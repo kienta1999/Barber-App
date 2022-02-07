@@ -1,3 +1,6 @@
 # CSE439-Project
 
-REPLACE THIS TEXT WITH TEAM MEMBER NAMES AND STUDENT IDS
+- Jiwon Choi:
+- Kevin Hao: 
+- Anh Le: 488493
+- Kien Ta: 488494
