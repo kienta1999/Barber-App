@@ -1,0 +1,592 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84E483F727B1F85000F22445 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E483F627B1F85000F22445 /* AppDelegate.swift */; };
+		84E483F927B1F85000F22445 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E483F827B1F85000F22445 /* SceneDelegate.swift */; };
+		84E483FB27B1F85000F22445 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E483FA27B1F85000F22445 /* ViewController.swift */; };
+		84E483FE27B1F85000F22445 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E483FC27B1F85000F22445 /* Main.storyboard */; };
+		84E4840027B1F85100F22445 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84E483FF27B1F85100F22445 /* Assets.xcassets */; };
+		84E4840327B1F85100F22445 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E4840127B1F85100F22445 /* LaunchScreen.storyboard */; };
+		84E4840E27B1F85100F22445 /* BarberAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E4840D27B1F85100F22445 /* BarberAppTests.swift */; };
+		84E4841927B1F85100F22445 /* BarberAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E4841827B1F85100F22445 /* BarberAppUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84E4840A27B1F85100F22445 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84E483EB27B1F85000F22445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84E483F227B1F85000F22445;
+			remoteInfo = BarberApp;
+		};
+		84E4841527B1F85100F22445 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84E483EB27B1F85000F22445 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84E483F227B1F85000F22445;
+			remoteInfo = BarberApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		84E483F327B1F85000F22445 /* BarberApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarberApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84E483F627B1F85000F22445 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84E483F827B1F85000F22445 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		84E483FA27B1F85000F22445 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84E483FD27B1F85000F22445 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84E483FF27B1F85100F22445 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84E4840227B1F85100F22445 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84E4840427B1F85100F22445 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84E4840927B1F85100F22445 /* BarberAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BarberAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84E4840D27B1F85100F22445 /* BarberAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberAppTests.swift; sourceTree = "<group>"; };
+		84E4840F27B1F85100F22445 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84E4841427B1F85100F22445 /* BarberAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BarberAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84E4841827B1F85100F22445 /* BarberAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberAppUITests.swift; sourceTree = "<group>"; };
+		84E4841A27B1F85100F22445 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84E483F027B1F85000F22445 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84E4840627B1F85100F22445 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84E4841127B1F85100F22445 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84E483EA27B1F85000F22445 = {
+			isa = PBXGroup;
+			children = (
+				84E483F527B1F85000F22445 /* BarberApp */,
+				84E4840C27B1F85100F22445 /* BarberAppTests */,
+				84E4841727B1F85100F22445 /* BarberAppUITests */,
+				84E483F427B1F85000F22445 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84E483F427B1F85000F22445 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84E483F327B1F85000F22445 /* BarberApp.app */,
+				84E4840927B1F85100F22445 /* BarberAppTests.xctest */,
+				84E4841427B1F85100F22445 /* BarberAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84E483F527B1F85000F22445 /* BarberApp */ = {
+			isa = PBXGroup;
+			children = (
+				84E483F627B1F85000F22445 /* AppDelegate.swift */,
+				84E483F827B1F85000F22445 /* SceneDelegate.swift */,
+				84E483FA27B1F85000F22445 /* ViewController.swift */,
+				84E483FC27B1F85000F22445 /* Main.storyboard */,
+				84E483FF27B1F85100F22445 /* Assets.xcassets */,
+				84E4840127B1F85100F22445 /* LaunchScreen.storyboard */,
+				84E4840427B1F85100F22445 /* Info.plist */,
+			);
+			path = BarberApp;
+			sourceTree = "<group>";
+		};
+		84E4840C27B1F85100F22445 /* BarberAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				84E4840D27B1F85100F22445 /* BarberAppTests.swift */,
+				84E4840F27B1F85100F22445 /* Info.plist */,
+			);
+			path = BarberAppTests;
+			sourceTree = "<group>";
+		};
+		84E4841727B1F85100F22445 /* BarberAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				84E4841827B1F85100F22445 /* BarberAppUITests.swift */,
+				84E4841A27B1F85100F22445 /* Info.plist */,
+			);
+			path = BarberAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84E483F227B1F85000F22445 /* BarberApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84E4841D27B1F85100F22445 /* Build configuration list for PBXNativeTarget "BarberApp" */;
+			buildPhases = (
+				84E483EF27B1F85000F22445 /* Sources */,
+				84E483F027B1F85000F22445 /* Frameworks */,
+				84E483F127B1F85000F22445 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BarberApp;
+			productName = BarberApp;
+			productReference = 84E483F327B1F85000F22445 /* BarberApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		84E4840827B1F85100F22445 /* BarberAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84E4842027B1F85100F22445 /* Build configuration list for PBXNativeTarget "BarberAppTests" */;
+			buildPhases = (
+				84E4840527B1F85100F22445 /* Sources */,
+				84E4840627B1F85100F22445 /* Frameworks */,
+				84E4840727B1F85100F22445 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84E4840B27B1F85100F22445 /* PBXTargetDependency */,
+			);
+			name = BarberAppTests;
+			productName = BarberAppTests;
+			productReference = 84E4840927B1F85100F22445 /* BarberAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		84E4841327B1F85100F22445 /* BarberAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84E4842327B1F85100F22445 /* Build configuration list for PBXNativeTarget "BarberAppUITests" */;
+			buildPhases = (
+				84E4841027B1F85100F22445 /* Sources */,
+				84E4841127B1F85100F22445 /* Frameworks */,
+				84E4841227B1F85100F22445 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84E4841627B1F85100F22445 /* PBXTargetDependency */,
+			);
+			name = BarberAppUITests;
+			productName = BarberAppUITests;
+			productReference = 84E4841427B1F85100F22445 /* BarberAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84E483EB27B1F85000F22445 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1210;
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					84E483F227B1F85000F22445 = {
+						CreatedOnToolsVersion = 12.1;
+					};
+					84E4840827B1F85100F22445 = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = 84E483F227B1F85000F22445;
+					};
+					84E4841327B1F85100F22445 = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = 84E483F227B1F85000F22445;
+					};
+				};
+			};
+			buildConfigurationList = 84E483EE27B1F85000F22445 /* Build configuration list for PBXProject "BarberApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84E483EA27B1F85000F22445;
+			productRefGroup = 84E483F427B1F85000F22445 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84E483F227B1F85000F22445 /* BarberApp */,
+				84E4840827B1F85100F22445 /* BarberAppTests */,
+				84E4841327B1F85100F22445 /* BarberAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84E483F127B1F85000F22445 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84E4840327B1F85100F22445 /* LaunchScreen.storyboard in Resources */,
+				84E4840027B1F85100F22445 /* Assets.xcassets in Resources */,
+				84E483FE27B1F85000F22445 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84E4840727B1F85100F22445 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84E4841227B1F85100F22445 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84E483EF27B1F85000F22445 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84E483FB27B1F85000F22445 /* ViewController.swift in Sources */,
+				84E483F727B1F85000F22445 /* AppDelegate.swift in Sources */,
+				84E483F927B1F85000F22445 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84E4840527B1F85100F22445 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84E4840E27B1F85100F22445 /* BarberAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84E4841027B1F85100F22445 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84E4841927B1F85100F22445 /* BarberAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84E4840B27B1F85100F22445 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84E483F227B1F85000F22445 /* BarberApp */;
+			targetProxy = 84E4840A27B1F85100F22445 /* PBXContainerItemProxy */;
+		};
+		84E4841627B1F85100F22445 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84E483F227B1F85000F22445 /* BarberApp */;
+			targetProxy = 84E4841527B1F85100F22445 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		84E483FC27B1F85000F22445 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84E483FD27B1F85000F22445 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		84E4840127B1F85100F22445 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84E4840227B1F85100F22445 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84E4841B27B1F85100F22445 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84E4841C27B1F85100F22445 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84E4841E27B1F85100F22445 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BarberApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cse439.group4.BarberApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84E4841F27B1F85100F22445 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BarberApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cse439.group4.BarberApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		84E4842127B1F85100F22445 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BarberAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cse439.group4.BarberAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BarberApp.app/BarberApp";
+			};
+			name = Debug;
+		};
+		84E4842227B1F85100F22445 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BarberAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cse439.group4.BarberAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BarberApp.app/BarberApp";
+			};
+			name = Release;
+		};
+		84E4842427B1F85100F22445 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BarberAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cse439.group4.BarberAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BarberApp;
+			};
+			name = Debug;
+		};
+		84E4842527B1F85100F22445 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BarberAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cse439.group4.BarberAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BarberApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84E483EE27B1F85000F22445 /* Build configuration list for PBXProject "BarberApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84E4841B27B1F85100F22445 /* Debug */,
+				84E4841C27B1F85100F22445 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84E4841D27B1F85100F22445 /* Build configuration list for PBXNativeTarget "BarberApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84E4841E27B1F85100F22445 /* Debug */,
+				84E4841F27B1F85100F22445 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84E4842027B1F85100F22445 /* Build configuration list for PBXNativeTarget "BarberAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84E4842127B1F85100F22445 /* Debug */,
+				84E4842227B1F85100F22445 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84E4842327B1F85100F22445 /* Build configuration list for PBXNativeTarget "BarberAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84E4842427B1F85100F22445 /* Debug */,
+				84E4842527B1F85100F22445 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84E483EB27B1F85000F22445 /* Project object */;
+}
