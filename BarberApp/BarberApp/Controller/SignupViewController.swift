@@ -7,7 +7,7 @@
 
 import UIKit
 import Firebase
-import FirebaseAuth
+//import FirebaseFirestore
 
 class SignupViewController: UIViewController {
     
@@ -24,6 +24,7 @@ class SignupViewController: UIViewController {
     let rolePickerData = ["Barber", "Client"]
     var user: User?
     var userRole: String = "Barber"
+    let db = Firestore.firestore()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +36,7 @@ class SignupViewController: UIViewController {
 
     @IBAction func signupClicked(_ sender: UIButton) {
         errorLabel.alpha = 0
-        user = User.init(firstname: firstNameTextField.text, lastname: lastNameTextField.text, email: emailTextField.text, password: passwordTextField.text)
+        user = User.init(firstname: firstNameTextField.text, lastname: lastNameTextField.text, email: emailTextField.text, password: passwordTextField.text, role: userRole)
         if user!.validateField(){
             if(user!.validatePassword()){
                 user!.cleanFields()
@@ -45,9 +46,21 @@ class SignupViewController: UIViewController {
                     if let e = error {
                         self.errorLabel.text = e.localizedDescription
                         self.errorLabel.alpha = 1
-                    } else if let u = authResult {
-//                        TODO: Add Navigation Segue
-                        print(u)
+                    } else if authResult != nil {
+                        var ref: DocumentReference? = nil
+                        ref = db.collection("users").addDocument(data: [
+                            "firstname": user!.firstname!,
+                            "lastname": user!.lastname!,
+                            "email": user!.email!,
+                            "password": user!.password!,
+                            "role": user!.role!
+                        ]) { err in
+                            if let err = err {
+                                print("Error adding document: \(err)")
+                            } else {
+                                print("Document added with ID: \(ref!.documentID)")
+                            }
+                        }
                     } else {
                         self.errorLabel.text = "Unknown error. Try again"
                         self.errorLabel.alpha = 1
