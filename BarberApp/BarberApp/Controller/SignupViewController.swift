@@ -35,8 +35,8 @@ class SignupViewController: UIViewController {
 
     @IBAction func signupClicked(_ sender: UIButton) {
         errorLabel.alpha = 0
-        user = User.init(firstname: firstNameTextField.text, lastname: lastNameTextField.text, email: emailTextField.text, password: passwordTextField.text, role: userRole, vc: self)
-        if user!.validateField(){
+        user = User.init(firstname: firstNameTextField.text, lastname: lastNameTextField.text, email: emailTextField.text ?? "", password: passwordTextField.text ?? "", role: userRole, signupVc: self)
+        if user!.validateSignupField(){
             if(user!.validatePassword()){
                 user!.cleanFields()
                 user!.createUser()
@@ -66,10 +66,12 @@ class SignupViewController: UIViewController {
     func transitionToHome(){
         let homeVC : HomepageViewController?
         if user?.role == "Barber"{
-            homeVC = self.storyboard?.instantiateViewController(identifier: Constant.StoryBoard.homeBarberVC) as? HomepageBarberViewController
+            homeVC = self.storyboard?.instantiateViewController(identifier: StoryBoard.homeBarberVC) as? HomepageBarberViewController
         }
-        else {
-            homeVC = self.storyboard?.instantiateViewController(identifier: Constant.StoryBoard.homeClientVC) as? HomepageClientViewController
+        else if user?.role == "Client"{
+            homeVC = self.storyboard?.instantiateViewController(identifier: StoryBoard.homeClientVC) as? HomepageClientViewController
+        } else {
+            return
         }
         homeVC?.user = user
         view.window?.rootViewController = homeVC

@@ -9,11 +9,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var loginRedirect: UIButton!
+    @IBOutlet weak var signupRedirect: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        setUpStyling()
     }
-
-
+    
+    func setUpStyling(){
+        Utilities.styleFilledButton(loginRedirect)
+        Utilities.styleHollowButton(signupRedirect)
+    }
 }
 
