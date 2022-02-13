@@ -30,46 +30,16 @@ class SignupViewController: UIViewController {
         super.viewDidLoad()
         rolePicker.dataSource = self
         rolePicker.delegate = self
-//        errorLabel.alpha = 0
         setUpStyling()
     }
 
     @IBAction func signupClicked(_ sender: UIButton) {
         errorLabel.alpha = 0
-        user = User.init(firstname: firstNameTextField.text, lastname: lastNameTextField.text, email: emailTextField.text, password: passwordTextField.text, role: userRole)
+        user = User.init(firstname: firstNameTextField.text, lastname: lastNameTextField.text, email: emailTextField.text, password: passwordTextField.text, role: userRole, vc: self)
         if user!.validateField(){
             if(user!.validatePassword()){
                 user!.cleanFields()
-                let cleanedEmail = user!.email!
-                let cleanedPassword = user!.password!
-                Auth.auth().createUser(withEmail: cleanedEmail, password: cleanedPassword, completion: { [self] (authResult, error) in
-                    if let e = error {
-                        self.errorLabel.text = e.localizedDescription
-                        self.errorLabel.alpha = 1
-                    } else if authResult != nil {
-                        var ref: DocumentReference? = nil
-                        ref = db.collection("users").addDocument(data: [
-                            "firstname": user!.firstname!,
-                            "lastname": user!.lastname!,
-                            "email": user!.email!,
-                            "password": user!.password!,
-                            "role": user!.role!
-                        ]) { err in
-                            if let err = err {
-                                print("Error adding document: \(err)")
-                            } else {
-                                print("Document added with ID: \(ref!.documentID)")
-                            }
-                        }
-                    } else {
-                        self.errorLabel.text = "Unknown error. Try again"
-                        self.errorLabel.alpha = 1
-                    }
-
-                })
-
-
-
+                user!.createUser()
                 
             }
             else{
@@ -91,6 +61,19 @@ class SignupViewController: UIViewController {
         Utilities.styleTextField(lastNameTextField)
         Utilities.styleFilledButton(signupButton)
         errorLabel.alpha = 0
+    }
+    
+    func transitionToHome(){
+        let homeVC : HomepageViewController?
+        if user?.role == "Barber"{
+            homeVC = self.storyboard?.instantiateViewController(identifier: Constant.StoryBoard.homeBarberVC) as? HomepageBarberViewController
+        }
+        else {
+            homeVC = self.storyboard?.instantiateViewController(identifier: Constant.StoryBoard.homeClientVC) as? HomepageClientViewController
+        }
+        homeVC?.user = user
+        view.window?.rootViewController = homeVC
+        view.window?.makeKeyAndVisible()
     }
 }
 

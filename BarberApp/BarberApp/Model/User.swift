@@ -5,7 +5,7 @@
 //  Created by admin on 2/11/22.
 //
 
-import Foundation
+import UIKit
 import Firebase
 
 struct User {
@@ -14,6 +14,7 @@ struct User {
     var email: String?
     var password: String?
     var role: String?
+    var vc: SignupViewController?
     static let db = Firestore.firestore()
     
     static let fieldError = "Please fill in all fields"
@@ -56,11 +57,11 @@ struct User {
         password = password?.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
-    func createUser() -> String?{
-        var error: String?
-        Auth.auth().createUser(withEmail: email!, password: password!) { (authResult, err) in
+    func createUser(){
+        Auth.auth().createUser(withEmail: email!, password: password!, completion: { (authResult, err) in
             if let e = err {
-                error = e.localizedDescription
+                vc?.errorLabel?.text = e.localizedDescription
+                vc?.errorLabel?.alpha = 1
             } else if authResult != nil {
                 var ref: DocumentReference? = nil
                 ref = User.db.collection("users").addDocument(data: [
@@ -71,16 +72,18 @@ struct User {
                     "role": self.role!
                 ]) { err in
                     if let err = err {
-                        error =  "Error adding document: \(err)"
+                        vc?.errorLabel?.text =  "Error adding document: \(err)"
+                        vc?.errorLabel?.alpha = 1
                     } else {
                         print("Document added with ID: \(ref!.documentID)")
+                        vc?.transitionToHome()
                     }
                 }
             } else {
-                error = "Unknown error. Try again"
+                vc?.errorLabel?.text = "Unknown error. Try again"
+                vc?.errorLabel?.alpha = 1
             }
 
-        }
-        return error
+        })
     }
 }
