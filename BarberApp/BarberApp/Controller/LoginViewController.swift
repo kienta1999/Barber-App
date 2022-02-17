@@ -30,7 +30,17 @@ class LoginViewController: UIViewController {
         
         if user!.validateLoginField() {
             user!.cleanFields()
-            user?.loginUser()
+            user?.loginUser() { error, data in
+                if let e = error {
+                    self.errorLabel.text = e
+                    self.errorLabel.alpha = 1
+                } else {
+                    self.user?.firstname = data?[User.userConstant.firstnameField] as? String
+                    self.user?.lastname = data?[User.userConstant.lastnameField] as? String
+                    self.user?.role = data?[User.userConstant.roleField]  as? String
+                    self.transitionToHome()
+                }
+            }
         }
         else {
             errorLabel.text = User.fieldError
@@ -38,8 +48,8 @@ class LoginViewController: UIViewController {
         }
     }
     
+    
     func setUpStyling(){
-//        emailTextField.attributedPlaceholder = [[NSAttributedString alloc] attributes:@{}]
         Utilities.styleTextField(emailTextField)
         Utilities.styleTextField(passwordTextField)
         Utilities.styleFilledButton(loginButton)

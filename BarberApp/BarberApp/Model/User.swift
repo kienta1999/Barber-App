@@ -59,11 +59,10 @@ struct User {
         password = password.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
-    func loginUser() {
+    func loginUser(loginCompleted: @escaping (String?, [String : Any]?) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password, completion: { (authResult, err) in
             if let e = err {
-                loginVc?.errorLabel?.text = e.localizedDescription
-                loginVc?.errorLabel?.alpha = 1
+                loginCompleted(e.localizedDescription, nil)
             } else if let authRes = authResult {
                 let userid = authRes.user.uid
                 User.db.collection(User.userConstant.name)
@@ -71,22 +70,12 @@ struct User {
                     .getDocument(completion: { (document, error) in
                         if let document = document, document.exists {
                             let data = document.data()
+                            loginCompleted(nil, data)
                             print("data: \(String(describing: data))")
-                            let userFirstname = data?[User.userConstant.firstnameField] as? String
-                            let userLastName = data?[User.userConstant.lastnameField] as? String
-                            let userRole = data?[User.userConstant.roleField]  as? String
-                            loginVc?.user = User.init(
-                                firstname: userFirstname,
-                                lastname: userLastName,
-                                email: self.email,
-                                password: self.password,
-                                role: userRole)
-                            loginVc?.transitionToHome()
                         }
                     })
             } else {
-                loginVc?.errorLabel?.text = "Unknown error. Try again"
-                loginVc?.errorLabel?.alpha = 1
+                loginCompleted("Unknown error. Try again", nil)
             }
         })
     }
