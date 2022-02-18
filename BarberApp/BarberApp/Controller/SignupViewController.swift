@@ -81,8 +81,8 @@ class SignupViewController: UIViewController {
             return
         }
         homeVC?.user = user
-        view.window?.rootViewController = homeVC
-        view.window?.makeKeyAndVisible()
+        
+        self.navigationController?.setViewControllers([homeVC!], animated: true)
     }
 }
 
