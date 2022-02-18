@@ -35,7 +35,16 @@ class UserAuthViewController: UIViewController {
         }
         else if user?.role == "Client"{
             homeVC = self.storyboard?.instantiateViewController(identifier: StoryBoard.Client.homeVC) as? HomepageClientViewController
-            tabViewControllers = [homeVC!]
+            tabViewControllers.append(homeVC!)
+            
+            let locationVC = self.storyboard?.instantiateViewController(identifier: StoryBoard.Client.locationVC) as! HomepageViewController
+            locationVC.user = user
+            tabViewControllers.append(locationVC)
+            
+            let profileVC = self.storyboard?.instantiateViewController(identifier: StoryBoard.Client.profileVC) as! HomepageViewController
+            profileVC.user = user
+            tabViewControllers.append(profileVC)
+            
             tabBarIdentifier = StoryBoard.Client.tabVC
         } else {
             return

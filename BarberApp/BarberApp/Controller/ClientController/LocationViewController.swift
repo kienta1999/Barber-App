@@ -1,17 +1,16 @@
 //
-//  ProfileViewController.swift
+//  LocationViewController.swift
 //  BarberApp
 //
-//  Created by admin on 2/17/22.
+//  Created by admin on 2/18/22.
 //
 
 import UIKit
 
-class ProfileBarberViewController: HomepageViewController {
+class LocationViewController: HomepageViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     

@@ -231,21 +231,30 @@
             </objects>
             <point key="canvasLocation" x="4497.1014492753629" y="-405.13392857142856"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--Profile Barber View Controller-->
         <scene sceneID="Ngl-uO-VqE">
             <objects>
-                <viewController storyboardIdentifier="ProfileBarberVC" id="Zfe-To-VFV" customClass="ProfileViewController" customModule="BarberApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileBarberVC" id="Zfe-To-VFV" customClass="ProfileBarberViewController" customModule="BarberApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vxI-Mx-uIM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Edr-fv-1w5">
-                                <rect key="frame" x="186" y="220" width="49" height="21"/>
+                                <rect key="frame" x="186" y="220" width="68" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmm-Me-vjw">
+                                <rect key="frame" x="184" y="286" width="76" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutClicked:" destination="Zfe-To-VFV" eventType="touchUpInside" id="p0s-F1-vvG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Jiy-A7-9NI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -265,12 +274,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2Q-ol-X3t">
-                                <rect key="frame" x="186" y="223" width="34" height="21"/>
+                                <rect key="frame" x="183" y="196" width="48" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOz-dn-dWi">
+                                <rect key="frame" x="169" y="258" width="76" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutClicked:" destination="Xyg-Kq-PL0" eventType="touchUpInside" id="W1B-Nd-3x5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XB8-me-QTV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -315,37 +333,73 @@
             </objects>
             <point key="canvasLocation" x="4442.0289855072469" y="375.66964285714283"/>
         </scene>
-        <!--Item-->
+        <!--Location-->
         <scene sceneID="ea5-LH-gY8">
             <objects>
-                <viewController id="L70-Mh-Pqu" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LocationClientVC" id="L70-Mh-Pqu" customClass="LocationViewController" customModule="BarberApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="98r-pI-BRV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eW0-kv-n1n">
+                                <rect key="frame" x="150" y="367" width="114" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1c-U8-mr0">
+                                <rect key="frame" x="160" y="433" width="94" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutClicked:" destination="L70-Mh-Pqu" eventType="touchUpInside" id="zFm-2g-1hM"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="uK3-db-0pX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="xL0-Me-fvm"/>
+                    <tabBarItem key="tabBarItem" title="Location" image="mappin" catalog="system" id="xL0-Me-fvm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tUh-YK-FSs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3532" y="1116"/>
+            <point key="canvasLocation" x="3428.985507246377" y="1143.75"/>
         </scene>
-        <!--Item-->
+        <!--Profile-->
         <scene sceneID="q6m-ce-0ME">
             <objects>
-                <viewController id="r2D-hm-heb" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileClientVC" id="r2D-hm-heb" customClass="ProfileClientViewController" customModule="BarberApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pxm-yf-wDd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKw-wf-3jr">
+                                <rect key="frame" x="168" y="346" width="78" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oEj-KU-Q1W">
+                                <rect key="frame" x="160" y="433" width="94" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutClicked:" destination="r2D-hm-heb" eventType="touchUpInside" id="zcb-CE-IUH"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ghj-gp-TO5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="b0e-bd-MwW"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="b0e-bd-MwW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YCf-3r-NAw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4442" y="1116"/>
+            <point key="canvasLocation" x="4440.579710144928" y="1115.625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Npq-xR-qs0">
@@ -492,6 +546,7 @@
         <image name="App Logo" width="299" height="304"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="logo text" width="476" height="230"/>
+        <image name="mappin" catalog="system" width="105" height="128"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="plus.rectangle.fill.on.rectangle.fill" catalog="system" width="128" height="96"/>
         <systemColor name="systemBackgroundColor">

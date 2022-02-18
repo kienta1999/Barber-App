@@ -17,6 +17,8 @@ struct StoryBoard {
     struct Client {
         static let homeVC = "HomepageClientVC"
         static let tabVC = "HomepageClientTab"
+        static let locationVC = "LocationClientVC"
+        static let profileVC = "ProfileClientVC"
     }
 }
 struct Collection {
