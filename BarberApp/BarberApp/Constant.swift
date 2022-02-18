@@ -11,6 +11,8 @@ struct StoryBoard {
     struct Barber {
         static let homeVC = "HomepageBarberVC"
         static let tabVC = "HomepageBarberTab"
+        static let postVC = "PostBarberVC"
+        static let profileVC = "ProfileBarberVC"
     }
     struct Client {
         static let homeVC = "HomepageClientVC"
