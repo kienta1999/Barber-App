@@ -35,11 +35,18 @@ class SignupViewController: UIViewController {
 
     @IBAction func signupClicked(_ sender: UIButton) {
         errorLabel.alpha = 0
-        user = User.init(firstname: firstNameTextField.text, lastname: lastNameTextField.text, email: emailTextField.text ?? "", password: passwordTextField.text ?? "", role: userRole, signupVc: self)
+        user = User.init(firstname: firstNameTextField.text, lastname: lastNameTextField.text, email: emailTextField.text ?? "", password: passwordTextField.text ?? "", role: userRole)
         if user!.validateSignupField(){
             if(user!.validatePassword()){
                 user!.cleanFields()
-                user!.createUser()
+                user!.createUser() {error in
+                    if let e = error {
+                        self.errorLabel.text = e
+                        self.errorLabel.alpha = 1
+                    } else {
+                        self.transitionToHome()
+                    }
+                }
                 
             }
             else{

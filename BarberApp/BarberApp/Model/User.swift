@@ -14,9 +14,7 @@ struct User {
     var email: String
     var password: String
     var role: String?
-    var signupVc: SignupViewController?
-    var loginVc: LoginViewController?
-//    var
+    
     static let db = Firestore.firestore()
     static let userConstant = Collection.Users.self
     
@@ -80,11 +78,10 @@ struct User {
         })
     }
     
-    func createUser(){
+    func createUser(signupCompleted: @escaping (String?) -> Void){
         Auth.auth().createUser(withEmail: email, password: password, completion: { (authResult, err) in
             if let e = err {
-                signupVc?.errorLabel?.text = e.localizedDescription
-                signupVc?.errorLabel?.alpha = 1
+                signupCompleted(e.localizedDescription)
             } else if let authRes = authResult {
                 let userid = authRes.user.uid
                 User.db.collection(User.userConstant.name)
@@ -97,16 +94,13 @@ struct User {
                     User.userConstant.roleField: self.role!
                 ]) { err in
                     if let err = err {
-                        signupVc?.errorLabel?.text =  "Error adding document: \(err)"
-                        signupVc?.errorLabel?.alpha = 1
+                        signupCompleted("Error adding document: \(err)")
                     } else {
-                        print("Document added with ID: \(userid)")
-                        signupVc?.transitionToHome()
+                        signupCompleted(nil)
                     }
                 }
             } else {
-                signupVc?.errorLabel?.text = "Unknown error. Try again"
-                signupVc?.errorLabel?.alpha = 1
+                signupCompleted("Unknown error. Try again")
             }
 
         })

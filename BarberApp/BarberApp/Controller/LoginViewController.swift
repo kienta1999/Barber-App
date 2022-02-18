@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginClicked(_ sender: UIButton) {
         errorLabel.alpha = 0
-        user = User.init(email: emailTextField.text ?? "", password: passwordTextField.text ?? "", loginVc: self)
+        user = User.init(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
         
         if user!.validateLoginField() {
             user!.cleanFields()
