@@ -101,6 +101,7 @@ struct User {
                 }
             } else {
                 signupCompleted("Unknown error. Try again")
+                
             }
 
         })

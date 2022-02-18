@@ -16,5 +16,11 @@ class HomepageViewController: UIViewController {
         helloLabel.text = "Welcome \(user?.role ?? "Error")  \(user?.firstname ?? "Error") \(user?.lastname ?? "Error")"
         // Do any additional setup after loading the view.
     }
-
+    
+    
+    
+    @IBAction func logoutClicked(_ sender: UIButton) {
+        self.navigationController?.setViewControllers([storyboard!.instantiateViewController(withIdentifier: "loginSignupView")], animated: true)
+    }
+    
 }

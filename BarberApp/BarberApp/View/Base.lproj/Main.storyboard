@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BarberApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginSignupView" id="BYZ-38-t0r" customClass="ViewController" customModule="BarberApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -196,7 +196,7 @@
             </objects>
             <point key="canvasLocation" x="1961" y="376"/>
         </scene>
-        <!--Homepage Barber View Controller-->
+        <!--Item-->
         <scene sceneID="8Ky-9I-EfW">
             <objects>
                 <viewController storyboardIdentifier="HomepageBarberVC" id="dzA-rH-Zm3" customClass="HomepageBarberViewController" customModule="BarberApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -211,10 +211,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ThQ-sb-IRe">
+                                <rect key="frame" x="161" y="315" width="93" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutClicked:" destination="dzA-rH-Zm3" eventType="touchUpInside" id="fWG-AL-gr0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2cU-57-mRN"/>
                         <color key="backgroundColor" red="0.37647058820000001" green="0.32156862749999998" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="4Ff-zq-lRz"/>
                     <navigationItem key="navigationItem" id="uja-6I-Fch"/>
                     <connections>
                         <outlet property="helloLabel" destination="3uB-cl-EqC" id="kJs-HL-gTR"/>
@@ -222,9 +232,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tex-vK-8Qa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3228" y="-405"/>
+            <point key="canvasLocation" x="4497.1014492753629" y="-405.13392857142856"/>
         </scene>
-        <!--Homepage Client View Controller-->
+        <!--Item-->
         <scene sceneID="lSc-QJ-lvz">
             <objects>
                 <viewController storyboardIdentifier="HomepageClientVC" id="2Nn-iZ-Aji" customClass="HomepageClientViewController" customModule="BarberApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -239,17 +249,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHK-F8-yZl">
+                                <rect key="frame" x="154" y="313" width="107" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutClicked:" destination="2Nn-iZ-Aji" eventType="touchUpInside" id="Ojz-8h-Bca"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LAU-8D-ts7"/>
                         <color key="backgroundColor" red="0.37647058820000001" green="0.32156862749999998" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="sj1-7o-A41"/>
                     <connections>
                         <outlet property="helloLabel" destination="uNW-q6-pDF" id="YQO-Kk-3kO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZqX-6H-sxU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3228" y="376"/>
+            <point key="canvasLocation" x="4442.0289855072469" y="375.66964285714283"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Npq-xR-qs0">
@@ -352,6 +372,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yC5-hY-ZyQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1961" y="-405"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="OnC-26-LOz">
+            <objects>
+                <tabBarController storyboardIdentifier="HomepageBarberTab" automaticallyAdjustsScrollViewInsets="NO" id="jYq-iX-SZ3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ccj-DG-mYE">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="dzA-rH-Zm3" kind="relationship" relationship="viewControllers" id="ZrQ-t7-A25"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lje-eF-mb9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3586.9565217391305" y="-405.13392857142856"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="QXM-WQ-Wo3">
+            <objects>
+                <tabBarController storyboardIdentifier="HomepageClientTab" automaticallyAdjustsScrollViewInsets="NO" id="27H-zB-lDa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="naO-FB-c4y">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="2Nn-iZ-Aji" kind="relationship" relationship="viewControllers" id="mK5-rK-MLw"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="czo-LJ-HXa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3531.884057971015" y="375.66964285714283"/>
         </scene>
     </scenes>
     <resources>

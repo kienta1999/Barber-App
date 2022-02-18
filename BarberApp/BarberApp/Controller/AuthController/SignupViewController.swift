@@ -72,17 +72,23 @@ class SignupViewController: UIViewController {
     
     func transitionToHome(){
         let homeVC : HomepageViewController?
+        var tabBarIdentifier: String?
         if user?.role == "Barber"{
             homeVC = self.storyboard?.instantiateViewController(identifier: StoryBoard.homeBarberVC) as? HomepageBarberViewController
+            tabBarIdentifier = "HomepageBarberTab"
         }
         else if user?.role == "Client"{
             homeVC = self.storyboard?.instantiateViewController(identifier: StoryBoard.homeClientVC) as? HomepageClientViewController
+            tabBarIdentifier = "HomepageClientTab"
         } else {
             return
         }
         homeVC?.user = user
+        let tabVC = self.storyboard?.instantiateViewController(identifier: tabBarIdentifier!) as! UITabBarController
+        tabVC.setViewControllers([homeVC!], animated: true)
         
-        self.navigationController?.setViewControllers([homeVC!], animated: true)
+        self.navigationController?.setViewControllers([tabVC], animated: true)
+        
     }
 }
 

@@ -161,9 +161,7 @@
 		840909F827B762A500364E09 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				84E483FA27B1F85000F22445 /* ViewController.swift */,
-				84090A0B27B7641300364E09 /* LoginViewController.swift */,
-				84090A1027B7641F00364E09 /* SignupViewController.swift */,
+				847596CF27BF61C90041614F /* AuthController */,
 				848CA5C827B87697001EFD41 /* HomepageBarberViewController.swift */,
 				848CA5D027B87C70001EFD41 /* HomepageClientViewController.swift */,
 				848CA5DA27B87E7B001EFD41 /* HomepageViewController.swift */,
@@ -177,6 +175,16 @@
 				840909FC27B762F100364E09 /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		847596CF27BF61C90041614F /* AuthController */ = {
+			isa = PBXGroup;
+			children = (
+				84E483FA27B1F85000F22445 /* ViewController.swift */,
+				84090A0B27B7641300364E09 /* LoginViewController.swift */,
+				84090A1027B7641F00364E09 /* SignupViewController.swift */,
+			);
+			path = AuthController;
 			sourceTree = "<group>";
 		};
 		84E483EA27B1F85000F22445 = {
