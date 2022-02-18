@@ -41,6 +41,7 @@
 		84090A1127B7641F00364E09 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84090A1027B7641F00364E09 /* SignupViewController.swift */; };
 		84090A1627B7739100364E09 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84090A1527B7739100364E09 /* Utilities.swift */; };
 		8457AA9227B9A896000B5F15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8457AA9127B9A896000B5F15 /* Assets.xcassets */; };
+		847596DF27BF66320041614F /* UserAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847596DE27BF66320041614F /* UserAuthViewController.swift */; };
 		848CA5C927B87697001EFD41 /* HomepageBarberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CA5C827B87697001EFD41 /* HomepageBarberViewController.swift */; };
 		848CA5D127B87C70001EFD41 /* HomepageClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CA5D027B87C70001EFD41 /* HomepageClientViewController.swift */; };
 		848CA5D627B87CCA001EFD41 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CA5D527B87CCA001EFD41 /* Constant.swift */; };
@@ -78,6 +79,7 @@
 		84090A1027B7641F00364E09 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		84090A1527B7739100364E09 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		8457AA9127B9A896000B5F15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		847596DE27BF66320041614F /* UserAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthViewController.swift; sourceTree = "<group>"; };
 		848CA5C827B87697001EFD41 /* HomepageBarberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageBarberViewController.swift; sourceTree = "<group>"; };
 		848CA5D027B87C70001EFD41 /* HomepageClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageClientViewController.swift; sourceTree = "<group>"; };
 		848CA5D527B87CCA001EFD41 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -162,8 +164,8 @@
 			isa = PBXGroup;
 			children = (
 				847596CF27BF61C90041614F /* AuthController */,
-				848CA5C827B87697001EFD41 /* HomepageBarberViewController.swift */,
-				848CA5D027B87C70001EFD41 /* HomepageClientViewController.swift */,
+				847596D327BF64E60041614F /* BarberController */,
+				847596D727BF64F60041614F /* ClientController */,
 				848CA5DA27B87E7B001EFD41 /* HomepageViewController.swift */,
 			);
 			path = Controller;
@@ -183,8 +185,25 @@
 				84E483FA27B1F85000F22445 /* ViewController.swift */,
 				84090A0B27B7641300364E09 /* LoginViewController.swift */,
 				84090A1027B7641F00364E09 /* SignupViewController.swift */,
+				847596DE27BF66320041614F /* UserAuthViewController.swift */,
 			);
 			path = AuthController;
+			sourceTree = "<group>";
+		};
+		847596D327BF64E60041614F /* BarberController */ = {
+			isa = PBXGroup;
+			children = (
+				848CA5C827B87697001EFD41 /* HomepageBarberViewController.swift */,
+			);
+			path = BarberController;
+			sourceTree = "<group>";
+		};
+		847596D727BF64F60041614F /* ClientController */ = {
+			isa = PBXGroup;
+			children = (
+				848CA5D027B87C70001EFD41 /* HomepageClientViewController.swift */,
+			);
+			path = ClientController;
 			sourceTree = "<group>";
 		};
 		84E483EA27B1F85000F22445 = {
@@ -410,6 +429,7 @@
 				84090A1127B7641F00364E09 /* SignupViewController.swift in Sources */,
 				840909FD27B762F100364E09 /* User.swift in Sources */,
 				848CA5DB27B87E7B001EFD41 /* HomepageViewController.swift in Sources */,
+				847596DF27BF66320041614F /* UserAuthViewController.swift in Sources */,
 				84090A1627B7739100364E09 /* Utilities.swift in Sources */,
 				84E483FB27B1F85000F22445 /* ViewController.swift in Sources */,
 				848CA5C927B87697001EFD41 /* HomepageBarberViewController.swift in Sources */,

@@ -196,7 +196,7 @@
             </objects>
             <point key="canvasLocation" x="1961" y="376"/>
         </scene>
-        <!--Item-->
+        <!--Homepage Barber View Controller-->
         <scene sceneID="8Ky-9I-EfW">
             <objects>
                 <viewController storyboardIdentifier="HomepageBarberVC" id="dzA-rH-Zm3" customClass="HomepageBarberViewController" customModule="BarberApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -224,7 +224,7 @@
                         <viewLayoutGuide key="safeArea" id="2cU-57-mRN"/>
                         <color key="backgroundColor" red="0.37647058820000001" green="0.32156862749999998" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="4Ff-zq-lRz"/>
+                    <tabBarItem key="tabBarItem" title="" image="house.fill" catalog="system" id="4Ff-zq-lRz"/>
                     <navigationItem key="navigationItem" id="uja-6I-Fch"/>
                     <connections>
                         <outlet property="helloLabel" destination="3uB-cl-EqC" id="kJs-HL-gTR"/>
@@ -234,7 +234,39 @@
             </objects>
             <point key="canvasLocation" x="4497.1014492753629" y="-405.13392857142856"/>
         </scene>
-        <!--Item-->
+        <!--View Controller-->
+        <scene sceneID="Ngl-uO-VqE">
+            <objects>
+                <viewController id="Zfe-To-VFV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vxI-Mx-uIM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Jiy-A7-9NI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="person.fill" catalog="system" id="oM0-Dq-eAG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v7S-DF-ONf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3587" y="-1120"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Ydb-op-1Yf">
+            <objects>
+                <viewController id="Xyg-Kq-PL0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XFQ-Jo-Ka2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="XB8-me-QTV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="plus.rectangle.fill.on.rectangle.fill" catalog="system" id="bzf-St-dxl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lwf-fH-L1V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4532" y="-1106"/>
+        </scene>
+        <!--Home-->
         <scene sceneID="lSc-QJ-lvz">
             <objects>
                 <viewController storyboardIdentifier="HomepageClientVC" id="2Nn-iZ-Aji" customClass="HomepageClientViewController" customModule="BarberApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -262,7 +294,7 @@
                         <viewLayoutGuide key="safeArea" id="LAU-8D-ts7"/>
                         <color key="backgroundColor" red="0.37647058820000001" green="0.32156862749999998" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="sj1-7o-A41"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="sj1-7o-A41"/>
                     <connections>
                         <outlet property="helloLabel" destination="uNW-q6-pDF" id="YQO-Kk-3kO"/>
                     </connections>
@@ -270,6 +302,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZqX-6H-sxU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4442.0289855072469" y="375.66964285714283"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="ea5-LH-gY8">
+            <objects>
+                <viewController id="L70-Mh-Pqu" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="98r-pI-BRV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="uK3-db-0pX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="xL0-Me-fvm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tUh-YK-FSs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3532" y="1116"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="q6m-ce-0ME">
+            <objects>
+                <viewController id="r2D-hm-heb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pxm-yf-wDd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ghj-gp-TO5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="b0e-bd-MwW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YCf-3r-NAw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4442" y="1116"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Npq-xR-qs0">
@@ -384,6 +448,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="dzA-rH-Zm3" kind="relationship" relationship="viewControllers" id="ZrQ-t7-A25"/>
+                        <segue destination="Xyg-Kq-PL0" kind="relationship" relationship="viewControllers" id="fSh-Zq-9Nn"/>
+                        <segue destination="Zfe-To-VFV" kind="relationship" relationship="viewControllers" id="tOg-1K-RmJ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lje-eF-mb9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -401,6 +467,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="2Nn-iZ-Aji" kind="relationship" relationship="viewControllers" id="mK5-rK-MLw"/>
+                        <segue destination="L70-Mh-Pqu" kind="relationship" relationship="viewControllers" id="yEc-zu-o2q"/>
+                        <segue destination="r2D-hm-heb" kind="relationship" relationship="viewControllers" id="qaa-mR-awE"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="czo-LJ-HXa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -410,7 +478,13 @@
     </scenes>
     <resources>
         <image name="App Logo" width="299" height="304"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="logo text" width="476" height="230"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="plus.rectangle.fill.on.rectangle.fill" catalog="system" width="128" height="96"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

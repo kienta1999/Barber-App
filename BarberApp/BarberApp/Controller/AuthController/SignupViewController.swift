@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 //import FirebaseFirestore
 
-class SignupViewController: UIViewController {
+class SignupViewController: UserAuthViewController {
     
     @IBOutlet weak var rolePicker: UIPickerView!
     @IBOutlet weak var firstNameTextField: UITextField!
@@ -22,7 +22,7 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var signupButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
     let rolePickerData = ["Barber", "Client"]
-    var user: User?
+    
     var userRole: String = "Barber"
     let db = Firestore.firestore()
 
@@ -68,27 +68,6 @@ class SignupViewController: UIViewController {
         Utilities.styleTextField(lastNameTextField)
         Utilities.styleFilledButton(signupButton)
         errorLabel.alpha = 0
-    }
-    
-    func transitionToHome(){
-        let homeVC : HomepageViewController?
-        var tabBarIdentifier: String?
-        if user?.role == "Barber"{
-            homeVC = self.storyboard?.instantiateViewController(identifier: StoryBoard.homeBarberVC) as? HomepageBarberViewController
-            tabBarIdentifier = "HomepageBarberTab"
-        }
-        else if user?.role == "Client"{
-            homeVC = self.storyboard?.instantiateViewController(identifier: StoryBoard.homeClientVC) as? HomepageClientViewController
-            tabBarIdentifier = "HomepageClientTab"
-        } else {
-            return
-        }
-        homeVC?.user = user
-        let tabVC = self.storyboard?.instantiateViewController(identifier: tabBarIdentifier!) as! UITabBarController
-        tabVC.setViewControllers([homeVC!], animated: true)
-        
-        self.navigationController?.setViewControllers([tabVC], animated: true)
-        
     }
 }
 

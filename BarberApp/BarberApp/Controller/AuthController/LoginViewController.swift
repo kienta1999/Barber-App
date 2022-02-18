@@ -9,14 +9,13 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class LoginViewController: UIViewController {
+class LoginViewController: UserAuthViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
     
-    var user: User?
     let db = Firestore.firestore()
     
     override func viewDidLoad() {
@@ -54,26 +53,5 @@ class LoginViewController: UIViewController {
         Utilities.styleTextField(passwordTextField)
         Utilities.styleFilledButton(loginButton)
         errorLabel.alpha = 0
-    }
-    
-    func transitionToHome(){
-        let homeVC : HomepageViewController?
-        var tabBarIdentifier: String?
-        if user?.role == "Barber"{
-            homeVC = self.storyboard?.instantiateViewController(identifier: StoryBoard.homeBarberVC) as? HomepageBarberViewController
-            tabBarIdentifier = "HomepageBarberTab"
-        }
-        else if user?.role == "Client"{
-            homeVC = self.storyboard?.instantiateViewController(identifier: StoryBoard.homeClientVC) as? HomepageClientViewController
-            tabBarIdentifier = "HomepageClientTab"
-        } else {
-            return
-        }
-        homeVC?.user = user
-        let tabVC = self.storyboard?.instantiateViewController(identifier: tabBarIdentifier!) as! UITabBarController
-        tabVC.setViewControllers([homeVC!], animated: true)
-        
-        self.navigationController?.setViewControllers([tabVC], animated: true)
-        
     }
 }

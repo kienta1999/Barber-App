@@ -8,8 +8,14 @@
 import Foundation
 
 struct StoryBoard {
-    static let homeBarberVC = "HomepageBarberVC"
-    static let homeClientVC = "HomepageClientVC"
+    struct Barber {
+        static let homeVC = "HomepageBarberVC"
+        static let tabVC = "HomepageBarberTab"
+    }
+    struct Client {
+        static let homeVC = "HomepageClientVC"
+        static let tabVC = "HomepageClientTab"
+    }
 }
 struct Collection {
     struct Users {
