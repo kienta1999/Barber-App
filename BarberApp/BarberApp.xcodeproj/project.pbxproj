@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		737982AA27C2E8DE004FA6DF /* MapLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737982A927C2E8DE004FA6DF /* MapLocationViewController.swift */; };
 		7809B57A27B60ECE002C8484 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7809B57927B60ECE002C8484 /* GoogleService-Info.plist */; };
 		7809B57D27B6138A002C8484 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 7809B57C27B6138A002C8484 /* FirebaseAnalytics */; };
 		7809B57F27B6138A002C8484 /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 7809B57E27B6138A002C8484 /* FirebaseAnalyticsSwift-Beta */; };
@@ -77,6 +78,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		737982A927C2E8DE004FA6DF /* MapLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocationViewController.swift; sourceTree = "<group>"; };
 		7809B57927B60ECE002C8484 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		840909FC27B762F100364E09 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		84090A0B27B7641300364E09 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				84E483FC27B1F85000F22445 /* Main.storyboard */,
+				737982A927C2E8DE004FA6DF /* MapLocationViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				737982AA27C2E8DE004FA6DF /* MapLocationViewController.swift in Sources */,
 				847596EE27BF6E2A0041614F /* LocationViewController.swift in Sources */,
 				847596F627BF6EDD0041614F /* ProfileClientViewController.swift in Sources */,
 				84090A1127B7641F00364E09 /* SignupViewController.swift in Sources */,

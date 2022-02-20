@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gpQ-1l-uB8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WVt-x1-ZQL">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -418,7 +419,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mqv-QF-juz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-91.304347826086968" y="39.508928571428569"/>
+            <point key="canvasLocation" x="-268" y="40"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="M75-Y5-rb0">
@@ -509,6 +510,7 @@
                 <tabBarController storyboardIdentifier="HomepageBarberTab" automaticallyAdjustsScrollViewInsets="NO" id="jYq-iX-SZ3" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ccj-DG-mYE">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -528,6 +530,7 @@
                 <tabBarController storyboardIdentifier="HomepageClientTab" automaticallyAdjustsScrollViewInsets="NO" id="27H-zB-lDa" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="naO-FB-c4y">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -541,6 +544,36 @@
             </objects>
             <point key="canvasLocation" x="3531.884057971015" y="375.66964285714283"/>
         </scene>
+        <!--Map Location View Controller-->
+        <scene sceneID="NZx-CH-57J">
+            <objects>
+                <viewController id="WVt-x1-ZQL" customClass="MapLocationViewController" customModule="BarberApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rnC-VY-TFW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="687-yt-J4Q">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mip-KJ-RVG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mip-KJ-RVG" firstAttribute="bottom" secondItem="687-yt-J4Q" secondAttribute="bottom" id="2DK-Vf-UH2"/>
+                            <constraint firstItem="mip-KJ-RVG" firstAttribute="trailing" secondItem="687-yt-J4Q" secondAttribute="trailing" id="K0n-BR-uF2"/>
+                            <constraint firstItem="687-yt-J4Q" firstAttribute="top" secondItem="mip-KJ-RVG" secondAttribute="top" id="Thz-gX-IeD"/>
+                            <constraint firstItem="687-yt-J4Q" firstAttribute="top" secondItem="mip-KJ-RVG" secondAttribute="top" id="xJN-0e-9Ob"/>
+                            <constraint firstItem="687-yt-J4Q" firstAttribute="leading" secondItem="mip-KJ-RVG" secondAttribute="leading" id="xhu-b6-UeF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="687-yt-J4Q" id="w6y-Ot-GK8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mv6-ge-oNG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="748" y="700"/>
+        </scene>
     </scenes>
     <resources>
         <image name="App Logo" width="299" height="304"/>
@@ -548,7 +581,7 @@
         <image name="logo text" width="476" height="230"/>
         <image name="mappin" catalog="system" width="105" height="128"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
-        <image name="plus.rectangle.fill.on.rectangle.fill" catalog="system" width="128" height="96"/>
+        <image name="plus.rectangle.fill.on.rectangle.fill" catalog="system" width="128" height="97"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
