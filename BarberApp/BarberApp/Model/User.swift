@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 
+/// User struct contains user information such as firstname, lastname, etc
 struct User {
     var firstname: String?
     var lastname: String?
@@ -21,6 +22,9 @@ struct User {
     static let fieldError = "Please fill in all fields"
     static let passwordError = "Password must have at least 6 characters and contain a number"
     
+    /// Validate if a filed is not empty
+    /// - Parameter field: Optional String containing the user input
+    /// - Returns: Bool value indicating if the field is valid or not
     func validateHelper(_ field: String?) -> Bool{
         if let text = field {
             if text.trimmingCharacters(in: .whitespacesAndNewlines) != "" {
@@ -30,14 +34,20 @@ struct User {
         return false
     }
     
+    /// Validate if users entered valid fields for signup
+    /// - Returns: Bool value indicating if all input fields are valid
     func validateSignupField() -> Bool {
         return validateHelper(firstname)  && validateHelper(lastname) && validateHelper(email) && validateHelper(password)
     }
     
+    /// Validate if users entered valid fields for login
+    /// - Returns: Bool value indicating if all input fields are valid
     func validateLoginField() -> Bool {
         return validateHelper(email) && validateHelper(password)
     }
     
+    /// Validate if users entered valid password (at least 6 character long, contain a number)
+    /// - Returns: Bool value indicating if password meets requirements
     func validatePassword() -> Bool {
             if password.count < 6 {
                 return false
@@ -50,6 +60,7 @@ struct User {
             return false
         }
     
+    /// Remove the white spaces and new lines in user's input
     mutating func cleanFields(){
         firstname = firstname?.trimmingCharacters(in: .whitespacesAndNewlines)
         lastname = lastname?.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -57,6 +68,8 @@ struct User {
         password = password.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
+    /// After validating fields, login user using FirebaseAuth
+    /// - Parameter loginCompleted: closure that captures String error message, if any
     func loginUser(loginCompleted: @escaping (String?, [String : Any]?) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password, completion: { (authResult, err) in
             if let e = err {
@@ -78,6 +91,8 @@ struct User {
         })
     }
     
+    /// After validating fields, create a new  user using FirebaseAuth
+    /// - Parameter signupCompleted: closure that captures String error message, if any
     func createUser(signupCompleted: @escaping (String?) -> Void){
         Auth.auth().createUser(withEmail: email, password: password, completion: { (authResult, err) in
             if let e = err {
