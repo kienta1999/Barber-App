@@ -10,6 +10,7 @@ import Firebase
 
 /// User struct contains user information such as firstname, lastname, etc
 struct User {
+    var id: String?
     var firstname: String?
     var lastname: String?
     var email: String
@@ -70,10 +71,10 @@ struct User {
     
     /// After validating fields, login user using FirebaseAuth
     /// - Parameter loginCompleted: closure that captures String error message, if any
-    func loginUser(loginCompleted: @escaping (String?, [String : Any]?) -> Void) {
+    func loginUser(loginCompleted: @escaping (String?, [String : Any]?, String?) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password, completion: { (authResult, err) in
             if let e = err {
-                loginCompleted(e.localizedDescription, nil)
+                loginCompleted(e.localizedDescription, nil, nil)
             } else if let authRes = authResult {
                 let userid = authRes.user.uid
                 User.db.collection(User.userConstant.name)
@@ -81,22 +82,22 @@ struct User {
                     .getDocument(completion: { (document, error) in
                         if let document = document, document.exists {
                             let data = document.data()
-                            loginCompleted(nil, data)
+                            loginCompleted(nil, data, userid)
                             print("data: \(String(describing: data))")
                         }
                     })
             } else {
-                loginCompleted("Unknown error. Try again", nil)
+                loginCompleted("Unknown error. Try again", nil, nil)
             }
         })
     }
     
     /// After validating fields, create a new  user using FirebaseAuth
     /// - Parameter signupCompleted: closure that captures String error message, if any
-    func createUser(signupCompleted: @escaping (String?) -> Void){
+    func createUser(signupCompleted: @escaping (String?, String?) -> Void){
         Auth.auth().createUser(withEmail: email, password: password, completion: { (authResult, err) in
             if let e = err {
-                signupCompleted(e.localizedDescription)
+                signupCompleted(e.localizedDescription, nil)
             } else if let authRes = authResult {
                 let userid = authRes.user.uid
                 User.db.collection(User.userConstant.name)
@@ -109,13 +110,13 @@ struct User {
                     User.userConstant.roleField: self.role!
                 ]) { err in
                     if let err = err {
-                        signupCompleted("Error adding document: \(err)")
+                        signupCompleted("Error adding document: \(err)", nil)
                     } else {
-                        signupCompleted(nil)
+                        signupCompleted(nil, userid)
                     }
                 }
             } else {
-                signupCompleted("Unknown error. Try again")
+                signupCompleted("Unknown error. Try again", nil)
                 
             }
 

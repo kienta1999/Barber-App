@@ -38,11 +38,12 @@ class SignupViewController: UserAuthViewController {
         if user!.validateSignupField(){
             if(user!.validatePassword()){
                 user!.cleanFields()
-                user!.createUser() {error in
+                user!.createUser() {error , userid in
                     if let e = error {
                         self.errorLabel.text = e
                         self.errorLabel.alpha = 1
                     } else {
+                        self.user?.id = userid
                         self.transitionToHome()
                     }
                 }

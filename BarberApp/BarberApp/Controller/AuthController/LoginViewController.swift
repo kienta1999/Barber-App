@@ -28,7 +28,7 @@ class LoginViewController: UserAuthViewController {
         
         if user!.validateLoginField() {
             user!.cleanFields()
-            user?.loginUser() { error, data in
+            user?.loginUser() { error, data, userid in
                 if let e = error {
                     self.errorLabel.text = e
                     self.errorLabel.alpha = 1
@@ -36,6 +36,7 @@ class LoginViewController: UserAuthViewController {
                     self.user?.firstname = data?[User.userConstant.firstnameField] as? String
                     self.user?.lastname = data?[User.userConstant.lastnameField] as? String
                     self.user?.role = data?[User.userConstant.roleField]  as? String
+                    self.user?.id = userid
                     self.transitionToHome()
                 }
             }

@@ -54,9 +54,9 @@ class PostViewController: HomepageViewController, UINavigationControllerDelegate
     
     
     @IBAction func uploadImage(_ sender: UIButton) {
-        if let imageUrl = imageUrl, let email = user?.email {
+        if let imageUrl = imageUrl, let userid = user?.id {
             let imgName = imageUrl.relativeString.split(separator: "/").last ?? "default.jpeg"
-            let userImageRef = barberPostRef.child("\(email)/\(imgName)")
+            let userImageRef = barberPostRef.child("\(userid)/\(imgName)")
             userImageRef.putFile(from: imageUrl, metadata: nil) { metadata, error in
               guard let metadata = metadata else {
                 print("error ! \(String(describing: error))")
