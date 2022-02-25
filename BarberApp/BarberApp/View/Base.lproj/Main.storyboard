@@ -338,6 +338,7 @@
                     <connections>
                         <outlet property="captionTextView" destination="3IE-Ne-4XK" id="GTw-rU-egQ"/>
                         <outlet property="imageView" destination="K5V-eH-WKh" id="A9d-mD-0kq"/>
+                        <outlet property="spinner" destination="0D0-Pt-czt" id="BO9-Hp-8yr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lwf-fH-L1V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

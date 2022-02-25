@@ -18,6 +18,8 @@ class PostViewController: HomepageViewController, UINavigationControllerDelegate
     @IBOutlet weak var captionTextView: UITextView!
     var placeholderLabel : UILabel!
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+
     
     required init?(coder aDecoder: NSCoder) {
         self.barberPostRef = storageRef.child("BarberPost")
@@ -41,6 +43,9 @@ class PostViewController: HomepageViewController, UINavigationControllerDelegate
         placeholderLabel.frame.origin = CGPoint(x: 5, y: (captionTextView.font?.pointSize)! / 2)
         placeholderLabel.textColor = UIColor.lightGray
         placeholderLabel.isHidden = !captionTextView.text.isEmpty
+        
+        spinner.isHidden = true
+        spinner.style = .large
     }
     
     @IBAction func imageSelectClicked() {
@@ -66,6 +71,9 @@ class PostViewController: HomepageViewController, UINavigationControllerDelegate
     
     @IBAction func uploadImage(_ sender: UIButton) {
         if let imageUrl = imageUrl, let userid = user?.id {
+            spinner.isHidden = false
+            spinner.startAnimating()
+            imageView.alpha = 0.5
             let imgName = imageUrl.relativeString.split(separator: "/").last ?? "default.jpeg"
             let userImageRef = barberPostRef.child("\(userid)/\(imgName)")
             userImageRef.putFile(from: imageUrl, metadata: nil) { metadata, error in
@@ -77,6 +85,8 @@ class PostViewController: HomepageViewController, UINavigationControllerDelegate
                 let newPost = Post.init(userid, userImageRef.fullPath, self.captionTextView.text)
                 newPost.saveToDatabase()
                 self.uploadNotification("Upload Successful", "Your image is posted successfully", "Ok", true)
+                self.spinner.stopAnimating()
+                self.spinner.isHidden = true
             }
         } else {
             uploadNotification("Upload Failed", "Please select an image", "Dismiss", false)
@@ -91,6 +101,7 @@ class PostViewController: HomepageViewController, UINavigationControllerDelegate
             imageView.image = nil
             captionTextView.text = nil
             imageUrl = nil
+            imageView.alpha = 1
         }
     }
     
