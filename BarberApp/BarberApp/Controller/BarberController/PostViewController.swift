@@ -8,13 +8,16 @@
 import UIKit
 import FirebaseStorage
 
-class PostViewController: HomepageViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class PostViewController: HomepageViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextViewDelegate {
 
     let storageRef = Storage.storage().reference()
     let barberPostRef: StorageReference
-    @IBOutlet var imageView: UIImageView!
     let imagePicker = UIImagePickerController()
     var imageUrl: URL?
+    @IBOutlet var imageView: UIImageView!
+    @IBOutlet weak var captionTextView: UITextView!
+    var placeholderLabel : UILabel!
+    
     
     required init?(coder aDecoder: NSCoder) {
         self.barberPostRef = storageRef.child("BarberPost")
@@ -22,10 +25,23 @@ class PostViewController: HomepageViewController, UINavigationControllerDelegate
         super.init(coder: aDecoder)
     }
     
+    // https://stackoverflow.com/questions/27652227/add-placeholder-text-inside-uitextview-in-swift
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("barber post ref")
-        print(self.barberPostRef)
+        print("barber post ref \(self.barberPostRef)")
+        captionTextView.layer.borderWidth = 1
+        captionTextView.layer.borderColor = UIColor.black.cgColor
+        captionTextView.layer.cornerRadius = captionTextView.frame.height / 10
+        
+        captionTextView.delegate = self
+        placeholderLabel = UILabel()
+        placeholderLabel.text = "Caption"
+        placeholderLabel.font = UIFont.italicSystemFont(ofSize: (captionTextView.font?.pointSize)!)
+        placeholderLabel.sizeToFit()
+        captionTextView.addSubview(placeholderLabel)
+        placeholderLabel.frame.origin = CGPoint(x: 5, y: (captionTextView.font?.pointSize)! / 2)
+        placeholderLabel.textColor = UIColor.lightGray
+        placeholderLabel.isHidden = !captionTextView.text.isEmpty
     }
     
     @IBAction func imageSelectClicked() {
@@ -73,6 +89,12 @@ class PostViewController: HomepageViewController, UINavigationControllerDelegate
             }
         }
     }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        placeholderLabel.isHidden = !textView.text.isEmpty
+    }
+    
+    
     
     
 
