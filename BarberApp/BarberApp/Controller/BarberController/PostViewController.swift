@@ -28,7 +28,6 @@ class PostViewController: HomepageViewController, UINavigationControllerDelegate
     // https://stackoverflow.com/questions/27652227/add-placeholder-text-inside-uitextview-in-swift
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("barber post ref \(self.barberPostRef)")
         captionTextView.layer.borderWidth = 1
         captionTextView.layer.borderColor = UIColor.black.cgColor
         captionTextView.layer.cornerRadius = captionTextView.frame.height / 10
@@ -46,8 +45,6 @@ class PostViewController: HomepageViewController, UINavigationControllerDelegate
     
     @IBAction func imageSelectClicked() {
         if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
-            print("Button capture")
-
             imagePicker.delegate = self
             imagePicker.sourceType = .savedPhotosAlbum
             imagePicker.allowsEditing = false
@@ -58,8 +55,6 @@ class PostViewController: HomepageViewController, UINavigationControllerDelegate
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
-        print("info \(info)")
-        print("info \(String(describing: info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerImageURL")]))")
         if let url = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerImageURL")] as? URL {
             imageUrl = url
         }
@@ -75,27 +70,31 @@ class PostViewController: HomepageViewController, UINavigationControllerDelegate
             let userImageRef = barberPostRef.child("\(userid)/\(imgName)")
             userImageRef.putFile(from: imageUrl, metadata: nil) { metadata, error in
               guard let metadata = metadata else {
-                print("error ! \(String(describing: error))")
-                let alert = UIAlertController(title: "Upload Failed", message: String(describing: error), preferredStyle: UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+                self.uploadNotification("Upload Failed", error?.localizedDescription ?? "Unknown error", "Dismiss", false)
                 return
               }
-//                Add to Firestore Database
                 print("Metadata: \(metadata)")
-                let alert = UIAlertController(title: "Upload Successful", message: "Your image is posted successfully", preferredStyle: UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+                let newPost = Post.init(userid, userImageRef.fullPath, self.captionTextView.text)
+                newPost.saveToDatabase()
+                self.uploadNotification("Upload Successful", "Your image is posted successfully", "Ok", true)
             }
+        } else {
+            uploadNotification("Upload Failed", "Please select an image", "Dismiss", false)
+        }
+    }
+    
+    func uploadNotification(_ title: String, _ message: String, _ actionTitle: String, _ isSuccess: Bool) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: actionTitle, style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        if isSuccess {
+            imageView.image = nil
+            captionTextView.text = nil
+            imageUrl = nil
         }
     }
     
     func textViewDidChange(_ textView: UITextView) {
         placeholderLabel.isHidden = !textView.text.isEmpty
     }
-    
-    
-    
-    
-
 }

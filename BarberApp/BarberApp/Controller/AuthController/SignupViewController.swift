@@ -91,7 +91,6 @@ extension SignupViewController : UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print(rolePickerData[row])
         userRole = rolePickerData[row]
     }
 }

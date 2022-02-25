@@ -77,13 +77,12 @@ struct User {
                 loginCompleted(e.localizedDescription, nil, nil)
             } else if let authRes = authResult {
                 let userid = authRes.user.uid
-                User.db.collection(User.userConstant.name)
+                User.db.collection(User.userConstant.collectionName)
                     .document(userid)
                     .getDocument(completion: { (document, error) in
                         if let document = document, document.exists {
                             let data = document.data()
                             loginCompleted(nil, data, userid)
-                            print("data: \(String(describing: data))")
                         }
                     })
             } else {
@@ -100,7 +99,7 @@ struct User {
                 signupCompleted(e.localizedDescription, nil)
             } else if let authRes = authResult {
                 let userid = authRes.user.uid
-                User.db.collection(User.userConstant.name)
+                User.db.collection(User.userConstant.collectionName)
                     .document(userid)
                     .setData([
                     User.userConstant.firstnameField: self.firstname!,
