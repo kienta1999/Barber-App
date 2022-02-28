@@ -91,7 +91,51 @@ class SignUpModelTests: XCTestCase {
                        password: "   ",
                        role: role)
             
-            XCTAssertFalse(sut.validateSignupField())
+            XCTAssertFalse(sut.validatePassword())
          }
+    
+    func testUser_invalidPasswordLength() {
+            sut = User(id: id,
+                       firstname: firstname,
+                       lastname: lastname,
+                       email: email,
+                       password: "14",
+                       role: role)
+            
+            XCTAssertFalse(sut.validatePassword())
+    }
+    
+    func testUser_invalidPasswordCharacter() {
+            sut = User(id: id,
+                       firstname: firstname,
+                       lastname: lastname,
+                       email: email,
+                       password: "absdfe",
+                       role: role)
+            
+            XCTAssertFalse(sut.validatePassword())
+    }
+    
+    func testUser_invalidPasswordCharacterAndLength() {
+            sut = User(id: id,
+                       firstname: firstname,
+                       lastname: lastname,
+                       email: email,
+                       password: "klw",
+                       role: role)
+            
+            XCTAssertFalse(sut.validatePassword())
+    }
+    
+    func testUser_validPassword() {
+            sut = User(id: id,
+                       firstname: firstname,
+                       lastname: lastname,
+                       email: email,
+                       password: "123456",
+                       role: role)
+            
+            XCTAssertTrue(sut.validatePassword())
+    }
     
 }
