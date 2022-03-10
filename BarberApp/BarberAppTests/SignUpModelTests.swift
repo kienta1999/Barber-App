@@ -137,4 +137,25 @@ class SignUpModelTests: XCTestCase {
             XCTAssertTrue(sut.validatePassword())
     }
     
+    func testUser_invalidLoginField() {
+            sut = User(id: id,
+                       firstname: firstname,
+                       lastname: lastname,
+                       email: email,
+                       password: "   ",
+                       role: role)
+            
+            XCTAssertFalse(sut.validateLoginField())
+    }
+    
+    func testUser_validLoginField() {
+            sut = User(id: id,
+                       firstname: firstname,
+                       lastname: lastname,
+                       email: email,
+                       password: "123456",
+                       role: role)
+            
+            XCTAssertTrue(sut.validateLoginField())
+    }
 }
