@@ -40,6 +40,7 @@
 		84090A0C27B7641300364E09 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84090A0B27B7641300364E09 /* LoginViewController.swift */; };
 		84090A1127B7641F00364E09 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84090A1027B7641F00364E09 /* SignupViewController.swift */; };
 		84090A1627B7739100364E09 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84090A1527B7739100364E09 /* Utilities.swift */; };
+		84561F2C27E96D72008CEAD9 /* PostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84561F2B27E96D72008CEAD9 /* PostView.xib */; };
 		8457AA9227B9A896000B5F15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8457AA9127B9A896000B5F15 /* Assets.xcassets */; };
 		847596DF27BF66320041614F /* UserAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847596DE27BF66320041614F /* UserAuthViewController.swift */; };
 		847596E427BF67F30041614F /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847596E327BF67F30041614F /* PostViewController.swift */; };
@@ -83,6 +84,7 @@
 		84090A0B27B7641300364E09 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		84090A1027B7641F00364E09 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		84090A1527B7739100364E09 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		84561F2B27E96D72008CEAD9 /* PostView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostView.xib; sourceTree = "<group>"; };
 		8457AA9127B9A896000B5F15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		847596DE27BF66320041614F /* UserAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthViewController.swift; sourceTree = "<group>"; };
 		847596E327BF67F30041614F /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				84E483FC27B1F85000F22445 /* Main.storyboard */,
+				84561F2B27E96D72008CEAD9 /* PostView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 			files = (
 				84E4840327B1F85100F22445 /* LaunchScreen.storyboard in Resources */,
 				7809B57A27B60ECE002C8484 /* GoogleService-Info.plist in Resources */,
+				84561F2C27E96D72008CEAD9 /* PostView.xib in Resources */,
 				84E483FE27B1F85000F22445 /* Main.storyboard in Resources */,
 				8457AA9227B9A896000B5F15 /* Assets.xcassets in Resources */,
 			);
