@@ -38,4 +38,30 @@ class Post {
         }
     }
     
+    static func getAllPost(getPostsComplete: @escaping ([[String : Any]]?, Error?) -> Void){
+        Firestore.firestore().collection("posts").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                getPostsComplete(nil, err)
+            } else {
+                let allPosts = querySnapshot!.documents.map(){ (document) -> [String : Any] in
+                    let post = document.data()
+                    return post
+                }
+                getPostsComplete(allPosts, nil)
+            }
+        }
+    }
+    
+    static func getUrl(_ imagePath: String, getUrlComplete: @escaping (URL?, Error?) -> Void){
+        let storage = Storage.storage()
+        let imagePathReference = storage.reference(withPath: imagePath)
+        imagePathReference.downloadURL { url, error in
+          if let error = error {
+            getUrlComplete(nil, error)
+          } else {
+            getUrlComplete(url, nil)
+          }
+        }
+    }
+    
 }

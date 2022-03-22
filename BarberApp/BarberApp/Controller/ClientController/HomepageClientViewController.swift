@@ -13,9 +13,25 @@ class HomepageClientViewController: HomepageViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let postView: PostView = PostView.init()
-        postView.configurateView(URL.init(string: "https://i.ytimg.com/vi/cX-Oqdt7gmc/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLD09HuYsHEh2TqhSSvzdmMUBJUIdA")!, "caption", 999)
-        self.view.addSubview(postView)
+        
+        
+        Post.getAllPost() { (posts, err) in
+            if let posts = posts {
+                for post in posts {
+                    let imagePath = post["path"] as! String
+                    Post.getUrl(imagePath) {url, error in
+                        if let url = url {
+                            let postView: PostView = PostView.init()
+                            postView.configurateView(url, post["caption"] as! String, post["likes"] as! Int)
+                            self.view.addSubview(postView)
+                            print(url)
+                        }
+                    }
+                }
+            } else {
+                print(err!)
+            }
+        }
         
     }
 
