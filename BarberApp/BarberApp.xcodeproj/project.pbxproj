@@ -41,6 +41,7 @@
 		84090A1127B7641F00364E09 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84090A1027B7641F00364E09 /* SignupViewController.swift */; };
 		84090A1627B7739100364E09 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84090A1527B7739100364E09 /* Utilities.swift */; };
 		84561F2C27E96D72008CEAD9 /* PostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84561F2B27E96D72008CEAD9 /* PostView.xib */; };
+		84561F3127E96E2F008CEAD9 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84561F3027E96E2F008CEAD9 /* PostView.swift */; };
 		8457AA9227B9A896000B5F15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8457AA9127B9A896000B5F15 /* Assets.xcassets */; };
 		847596DF27BF66320041614F /* UserAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847596DE27BF66320041614F /* UserAuthViewController.swift */; };
 		847596E427BF67F30041614F /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847596E327BF67F30041614F /* PostViewController.swift */; };
@@ -85,6 +86,7 @@
 		84090A1027B7641F00364E09 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		84090A1527B7739100364E09 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		84561F2B27E96D72008CEAD9 /* PostView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostView.xib; sourceTree = "<group>"; };
+		84561F3027E96E2F008CEAD9 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		8457AA9127B9A896000B5F15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		847596DE27BF66320041614F /* UserAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthViewController.swift; sourceTree = "<group>"; };
 		847596E327BF67F30041614F /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				840909FC27B762F100364E09 /* User.swift */,
+				84561F3027E96E2F008CEAD9 /* PostView.swift */,
 				84957A3927C84F96000BA467 /* Post.swift */,
 			);
 			path = Model;
@@ -461,6 +464,7 @@
 				848CA5D127B87C70001EFD41 /* HomepageClientViewController.swift in Sources */,
 				848CA5D627B87CCA001EFD41 /* Constant.swift in Sources */,
 				84090A0C27B7641300364E09 /* LoginViewController.swift in Sources */,
+				84561F3127E96E2F008CEAD9 /* PostView.swift in Sources */,
 				84E483F927B1F85000F22445 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
