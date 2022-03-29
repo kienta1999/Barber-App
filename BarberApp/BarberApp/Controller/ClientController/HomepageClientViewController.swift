@@ -11,6 +11,7 @@ class HomepageClientViewController: HomepageViewController, UITableViewDelegate 
     
     @IBOutlet weak var postTableView: UITableView!
     var allPost: [[String: Any]] = []
+    var cachedImages: [UIImage?] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         postTableView.delegate = self
@@ -26,6 +27,7 @@ class HomepageClientViewController: HomepageViewController, UITableViewDelegate 
                 let group = DispatchGroup()
                 for i in 0..<self.allPost.count{
                     group.enter()
+                    self.cachedImages.append(nil)
                     let post = self.allPost[i]
                     let imagePath = post["path"] as! String
                     Post.getUrl(imagePath) { url, error in
@@ -53,12 +55,18 @@ class HomepageClientViewController: HomepageViewController, UITableViewDelegate 
         let myCell = UITableViewCell.init(style: .default, reuseIdentifier: "postCell")
         if(allPost.count > indexPath.row) {
             let post = allPost[indexPath.row]
-            let url = post["path"] as! URL
-            if let data = try? Data(contentsOf: url) {
-                let imageView = UIImage(data: data);
-                let size = CGSize.init(width: 200.0, height: (imageView?.size.height)! / (imageView?.size.width)! * 200.0)
-                myCell.imageView?.image = HomepageClientViewController.resizeImage(imageView!, size);
+            if let img = self.cachedImages[indexPath.row]{
+                myCell.imageView?.image = img
+            } else {
+                let url = post["path"] as! URL
+                if let data = try? Data(contentsOf: url) {
+                    let imageView = UIImage(data: data);
+                    let size = CGSize.init(width: 200.0, height: (imageView?.size.height)! / (imageView?.size.width)! * 200.0)
+                    self.cachedImages[indexPath.row] = HomepageClientViewController.resizeImage(imageView!, size);
+                    myCell.imageView?.image = self.cachedImages[indexPath.row]
+                }
             }
+            
             myCell.textLabel?.numberOfLines = 2
             myCell.textLabel?.lineBreakMode = NSLineBreakMode(rawValue: 0)!
             myCell.textLabel?.text = "\(post["caption"] as! String) \(post["likes"] as! Int) likes"
