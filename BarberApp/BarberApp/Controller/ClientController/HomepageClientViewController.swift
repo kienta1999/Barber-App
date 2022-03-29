@@ -46,28 +46,24 @@ class HomepageClientViewController: HomepageViewController, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10;
+        return allPost.count;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let myCell = UITableViewCell.init(style: .default, reuseIdentifier: "postCell")
-        
-        if(allPost.count <= indexPath.row){
-            return myCell
-        }
-        else {
+        if(allPost.count > indexPath.row) {
             let post = allPost[indexPath.row]
             let url = post["path"] as! URL
             if let data = try? Data(contentsOf: url) {
                 let imageView = UIImage(data: data);
-                myCell.imageView?.image = imageView;
+                let size = CGSize.init(width: 200.0, height: (imageView?.size.height)! / (imageView?.size.width)! * 200.0)
+                myCell.imageView?.image = HomepageClientViewController.resizeImage(imageView!, size);
             }
             myCell.textLabel?.numberOfLines = 2
             myCell.textLabel?.lineBreakMode = NSLineBreakMode(rawValue: 0)!
             myCell.textLabel?.text = "\(post["caption"] as! String) \(post["likes"] as! Int) likes"
-            
-            return myCell
         }
+        return myCell
     }
 
 }
