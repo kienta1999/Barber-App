@@ -278,57 +278,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N2Q-ol-X3t">
-                                <rect key="frame" x="183" y="44" width="48" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Crp-sA-PZ4">
-                                <rect key="frame" x="121" y="102" width="185" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <state key="normal" title="Select an image"/>
-                                <connections>
-                                    <action selector="imageSelectClicked" destination="Xyg-Kq-PL0" eventType="touchUpInside" id="wD3-r7-gNe"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zla-U3-Oob">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hYH-9b-smj">
+                                <rect key="frame" x="20" y="44" width="374" height="769"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Crp-sA-PZ4">
+                                        <rect key="frame" x="94.5" y="0.0" width="185" height="124"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <state key="normal" title="Select an image"/>
+                                        <connections>
+                                            <action selector="imageSelectClicked" destination="Xyg-Kq-PL0" eventType="touchUpInside" id="wD3-r7-gNe"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K5V-eH-WKh">
+                                        <rect key="frame" x="11.5" y="132" width="351" height="485"/>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3IE-Ne-4XK">
+                                        <rect key="frame" x="11.5" y="625" width="351" height="94"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="94" id="bbF-BJ-FTr"/>
+                                        </constraints>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09z-4h-UWE">
+                                        <rect key="frame" x="159.5" y="727" width="55" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Post!"/>
+                                        <connections>
+                                            <action selector="uploadImage:" destination="Xyg-Kq-PL0" eventType="touchUpInside" id="Cr7-ue-1qD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="K5V-eH-WKh" firstAttribute="leading" secondItem="hYH-9b-smj" secondAttribute="leading" constant="11.5" id="9iU-qU-xIu"/>
+                                    <constraint firstItem="K5V-eH-WKh" firstAttribute="top" secondItem="hYH-9b-smj" secondAttribute="top" constant="132" id="ZlO-n6-RmY"/>
+                                    <constraint firstItem="K5V-eH-WKh" firstAttribute="leading" secondItem="3IE-Ne-4XK" secondAttribute="leading" id="tjs-Kj-8Xs"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zla-U3-Oob">
                                 <rect key="frame" x="130" y="661" width="0.0" height="0.0"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemGreenColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09z-4h-UWE">
-                                <rect key="frame" x="180" y="750" width="55" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Post!"/>
-                                <connections>
-                                    <action selector="uploadImage:" destination="Xyg-Kq-PL0" eventType="touchUpInside" id="Cr7-ue-1qD"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3IE-Ne-4XK">
-                                <rect key="frame" x="32" y="648" width="351" height="94"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="0D0-Pt-czt">
                                 <rect key="frame" x="153" y="350" width="109" height="94"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K5V-eH-WKh">
-                                <rect key="frame" x="32" y="155" width="351" height="485"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XB8-me-QTV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XB8-me-QTV" firstAttribute="trailing" secondItem="hYH-9b-smj" secondAttribute="trailing" constant="20" id="8Bc-qT-ywu"/>
+                            <constraint firstAttribute="bottom" secondItem="Zla-U3-Oob" secondAttribute="bottom" constant="235" id="B7Z-vd-UTz"/>
+                            <constraint firstItem="Zla-U3-Oob" firstAttribute="leading" secondItem="XFQ-Jo-Ka2" secondAttribute="leading" constant="130" id="KiR-PN-yi6"/>
+                            <constraint firstItem="hYH-9b-smj" firstAttribute="leading" secondItem="XB8-me-QTV" secondAttribute="leading" constant="20" id="Pvy-5Y-kJS"/>
+                            <constraint firstItem="hYH-9b-smj" firstAttribute="top" secondItem="XB8-me-QTV" secondAttribute="top" id="Vrc-sk-eBK"/>
+                            <constraint firstItem="XB8-me-QTV" firstAttribute="bottom" secondItem="hYH-9b-smj" secondAttribute="bottom" id="ikL-SF-VtI"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="plus.rectangle.fill.on.rectangle.fill" catalog="system" id="bzf-St-dxl"/>
                     <connections>
@@ -339,7 +348,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lwf-fH-L1V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4497" y="-1092"/>
+            <point key="canvasLocation" x="4832" y="-1118"/>
         </scene>
         <!--Home-->
         <scene sceneID="lSc-QJ-lvz">
