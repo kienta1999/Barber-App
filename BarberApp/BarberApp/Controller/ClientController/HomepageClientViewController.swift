@@ -7,32 +7,67 @@
 
 import UIKit
 
-class HomepageClientViewController: HomepageViewController {
+class HomepageClientViewController: HomepageViewController, UITableViewDelegate , UITableViewDataSource {
     
+    @IBOutlet weak var postTableView: UITableView!
+    var allPost: [[String: Any]] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        postTableView.delegate = self
+        postTableView.dataSource = self
+        postTableView.register(UITableViewCell.self, forCellReuseIdentifier: "postCell")
         // Do any additional setup after loading the view.
+        
         
         
         Post.getAllPost() { (posts, err) in
             if let posts = posts {
-                for post in posts {
+                self.allPost = posts
+                let group = DispatchGroup()
+                for i in 0..<self.allPost.count{
+                    group.enter()
+                    let post = self.allPost[i]
                     let imagePath = post["path"] as! String
-                    Post.getUrl(imagePath) {url, error in
+                    Post.getUrl(imagePath) { url, error in
                         if let url = url {
-                            let postView: PostView = PostView.init()
-                            postView.configurateView(url, post["caption"] as! String, post["likes"] as! Int)
-                            self.view.addSubview(postView)
-                            print(url)
+                            self.allPost[i]["path"] = url
                         }
+                        group.leave()
                     }
+                }
+                group.notify(queue: .main) {
+                    self.postTableView.reloadData()
                 }
             } else {
                 print(err!)
             }
         }
         
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10;
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let myCell = UITableViewCell.init(style: .default, reuseIdentifier: "postCell")
+        
+        if(allPost.count <= indexPath.row){
+            return myCell
+        }
+        else {
+            let post = allPost[indexPath.row]
+            let url = post["path"] as! URL
+            if let data = try? Data(contentsOf: url) {
+                let imageView = UIImage(data: data);
+                myCell.imageView?.image = imageView;
+            }
+            myCell.textLabel?.numberOfLines = 2
+            myCell.textLabel?.lineBreakMode = NSLineBreakMode(rawValue: 0)!
+            myCell.textLabel?.text = "\(post["caption"] as! String) \(post["likes"] as! Int) likes"
+            
+            return myCell
+        }
     }
 
 }
