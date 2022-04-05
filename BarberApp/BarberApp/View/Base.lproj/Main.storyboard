@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gpQ-1l-uB8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gpQ-1l-uB8">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -382,6 +381,78 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZqX-6H-sxU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4442.0289855072469" y="375.66964285714283"/>
+        </scene>
+        <!--Detailed Post View Controller-->
+        <scene sceneID="Fg3-f7-wHL">
+            <objects>
+                <viewController storyboardIdentifier="DetailedPostVC" id="5IE-36-H5r" customClass="DetailedPostViewController" customModule="BarberApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NhW-Z1-kzx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="jYu-L3-6gB">
+                                <rect key="frame" x="10" y="64" width="394" height="798"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kien Ta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBh-yg-kfc">
+                                        <rect key="frame" x="0.0" y="0.0" width="56" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kLG-kz-D6Q">
+                                        <rect key="frame" x="0.0" y="36.5" width="394" height="355"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjT-CS-PwM">
+                                        <rect key="frame" x="0.0" y="407.5" width="92.5" height="210"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="210" id="R9O-FV-CKL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Button" image="heart" catalog="system"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYh-iW-e39">
+                                        <rect key="frame" x="0.0" y="633.5" width="56" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="epo-Xe-0hF">
+                                        <rect key="frame" x="0.0" y="670" width="394" height="128"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="bse-v0-4Gs"/>
+                                        </constraints>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="kLG-kz-D6Q" firstAttribute="trailing" secondItem="epo-Xe-0hF" secondAttribute="trailing" id="7z4-VZ-Dof"/>
+                                    <constraint firstItem="gYh-iW-e39" firstAttribute="centerX" secondItem="EBh-yg-kfc" secondAttribute="centerX" id="8Bj-Pv-ll5"/>
+                                    <constraint firstItem="kLG-kz-D6Q" firstAttribute="trailing" secondItem="jYu-L3-6gB" secondAttribute="trailingMargin" id="qZc-Es-IRH"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9wP-Gj-jb7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9wP-Gj-jb7" firstAttribute="bottom" secondItem="jYu-L3-6gB" secondAttribute="bottom" id="G4C-l5-Ldk"/>
+                            <constraint firstItem="jYu-L3-6gB" firstAttribute="leading" secondItem="9wP-Gj-jb7" secondAttribute="leading" constant="10" id="ef1-DQ-Yjx"/>
+                            <constraint firstItem="jYu-L3-6gB" firstAttribute="top" secondItem="9wP-Gj-jb7" secondAttribute="top" constant="20" id="tCz-5M-96C"/>
+                            <constraint firstItem="9wP-Gj-jb7" firstAttribute="trailing" secondItem="jYu-L3-6gB" secondAttribute="trailing" constant="10" id="wNk-j7-JYb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="captionTextView" destination="epo-Xe-0hF" id="nrs-HK-hr7"/>
+                        <outlet property="imageView" destination="kLG-kz-D6Q" id="KAi-PH-5yX"/>
+                        <outlet property="likeLabel" destination="gYh-iW-e39" id="KRQ-3O-fQD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Mv-hr-F0X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5195.652173913044" y="511.60714285714283"/>
         </scene>
         <!--Location-->
         <scene sceneID="ea5-LH-gY8">
@@ -790,11 +861,12 @@
     </scenes>
     <resources>
         <image name="App Logo" width="299" height="304"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="logo text" width="476" height="230"/>
         <image name="mappin" catalog="system" width="105" height="128"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
-        <image name="plus.rectangle.fill.on.rectangle.fill" catalog="system" width="128" height="97"/>
+        <image name="plus.rectangle.fill.on.rectangle.fill" catalog="system" width="128" height="96"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

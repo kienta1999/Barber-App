@@ -20,6 +20,7 @@ struct StoryBoard {
         static let locationVC = "LocationClientVC"
         static let profileVC = "ProfileClientVC"
     }
+    static let detailedPostVC = "DetailedPostVC"
 }
 struct Collection {
     struct Users {

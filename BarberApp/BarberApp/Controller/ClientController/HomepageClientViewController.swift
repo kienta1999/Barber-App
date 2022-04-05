@@ -69,7 +69,7 @@ class HomepageClientViewController: HomepageViewController, UITableViewDelegate 
             
             myCell.textLabel?.numberOfLines = 2
             myCell.textLabel?.lineBreakMode = NSLineBreakMode(rawValue: 0)!
-            myCell.textLabel?.text = "\(post["caption"] as! String) \(post["likes"] as! Int) likes"
+            myCell.textLabel?.text = post["caption"] as? String
         }
         return myCell
     }
@@ -77,6 +77,11 @@ class HomepageClientViewController: HomepageViewController, UITableViewDelegate 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("selected: \(indexPath[1])")
         print(allPost[indexPath[1]])
+        print(StoryBoard.detailedPostVC)
+        let detailedVC = storyboard?.instantiateViewController(identifier: StoryBoard.detailedPostVC) as! DetailedPostViewController
+        detailedVC.configurate(allPost[indexPath[1]], cachedImages[indexPath[1]])
+        navigationController?.pushViewController(detailedVC, animated: true)
+        
     }
 
 }
