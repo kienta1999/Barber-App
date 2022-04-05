@@ -448,6 +448,7 @@
                         <outlet property="captionTextView" destination="epo-Xe-0hF" id="nrs-HK-hr7"/>
                         <outlet property="imageView" destination="kLG-kz-D6Q" id="KAi-PH-5yX"/>
                         <outlet property="likeLabel" destination="gYh-iW-e39" id="KRQ-3O-fQD"/>
+                        <outlet property="nameLabel" destination="EBh-yg-kfc" id="Gsr-XC-TKW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Mv-hr-F0X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

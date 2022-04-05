@@ -121,4 +121,17 @@ struct User {
 
         })
     }
+    
+    static func getUser(_ id: String, completion: @escaping ([String : Any]?) -> Void){
+        let userRef = db.collection(User.userConstant.collectionName).document(id)
+        userRef.getDocument { (snapshot, err) in
+            if let snapshot = snapshot{
+                var user = snapshot.data()
+                user!["id"] = id
+                completion(user)
+            } else{
+                completion(nil)
+            }
+        }
+    }
 }
