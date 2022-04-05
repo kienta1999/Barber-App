@@ -44,7 +44,8 @@ class Post {
                 getPostsComplete(nil, err)
             } else {
                 let allPosts = querySnapshot!.documents.map(){ (document) -> [String : Any] in
-                    let post = document.data()
+                    var post = document.data()
+                    post["id"] = document.documentID
                     return post
                 }
                 getPostsComplete(allPosts, nil)

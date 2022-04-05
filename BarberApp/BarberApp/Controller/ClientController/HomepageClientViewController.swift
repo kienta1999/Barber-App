@@ -73,5 +73,10 @@ class HomepageClientViewController: HomepageViewController, UITableViewDelegate 
         }
         return myCell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("selected: \(indexPath[1])")
+        print(allPost[indexPath[1]])
+    }
 
 }
