@@ -37,7 +37,6 @@ struct Collection {
         static let userid = "userid"
         static let path = "path"
         static let caption = "caption"
-        static let likes = "likes"
     }
     
     struct Like {

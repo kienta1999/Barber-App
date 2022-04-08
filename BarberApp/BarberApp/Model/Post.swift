@@ -12,7 +12,6 @@ class Post {
     var userid: String
     var path: String
     var caption: String?
-    var likes: Int
     let db = Firestore.firestore()
     static let postConstant = Collection.Post.self
     
@@ -20,15 +19,13 @@ class Post {
         self.userid = userid
         self.path = path
         self.caption = caption
-        self.likes = 0
     }
     
     func saveToDatabase(){
         db.collection("posts").document().setData([
             Post.postConstant.userid: self.userid,
             Post.postConstant.path: self.path,
-            Post.postConstant.caption: self.caption as Any,
-            Post.postConstant.likes: self.likes
+            Post.postConstant.caption: self.caption as Any
         ]) { err in
             if let err = err {
                 print("Error writing document: \(err)")
