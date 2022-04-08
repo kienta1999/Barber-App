@@ -390,69 +390,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="jYu-L3-6gB">
-                                <rect key="frame" x="10" y="64" width="394" height="798"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kien Ta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBh-yg-kfc">
-                                        <rect key="frame" x="0.0" y="0.0" width="56" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kLG-kz-D6Q">
-                                        <rect key="frame" x="0.0" y="36.5" width="394" height="355"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjT-CS-PwM">
-                                        <rect key="frame" x="0.0" y="407.5" width="92.5" height="210"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="210" id="R9O-FV-CKL"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="Button" image="heart.fill" catalog="system"/>
-                                        <connections>
-                                            <action selector="likeBtnClicked:" destination="5IE-36-H5r" eventType="touchUpInside" id="ri9-H0-9QP"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYh-iW-e39">
-                                        <rect key="frame" x="0.0" y="633.5" width="56" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="epo-Xe-0hF">
-                                        <rect key="frame" x="0.0" y="670" width="394" height="128"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="128" id="bse-v0-4Gs"/>
-                                        </constraints>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="kLG-kz-D6Q" firstAttribute="trailing" secondItem="epo-Xe-0hF" secondAttribute="trailing" id="7z4-VZ-Dof"/>
-                                    <constraint firstItem="gYh-iW-e39" firstAttribute="centerX" secondItem="EBh-yg-kfc" secondAttribute="centerX" id="8Bj-Pv-ll5"/>
-                                    <constraint firstItem="kLG-kz-D6Q" firstAttribute="trailing" secondItem="jYu-L3-6gB" secondAttribute="trailingMargin" id="qZc-Es-IRH"/>
-                                </constraints>
-                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qqr-2M-UUW">
+                                <rect key="frame" x="10" y="122" width="394" height="216"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vHO-ae-5QM">
+                                <rect key="frame" x="10" y="346" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Button" image="heart.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="likeBtnClicked:" destination="5IE-36-H5r" eventType="touchUpInside" id="ZS4-wG-4XH"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kien Ta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHb-Ci-BBE">
+                                <rect key="frame" x="20" y="94" width="108" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10 likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kaO-Xa-dDa">
+                                <rect key="frame" x="72" y="349" width="56" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5XM-x3-iTE">
+                                <rect key="frame" x="10" y="384" width="394" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9wP-Gj-jb7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="9wP-Gj-jb7" firstAttribute="bottom" secondItem="jYu-L3-6gB" secondAttribute="bottom" id="G4C-l5-Ldk"/>
-                            <constraint firstItem="jYu-L3-6gB" firstAttribute="leading" secondItem="9wP-Gj-jb7" secondAttribute="leading" constant="10" id="ef1-DQ-Yjx"/>
-                            <constraint firstItem="jYu-L3-6gB" firstAttribute="top" secondItem="9wP-Gj-jb7" secondAttribute="top" constant="20" id="tCz-5M-96C"/>
-                            <constraint firstItem="9wP-Gj-jb7" firstAttribute="trailing" secondItem="jYu-L3-6gB" secondAttribute="trailing" constant="10" id="wNk-j7-JYb"/>
-                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="captionTextView" destination="epo-Xe-0hF" id="nrs-HK-hr7"/>
-                        <outlet property="imageView" destination="kLG-kz-D6Q" id="KAi-PH-5yX"/>
-                        <outlet property="likeBtn" destination="xjT-CS-PwM" id="08V-l9-JiW"/>
-                        <outlet property="likeLabel" destination="gYh-iW-e39" id="KRQ-3O-fQD"/>
-                        <outlet property="nameLabel" destination="EBh-yg-kfc" id="Gsr-XC-TKW"/>
+                        <outlet property="captionTextView" destination="5XM-x3-iTE" id="P6P-lp-hdV"/>
+                        <outlet property="imageView" destination="qqr-2M-UUW" id="bbv-f9-OAM"/>
+                        <outlet property="likeBtn" destination="vHO-ae-5QM" id="n7a-9H-v7D"/>
+                        <outlet property="likeLabel" destination="kaO-Xa-dDa" id="NY6-SN-K6j"/>
+                        <outlet property="nameLabel" destination="rHb-Ci-BBE" id="6PE-hi-0qW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Mv-hr-F0X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
