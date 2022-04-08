@@ -40,6 +40,7 @@
 		84090A0C27B7641300364E09 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84090A0B27B7641300364E09 /* LoginViewController.swift */; };
 		84090A1127B7641F00364E09 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84090A1027B7641F00364E09 /* SignupViewController.swift */; };
 		84090A1627B7739100364E09 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84090A1527B7739100364E09 /* Utilities.swift */; };
+		842638AD280020D6003C3113 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842638AC280020D6003C3113 /* Comment.swift */; };
 		84561F2C27E96D72008CEAD9 /* PostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84561F2B27E96D72008CEAD9 /* PostView.xib */; };
 		84561F3127E96E2F008CEAD9 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84561F3027E96E2F008CEAD9 /* PostView.swift */; };
 		8457AA9227B9A896000B5F15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8457AA9127B9A896000B5F15 /* Assets.xcassets */; };
@@ -87,6 +88,7 @@
 		84090A0B27B7641300364E09 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		84090A1027B7641F00364E09 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		84090A1527B7739100364E09 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		842638AC280020D6003C3113 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		84561F2B27E96D72008CEAD9 /* PostView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostView.xib; sourceTree = "<group>"; };
 		84561F3027E96E2F008CEAD9 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		8457AA9127B9A896000B5F15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				84561F3027E96E2F008CEAD9 /* PostView.swift */,
 				84957A3927C84F96000BA467 /* Post.swift */,
 				84C4D6D827FC0F260039D50A /* Like.swift */,
+				842638AC280020D6003C3113 /* Comment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				84C4D6D127FC00360039D50A /* DetailedPostViewController.swift in Sources */,
 				847596E927BF68BC0041614F /* ProfileBarberViewController.swift in Sources */,
 				847596DF27BF66320041614F /* UserAuthViewController.swift in Sources */,
+				842638AD280020D6003C3113 /* Comment.swift in Sources */,
 				84090A1627B7739100364E09 /* Utilities.swift in Sources */,
 				84E483FB27B1F85000F22445 /* ViewController.swift in Sources */,
 				848CA5C927B87697001EFD41 /* HomepageBarberViewController.swift in Sources */,

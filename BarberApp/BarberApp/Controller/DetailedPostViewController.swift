@@ -29,6 +29,8 @@ class DetailedPostViewController: UIViewController {
     @IBOutlet weak var captionTextView: UITextView!
     @IBOutlet weak var likeBtn: UIButton!
     
+    @IBOutlet weak var commentTextView: UITextView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,9 +84,15 @@ class DetailedPostViewController: UIViewController {
                 }
             }
         }
-
-            
-        
-        
     }
+    
+    @IBAction func postComment(_ sender: Any) {
+        if let content = commentTextView.text, let postid = post!["id"] {
+            let comment = Comment.init(postid as! String, content)
+            comment.newComment { (err) in
+                print("error \(String(describing: err))")
+            }
+        }
+    }
+    
 }

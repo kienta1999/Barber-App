@@ -437,7 +437,7 @@
                                 <rect key="frame" x="10" y="488" width="345" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -446,6 +446,9 @@
                                 <rect key="frame" x="363" y="497" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Post"/>
+                                <connections>
+                                    <action selector="postComment:" destination="5IE-36-H5r" eventType="touchUpInside" id="RaZ-mf-6vC"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9wP-Gj-jb7"/>
@@ -453,6 +456,7 @@
                     </view>
                     <connections>
                         <outlet property="captionTextView" destination="5XM-x3-iTE" id="P6P-lp-hdV"/>
+                        <outlet property="commentTextView" destination="91A-rt-uXs" id="INX-fe-UrJ"/>
                         <outlet property="imageView" destination="qqr-2M-UUW" id="bbv-f9-OAM"/>
                         <outlet property="likeBtn" destination="vHO-ae-5QM" id="n7a-9H-v7D"/>
                         <outlet property="likeLabel" destination="kaO-Xa-dDa" id="NY6-SN-K6j"/>
