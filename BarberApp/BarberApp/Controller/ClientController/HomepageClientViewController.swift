@@ -79,7 +79,7 @@ class HomepageClientViewController: HomepageViewController, UITableViewDelegate 
         print(allPost[indexPath[1]])
         print(StoryBoard.detailedPostVC)
         let detailedVC = storyboard?.instantiateViewController(identifier: StoryBoard.detailedPostVC) as! DetailedPostViewController
-        detailedVC.configurate(allPost[indexPath[1]], cachedImages[indexPath[1]])
+        detailedVC.configurate(allPost[indexPath[1]], cachedImages[indexPath[1]], self.user)
         navigationController?.pushViewController(detailedVC, animated: true)
         
     }

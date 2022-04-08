@@ -408,7 +408,10 @@
                                             <constraint firstAttribute="height" constant="210" id="R9O-FV-CKL"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="Button" image="heart" catalog="system"/>
+                                        <state key="normal" title="Button" image="heart.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="likeBtnClicked:" destination="5IE-36-H5r" eventType="touchUpInside" id="ri9-H0-9QP"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYh-iW-e39">
                                         <rect key="frame" x="0.0" y="633.5" width="56" height="20.5"/>
@@ -447,6 +450,7 @@
                     <connections>
                         <outlet property="captionTextView" destination="epo-Xe-0hF" id="nrs-HK-hr7"/>
                         <outlet property="imageView" destination="kLG-kz-D6Q" id="KAi-PH-5yX"/>
+                        <outlet property="likeBtn" destination="xjT-CS-PwM" id="08V-l9-JiW"/>
                         <outlet property="likeLabel" destination="gYh-iW-e39" id="KRQ-3O-fQD"/>
                         <outlet property="nameLabel" destination="EBh-yg-kfc" id="Gsr-XC-TKW"/>
                     </connections>
@@ -862,7 +866,7 @@
     </scenes>
     <resources>
         <image name="App Logo" width="299" height="304"/>
-        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="logo text" width="476" height="230"/>
         <image name="mappin" catalog="system" width="105" height="128"/>

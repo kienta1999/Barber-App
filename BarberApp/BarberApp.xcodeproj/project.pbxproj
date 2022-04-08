@@ -54,6 +54,7 @@
 		848CA5DB27B87E7B001EFD41 /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CA5DA27B87E7B001EFD41 /* HomepageViewController.swift */; };
 		84957A3A27C84F96000BA467 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84957A3927C84F96000BA467 /* Post.swift */; };
 		84C4D6D127FC00360039D50A /* DetailedPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4D6D027FC00360039D50A /* DetailedPostViewController.swift */; };
+		84C4D6D927FC0F260039D50A /* Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4D6D827FC0F260039D50A /* Like.swift */; };
 		84E483F727B1F85000F22445 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E483F627B1F85000F22445 /* AppDelegate.swift */; };
 		84E483F927B1F85000F22445 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E483F827B1F85000F22445 /* SceneDelegate.swift */; };
 		84E483FB27B1F85000F22445 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E483FA27B1F85000F22445 /* ViewController.swift */; };
@@ -100,6 +101,7 @@
 		848CA5DA27B87E7B001EFD41 /* HomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
 		84957A3927C84F96000BA467 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		84C4D6D027FC00360039D50A /* DetailedPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailedPostViewController.swift; path = BarberApp/Controller/DetailedPostViewController.swift; sourceTree = SOURCE_ROOT; };
+		84C4D6D827FC0F260039D50A /* Like.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Like.swift; sourceTree = "<group>"; };
 		84E483F327B1F85000F22445 /* BarberApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarberApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E483F627B1F85000F22445 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84E483F827B1F85000F22445 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				840909FC27B762F100364E09 /* User.swift */,
 				84561F3027E96E2F008CEAD9 /* PostView.swift */,
 				84957A3927C84F96000BA467 /* Post.swift */,
+				84C4D6D827FC0F260039D50A /* Like.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				84E483FB27B1F85000F22445 /* ViewController.swift in Sources */,
 				848CA5C927B87697001EFD41 /* HomepageBarberViewController.swift in Sources */,
 				84E483F727B1F85000F22445 /* AppDelegate.swift in Sources */,
+				84C4D6D927FC0F260039D50A /* Like.swift in Sources */,
 				848CA5D127B87C70001EFD41 /* HomepageClientViewController.swift in Sources */,
 				848CA5D627B87CCA001EFD41 /* Constant.swift in Sources */,
 				84090A0C27B7641300364E09 /* LoginViewController.swift in Sources */,

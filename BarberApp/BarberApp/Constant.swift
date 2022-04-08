@@ -39,4 +39,9 @@ struct Collection {
         static let caption = "caption"
         static let likes = "likes"
     }
+    
+    struct Like {
+        static let userid = "userid"
+        static let postid = "postid"
+    }
 }
