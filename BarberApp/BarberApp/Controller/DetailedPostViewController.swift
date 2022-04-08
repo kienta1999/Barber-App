@@ -9,9 +9,12 @@ import UIKit
 
 class DetailedPostViewController: UIViewController {
     
+    // post information drawn from database
     var post: [String: Any]?
     var image: UIImage?
+    // The user currently log in
     var currentUser: User?
+    // post owner information drawn from database
     var postOwner: [String: Any] = [:] {
         didSet{
             nameLabel?.text = "\(postOwner["firstname"] as! String) \(postOwner["lastname"] as! String)"
@@ -34,6 +37,7 @@ class DetailedPostViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         imageView?.image = image
         captionTextView?.text = post!["caption"] as? String
+        captionTextView?.isEditable = false
         
         if let firstname = postOwner["firstname"], let lastname =  postOwner["lastname"]{
             nameLabel?.text = "\(firstname as! String) \(lastname as! String)"
