@@ -22,6 +22,7 @@ class DetailedPostViewController: UIViewController {
     }
     var like: Like?
     var likeCount = 0
+    @IBOutlet weak var commentMsgLabel: UILabel!
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
@@ -57,6 +58,7 @@ class DetailedPostViewController: UIViewController {
             self.likeCount = count
             self.likeLabel?.text = "\(self.likeCount) likes"
         }
+        commentMsgLabel.text = ""
     }
     
     func configurate(_ post: [String: Any], _ image: UIImage?, _ currentUser: User?){
@@ -90,7 +92,12 @@ class DetailedPostViewController: UIViewController {
         if let content = commentTextView.text, let postid = post!["id"] {
             let comment = Comment.init(postid as! String, content)
             comment.newComment { (err) in
-                print("error \(String(describing: err))")
+                if let err = err {
+                    self.commentMsgLabel.text = "Error: \(String(describing: err))"
+                } else {
+                    self.commentMsgLabel.text = "Comment posted!"
+                    self.commentTextView.text = "Start writing your comment here"
+                }
             }
         }
     }
