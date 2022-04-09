@@ -106,7 +106,12 @@ class DetailedPostViewController: UIViewController {
         let postid = self.post!["id"] as! String
         Comment.getAllComment(postid) { (data) in
             if let data = data {
-                print(data)
+                let commentVC = self.storyboard?.instantiateViewController(withIdentifier: StoryBoard.commentVC) as! CommentViewController
+                commentVC.configurate(postid: postid, comments: data)
+                self.navigationController?.pushViewController(commentVC, animated: true)
+            }
+            else {
+                self.commentMsgLabel.text = "Some error occur - cannot view the comments"
             }
         }
     }

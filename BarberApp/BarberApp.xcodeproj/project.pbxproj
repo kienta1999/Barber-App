@@ -44,6 +44,7 @@
 		84561F2C27E96D72008CEAD9 /* PostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84561F2B27E96D72008CEAD9 /* PostView.xib */; };
 		84561F3127E96E2F008CEAD9 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84561F3027E96E2F008CEAD9 /* PostView.swift */; };
 		8457AA9227B9A896000B5F15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8457AA9127B9A896000B5F15 /* Assets.xcassets */; };
+		845E70CF28022B9B0021AD03 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845E70CE28022B9B0021AD03 /* CommentViewController.swift */; };
 		847596DF27BF66320041614F /* UserAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847596DE27BF66320041614F /* UserAuthViewController.swift */; };
 		847596E427BF67F30041614F /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847596E327BF67F30041614F /* PostViewController.swift */; };
 		847596E927BF68BC0041614F /* ProfileBarberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847596E827BF68BB0041614F /* ProfileBarberViewController.swift */; };
@@ -92,6 +93,7 @@
 		84561F2B27E96D72008CEAD9 /* PostView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostView.xib; sourceTree = "<group>"; };
 		84561F3027E96E2F008CEAD9 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		8457AA9127B9A896000B5F15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		845E70CE28022B9B0021AD03 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		847596DE27BF66320041614F /* UserAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthViewController.swift; sourceTree = "<group>"; };
 		847596E327BF67F30041614F /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		847596E827BF68BB0041614F /* ProfileBarberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBarberViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				847596D727BF64F60041614F /* ClientController */,
 				848CA5DA27B87E7B001EFD41 /* HomepageViewController.swift */,
 				84C4D6D027FC00360039D50A /* DetailedPostViewController.swift */,
+				845E70CE28022B9B0021AD03 /* CommentViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				84C4D6D127FC00360039D50A /* DetailedPostViewController.swift in Sources */,
 				847596E927BF68BC0041614F /* ProfileBarberViewController.swift in Sources */,
 				847596DF27BF66320041614F /* UserAuthViewController.swift in Sources */,
+				845E70CF28022B9B0021AD03 /* CommentViewController.swift in Sources */,
 				842638AD280020D6003C3113 /* Comment.swift in Sources */,
 				84090A1627B7739100364E09 /* Utilities.swift in Sources */,
 				84E483FB27B1F85000F22445 /* ViewController.swift in Sources */,

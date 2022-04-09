@@ -21,6 +21,7 @@ struct StoryBoard {
         static let profileVC = "ProfileClientVC"
     }
     static let detailedPostVC = "DetailedPostVC"
+    static let commentVC = "CommentVC"
 }
 struct Collection {
     struct Users {
