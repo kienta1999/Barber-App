@@ -10,11 +10,7 @@ import UIKit
 class CommentViewController: UIViewController, UITableViewDelegate , UITableViewDataSource {
     
     var postid: String?
-    var comments: [[String: Any]] = [] {
-        didSet {
-            commentTable?.reloadData()
-        }
-    }
+    var comments: [[String: Any]] = []
     @IBOutlet weak var commentTable: UITableView!
     
     func configurate(postid: String?, comments: [[String: Any]]){
@@ -24,17 +20,15 @@ class CommentViewController: UIViewController, UITableViewDelegate , UITableView
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        commentTable?.reloadData()
-        print("viewDidLoad")
-        print(self.comments)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         commentTable.delegate = self
         commentTable.dataSource = self
         commentTable.register(UITableViewCell.self, forCellReuseIdentifier: "commentCell")
-        print("viewWillAppear")
-        print(self.comments)
+        commentTable.reloadData()
+//        print("viewWillAppear")
+//        print(self.comments)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,6 +38,7 @@ class CommentViewController: UIViewController, UITableViewDelegate , UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let myCell = UITableViewCell.init(style: .default, reuseIdentifier: "commentCell")
         let commentInfor = self.comments[indexPath.row]
+//        let userid = commentInfor["userid"] as? String
         myCell.textLabel?.text = commentInfor["content"] as? String
         return myCell
     }
