@@ -456,6 +456,14 @@
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFT-86-2xv">
+                                <rect key="frame" x="10" y="616" width="129" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="View all comments"/>
+                                <connections>
+                                    <action selector="viewCommentBtnClicked:" destination="5IE-36-H5r" eventType="touchUpInside" id="RqR-mp-Tcb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9wP-Gj-jb7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

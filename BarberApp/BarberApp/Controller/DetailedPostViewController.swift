@@ -90,7 +90,7 @@ class DetailedPostViewController: UIViewController {
     
     @IBAction func postComment(_ sender: Any) {
         if let content = commentTextView.text, let postid = post!["id"] {
-            let comment = Comment.init(postid as! String, content)
+            let comment = Comment.init(postid as! String, (currentUser?.id)!, content)
             comment.newComment { (err) in
                 if let err = err {
                     self.commentMsgLabel.text = "Error: \(String(describing: err))"
@@ -102,4 +102,12 @@ class DetailedPostViewController: UIViewController {
         }
     }
     
+    @IBAction func viewCommentBtnClicked(_ sender: Any) {
+        let postid = self.post!["id"] as! String
+        Comment.getAllComment(postid) { (data) in
+            if let data = data {
+                print(data)
+            }
+        }
+    }
 }

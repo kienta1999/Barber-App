@@ -46,6 +46,7 @@ struct Collection {
     
     struct Comment {
         static let postid = "postid"
+        static let userid = "userid"
         static let content = "content"
     }
 }
