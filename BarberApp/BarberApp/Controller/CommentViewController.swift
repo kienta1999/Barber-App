@@ -7,25 +7,45 @@
 
 import UIKit
 
-class CommentViewController: UIViewController {
+class CommentViewController: UIViewController, UITableViewDelegate , UITableViewDataSource {
     
     var postid: String?
-    var comments: [[String: Any]]?
-    @IBOutlet weak var randomThings: UITextView!
+    var comments: [[String: Any]] = [] {
+        didSet {
+            commentTable?.reloadData()
+        }
+    }
+    @IBOutlet weak var commentTable: UITableView!
     
-    func configurate(postid: String?, comments: [[String: Any]]?){
+    func configurate(postid: String?, comments: [[String: Any]]){
         self.postid = postid
         self.comments = comments
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        commentTable?.reloadData()
+        print("viewDidLoad")
+        print(self.comments)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        randomThings.text = String.init(describing: self.comments!)
+        commentTable.delegate = self
+        commentTable.dataSource = self
+        commentTable.register(UITableViewCell.self, forCellReuseIdentifier: "commentCell")
+        print("viewWillAppear")
+        print(self.comments)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.comments.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let myCell = UITableViewCell.init(style: .default, reuseIdentifier: "commentCell")
+        let commentInfor = self.comments[indexPath.row]
+        myCell.textLabel?.text = commentInfor["content"] as? String
+        return myCell
     }
 
 }
