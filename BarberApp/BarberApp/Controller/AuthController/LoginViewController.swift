@@ -37,6 +37,9 @@ class LoginViewController: UserAuthViewController {
                     self.user?.lastname = data?[User.userConstant.lastnameField] as? String
                     self.user?.role = data?[User.userConstant.roleField]  as? String
                     self.user?.id = userid
+                    self.user?.gender = data?[User.userConstant.genderField]  as? String
+                    self.user?.bio = data?[User.userConstant.bioField]  as? String
+                    self.user?.age = data?[User.userConstant.ageField]  as? Int
                     self.transitionToHome()
                 }
             }

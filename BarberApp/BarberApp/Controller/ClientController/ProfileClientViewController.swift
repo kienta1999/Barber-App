@@ -21,6 +21,10 @@ class ProfileClientViewController: ProfileViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         nameLabel.text = "\(String(describing: user!.firstname!)) \(user!.lastname!)"
         if let age = user?.age {
             ageLabel.text = "\(age)"
@@ -31,8 +35,8 @@ class ProfileClientViewController: ProfileViewController {
         
         genderLabel.text = user?.gender ?? "N/A"
         bioLabel.text = user?.bio ?? ""
-        // Do any additional setup after loading the view.
     }
+    
     
     @IBAction func editProfileClicked(_ sender: Any) {
         let editProfileVC = self.storyboard?.instantiateViewController(identifier: StoryBoard.Client.editProfileClientVC) as! HomepageViewController

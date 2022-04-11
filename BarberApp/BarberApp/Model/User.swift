@@ -126,6 +126,24 @@ struct User {
         })
     }
     
+    mutating func editUserProfile(age: Int?, gender: String?, bio: String?, completion: @escaping (Error?) -> Void){
+        self.age = age
+        self.gender = gender
+        self.bio = bio
+        if let id = id {
+            let userRef = Firestore.firestore().collection(User.userConstant.collectionName).document(id)
+
+            // Set the "capital" field of the city 'DC'
+            userRef.updateData([
+                "age": age,
+                "gender": gender,
+                "bio": bio
+            ]) { err in
+                completion(err)
+            }
+        }
+    }
+    
     static func getUser(_ id: String, completion: @escaping ([String : Any]?) -> Void){
         let userRef = db.collection(User.userConstant.collectionName).document(id)
         userRef.getDocument { (snapshot, err) in

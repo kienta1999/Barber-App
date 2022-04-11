@@ -645,7 +645,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Male" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7z-VD-qsX">
-                                <rect key="frame" x="262" y="202" width="37" height="21"/>
+                                <rect key="frame" x="262" y="202" width="73" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="linkColor"/>
@@ -878,7 +878,7 @@
     </scenes>
     <resources>
         <image name="App Logo" width="299" height="304"/>
-        <image name="Default Profile photo" width="360" height="360"/>
+        <image name="Default Profile photo" width="180" height="180"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="logo text" width="476" height="230"/>

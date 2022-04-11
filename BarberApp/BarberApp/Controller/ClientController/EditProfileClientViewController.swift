@@ -24,6 +24,7 @@ class EditProfileClientViewController: HomepageViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ageTextField.textColor = .white
         maleButton.isSelected = true
         if let currGender = user?.gender{
             gender = currGender
@@ -55,8 +56,17 @@ class EditProfileClientViewController: HomepageViewController {
     
     
     @IBAction func saveProfile(_ sender: Any) {
-        
-        navigationController?.popViewController(animated: true)
+        user?.editUserProfile(age: Int(ageTextField.text ?? ""), gender: gender, bio: bioTextView.text ?? "", completion: { (err) in
+            if let err = err {
+                print(err)
+            } else{
+                self.navigationController?.popViewController(animated: true)
+                let tabVC = self.navigationController?.topViewController  as! UITabBarController
+                tabVC.viewControllers?.forEach({ (vc) in
+                    (vc as! HomepageViewController).user = self.user
+                })
+            }
+        })
     }
     
 

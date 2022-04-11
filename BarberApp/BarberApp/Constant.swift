@@ -32,6 +32,9 @@ struct Collection {
         static let emailField = "email"
         static let passwordField = "password"
         static let roleField = "role"
+        static let genderField = "gender"
+        static let bioField = "bio"
+        static let ageField = "age"
     }
     
     struct Post {
