@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomepageClientViewController: HomepageViewController, UITableViewDelegate , UITableViewDataSource {
+class ViewAllPostViewController: HomepageViewController, UITableViewDelegate , UITableViewDataSource {
     
     @IBOutlet weak var postTableView: UITableView!
     var allPost: [[String: Any]] = []
@@ -62,7 +62,7 @@ class HomepageClientViewController: HomepageViewController, UITableViewDelegate 
                 if let data = try? Data(contentsOf: url) {
                     let imageView = UIImage(data: data);
                     let size = CGSize.init(width: 200.0, height: (imageView?.size.height)! / (imageView?.size.width)! * 200.0)
-                    self.cachedImages[indexPath.row] = HomepageClientViewController.resizeImage(imageView!, size);
+                    self.cachedImages[indexPath.row] = HomepageViewController.resizeImage(imageView!, size);
                     myCell.imageView?.image = self.cachedImages[indexPath.row]
                 }
             }

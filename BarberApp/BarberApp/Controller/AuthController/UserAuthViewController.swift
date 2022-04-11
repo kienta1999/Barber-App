@@ -20,7 +20,7 @@ class UserAuthViewController: UIViewController {
         var tabBarIdentifier: String?
         var tabViewControllers: [UIViewController] = []
         if user?.role == "Barber"{
-            homeVC = self.storyboard?.instantiateViewController(identifier: StoryBoard.Barber.homeVC) as? HomepageBarberViewController
+            homeVC = self.storyboard?.instantiateViewController(identifier: StoryBoard.Barber.homeVC) as? ViewAllPostViewController
             tabViewControllers.append(homeVC!)
     
             let postVC = self.storyboard?.instantiateViewController(identifier: StoryBoard.Barber.postVC) as! HomepageViewController
@@ -34,7 +34,7 @@ class UserAuthViewController: UIViewController {
             tabBarIdentifier = StoryBoard.Barber.tabVC
         }
         else if user?.role == "Client"{
-            homeVC = self.storyboard?.instantiateViewController(identifier: StoryBoard.Client.homeVC) as? HomepageClientViewController
+            homeVC = self.storyboard?.instantiateViewController(identifier: StoryBoard.Client.homeVC) as? ViewAllPostViewController
             tabViewControllers.append(homeVC!)
             
             let locationVC = self.storyboard?.instantiateViewController(identifier: StoryBoard.Client.locationVC) as! HomepageViewController
