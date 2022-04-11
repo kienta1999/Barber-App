@@ -1,17 +1,18 @@
 //
-//  ProfileViewController.swift
+//  EditProfileClientViewController.swift
 //  BarberApp
 //
-//  Created by admin on 2/17/22.
+//  Created by admin on 4/11/22.
 //
 
 import UIKit
 
-class ProfileBarberViewController: ProfileViewController {
+class EditProfileClientViewController: HomepageViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+
 }

@@ -19,6 +19,7 @@ struct StoryBoard {
         static let tabVC = "HomepageClientTab"
         static let locationVC = "LocationClientVC"
         static let profileVC = "ProfileClientVC"
+        static let editProfileClientVC = "editProfileClientVC"
     }
     static let detailedPostVC = "DetailedPostVC"
     static let commentVC = "CommentVC"

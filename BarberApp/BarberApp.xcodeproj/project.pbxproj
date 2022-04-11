@@ -63,6 +63,8 @@
 		84E4840327B1F85100F22445 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E4840127B1F85100F22445 /* LaunchScreen.storyboard */; };
 		84E4840E27B1F85100F22445 /* BarberAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E4840D27B1F85100F22445 /* BarberAppTests.swift */; };
 		84E4841927B1F85100F22445 /* BarberAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E4841827B1F85100F22445 /* BarberAppUITests.swift */; };
+		84FC16FA2804D97C00D92693 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FC16F92804D97C00D92693 /* ProfileViewController.swift */; };
+		84FC16FF2804E0BF00D92693 /* EditProfileClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FC16FE2804E0BF00D92693 /* EditProfileClientViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +119,8 @@
 		84E4841427B1F85100F22445 /* BarberAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BarberAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E4841827B1F85100F22445 /* BarberAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberAppUITests.swift; sourceTree = "<group>"; };
 		84E4841A27B1F85100F22445 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84FC16F92804D97C00D92693 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		84FC16FE2804E0BF00D92693 /* EditProfileClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileClientViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +192,7 @@
 				847596D327BF64E60041614F /* BarberController */,
 				847596D727BF64F60041614F /* ClientController */,
 				848CA5DA27B87E7B001EFD41 /* HomepageViewController.swift */,
+				84FC16F92804D97C00D92693 /* ProfileViewController.swift */,
 				848CA5D027B87C70001EFD41 /* ViewAllPostViewController.swift */,
 				84C4D6D027FC00360039D50A /* DetailedPostViewController.swift */,
 				845E70CE28022B9B0021AD03 /* CommentViewController.swift */,
@@ -232,6 +237,7 @@
 			children = (
 				847596ED27BF6E2A0041614F /* LocationViewController.swift */,
 				847596F527BF6EDD0041614F /* ProfileClientViewController.swift */,
+				84FC16FE2804E0BF00D92693 /* EditProfileClientViewController.swift */,
 			);
 			path = ClientController;
 			sourceTree = "<group>";
@@ -463,6 +469,7 @@
 				840909FD27B762F100364E09 /* User.swift in Sources */,
 				84957A3A27C84F96000BA467 /* Post.swift in Sources */,
 				848CA5DB27B87E7B001EFD41 /* HomepageViewController.swift in Sources */,
+				84FC16FA2804D97C00D92693 /* ProfileViewController.swift in Sources */,
 				847596E427BF67F30041614F /* PostViewController.swift in Sources */,
 				84C4D6D127FC00360039D50A /* DetailedPostViewController.swift in Sources */,
 				847596E927BF68BC0041614F /* ProfileBarberViewController.swift in Sources */,
@@ -472,6 +479,7 @@
 				84090A1627B7739100364E09 /* Utilities.swift in Sources */,
 				84E483FB27B1F85000F22445 /* ViewController.swift in Sources */,
 				84E483F727B1F85000F22445 /* AppDelegate.swift in Sources */,
+				84FC16FF2804E0BF00D92693 /* EditProfileClientViewController.swift in Sources */,
 				84C4D6D927FC0F260039D50A /* Like.swift in Sources */,
 				848CA5D127B87C70001EFD41 /* ViewAllPostViewController.swift in Sources */,
 				848CA5D627B87CCA001EFD41 /* Constant.swift in Sources */,

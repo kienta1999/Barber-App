@@ -16,6 +16,10 @@ struct User {
     var email: String
     var password: String
     var role: String?
+    var age: Int?
+    var gender: String?
+    var bio: String?
+    var profilePicPath: String?
     
     static let db = Firestore.firestore()
     static let userConstant = Collection.Users.self
