@@ -490,32 +490,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1c-U8-mr0">
-                                <rect key="frame" x="300" y="44" width="94" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="7PD-Jf-g9w"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Logout"/>
-                                <connections>
-                                    <action selector="logoutClicked:" destination="L70-Mh-Pqu" eventType="touchUpInside" id="zFm-2g-1hM"/>
-                                </connections>
-                            </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aKw-0Y-mbK">
-                                <rect key="frame" x="0.0" y="74" width="414" height="739"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uK3-db-0pX"/>
                         <color key="backgroundColor" red="0.33333334329999997" green="0.27698467040000002" blue="0.27251579990000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="aKw-0Y-mbK" firstAttribute="leading" secondItem="uK3-db-0pX" secondAttribute="leading" id="4Bl-V9-W0g"/>
-                            <constraint firstItem="aKw-0Y-mbK" firstAttribute="top" secondItem="g1c-U8-mr0" secondAttribute="bottom" id="95z-Nd-fnc"/>
-                            <constraint firstItem="aKw-0Y-mbK" firstAttribute="bottom" secondItem="uK3-db-0pX" secondAttribute="bottom" id="PnG-yF-BT3"/>
-                            <constraint firstItem="g1c-U8-mr0" firstAttribute="leading" secondItem="uK3-db-0pX" secondAttribute="leading" constant="300" id="bnX-QM-xqA"/>
-                            <constraint firstItem="uK3-db-0pX" firstAttribute="trailing" secondItem="aKw-0Y-mbK" secondAttribute="trailing" id="iBo-TG-Kks"/>
-                            <constraint firstItem="g1c-U8-mr0" firstAttribute="top" secondItem="uK3-db-0pX" secondAttribute="top" id="jiI-bM-DEg"/>
-                            <constraint firstItem="uK3-db-0pX" firstAttribute="trailing" secondItem="aKw-0Y-mbK" secondAttribute="trailing" id="oLj-sE-eUn"/>
-                            <constraint firstItem="g1c-U8-mr0" firstAttribute="trailing" secondItem="98r-pI-BRV" secondAttribute="trailingMargin" id="vGv-MX-gKc"/>
+                            <constraint firstItem="aKw-0Y-mbK" firstAttribute="trailing" secondItem="uK3-db-0pX" secondAttribute="trailing" id="25J-od-ycy"/>
+                            <constraint firstItem="aKw-0Y-mbK" firstAttribute="bottom" secondItem="uK3-db-0pX" secondAttribute="bottom" id="Kql-uD-e2T"/>
+                            <constraint firstItem="aKw-0Y-mbK" firstAttribute="leading" secondItem="uK3-db-0pX" secondAttribute="leading" id="Lk9-e1-kmV"/>
+                            <constraint firstItem="aKw-0Y-mbK" firstAttribute="top" secondItem="uK3-db-0pX" secondAttribute="top" id="s2L-MG-Cjt"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Location" image="mappin" catalog="system" id="xL0-Me-fvm"/>
