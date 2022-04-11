@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EditProfileClientViewController: HomepageViewController {
+class EditProfileClientViewController: HomepageViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate  {
 
     
     @IBOutlet weak var profilePicture: UIImageView!
@@ -19,6 +19,9 @@ class EditProfileClientViewController: HomepageViewController {
     @IBOutlet weak var maleButton: UIButton!
     @IBOutlet weak var femaleButton: UIButton!
     @IBOutlet weak var otherButton: UIButton!
+    
+    let imagePicker = UIImagePickerController()
+    var imageUrl: URL?
     
     var gender: String =  "Male"
     
@@ -67,6 +70,27 @@ class EditProfileClientViewController: HomepageViewController {
                 })
             }
         })
+    }
+    
+    @IBAction func profileImageSelectClick(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+            imagePicker.delegate = self
+            imagePicker.sourceType = .savedPhotosAlbum
+            imagePicker.allowsEditing = false
+
+            present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        if let url = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerImageURL")] as? URL {
+            imageUrl = url
+        }
+        if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerOriginalImage")] as? UIImage {
+            profilePicture.image = image
+        }
     }
     
 

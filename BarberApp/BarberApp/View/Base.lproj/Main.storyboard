@@ -538,6 +538,8 @@
                                 <state key="normal" title="Change profile photo"/>
                                 <connections>
                                     <action selector="imageSelectClicked" destination="Xyg-Kq-PL0" eventType="touchUpInside" id="KEd-Pi-Dts"/>
+                                    <action selector="profileImageSelectClick:" destination="Cwk-1i-Dl5" eventType="touchUpInside" id="WKn-OG-v7A"/>
+                                    <action selector="profileImageSelectClick:" destination="CGe-rG-Lgg" eventType="touchUpInside" id="gDc-mR-ibG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agz-yK-Dm6">
@@ -578,6 +580,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gk7-tJ-BHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Cwk-1i-Dl5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5224.6376811594209" y="1143.75"/>
         </scene>

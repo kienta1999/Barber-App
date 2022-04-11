@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileClientViewController: ProfileViewController {
+class ProfileClientViewController: ProfileViewController{
 
     
     @IBOutlet weak var nameLabel: UILabel!
