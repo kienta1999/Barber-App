@@ -13,6 +13,7 @@ struct StoryBoard {
         static let tabVC = "HomepageBarberTab"
         static let postVC = "PostBarberVC"
         static let profileVC = "ProfileBarberVC"
+        static let editProfileBarberVC = "editProfileBarberVC"
     }
     struct Client {
         static let homeVC = "HomepageClientVC"
