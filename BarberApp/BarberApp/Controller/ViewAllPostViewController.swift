@@ -19,29 +19,34 @@ class ViewAllPostViewController: HomepageViewController, UITableViewDelegate , U
         postTableView.register(UITableViewCell.self, forCellReuseIdentifier: "postCell")
         // Do any additional setup after loading the view.
         
-        
-        
-        Post.getAllPost() { (posts, err) in
-            if let posts = posts {
-                self.allPost = posts
-                let group = DispatchGroup()
-                for i in 0..<self.allPost.count{
-                    group.enter()
-                    self.cachedImages.append(nil)
-                    let post = self.allPost[i]
-                    let imagePath = post["path"] as! String
-                    Post.getUrl(imagePath) { url, error in
-                        if let url = url {
-                            self.allPost[i]["path"] = url
+        DispatchQueue.global(qos: .userInitiated).async {
+            print("This is run on a background queue")
+            Post.getAllPost() { (posts, err) in
+                if let posts = posts {
+                    self.allPost = posts
+                    let group = DispatchGroup()
+                    for i in 0..<self.allPost.count{
+                        group.enter()
+                        self.cachedImages.append(nil)
+                        let post = self.allPost[i]
+                        let imagePath = post["path"] as! String
+                        Post.getUrl(imagePath) { url, error in
+                            if let url = url {
+                                self.allPost[i]["path"] = url
+                            }
+                            group.leave()
                         }
-                        group.leave()
                     }
+                    group.notify(queue: .main) {
+                        self.postTableView.reloadData()
+                    }
+                } else {
+                    print(err!)
                 }
-                group.notify(queue: .main) {
-                    self.postTableView.reloadData()
-                }
-            } else {
-                print(err!)
+            }
+
+            DispatchQueue.main.async {
+                print("This is run on the main queue, after the previous code in outer block")
             }
         }
         
