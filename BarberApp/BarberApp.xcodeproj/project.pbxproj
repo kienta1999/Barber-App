@@ -66,6 +66,7 @@
 		84FC16FA2804D97C00D92693 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FC16F92804D97C00D92693 /* ProfileViewController.swift */; };
 		84FC16FF2804E0BF00D92693 /* EditProfileClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FC16FE2804E0BF00D92693 /* EditProfileClientViewController.swift */; };
 		84FC1704280503CE00D92693 /* EditProfileBarberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FC1703280503CE00D92693 /* EditProfileBarberViewController.swift */; };
+		84FC17092805090A00D92693 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FC17082805090A00D92693 /* EditProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,7 @@
 		84FC16F92804D97C00D92693 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		84FC16FE2804E0BF00D92693 /* EditProfileClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileClientViewController.swift; sourceTree = "<group>"; };
 		84FC1703280503CE00D92693 /* EditProfileBarberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileBarberViewController.swift; sourceTree = "<group>"; };
+		84FC17082805090A00D92693 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 				847596D727BF64F60041614F /* ClientController */,
 				848CA5DA27B87E7B001EFD41 /* HomepageViewController.swift */,
 				84FC16F92804D97C00D92693 /* ProfileViewController.swift */,
+				84FC17082805090A00D92693 /* EditProfileViewController.swift */,
 				848CA5D027B87C70001EFD41 /* ViewAllPostViewController.swift */,
 				84C4D6D027FC00360039D50A /* DetailedPostViewController.swift */,
 				845E70CE28022B9B0021AD03 /* CommentViewController.swift */,
@@ -489,6 +492,7 @@
 				84FC1704280503CE00D92693 /* EditProfileBarberViewController.swift in Sources */,
 				84090A0C27B7641300364E09 /* LoginViewController.swift in Sources */,
 				84561F3127E96E2F008CEAD9 /* PostView.swift in Sources */,
+				84FC17092805090A00D92693 /* EditProfileViewController.swift in Sources */,
 				84E483F927B1F85000F22445 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
