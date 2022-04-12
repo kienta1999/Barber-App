@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseStorage
 
 class EditProfileClientViewController: HomepageViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate  {
 
@@ -19,7 +20,9 @@ class EditProfileClientViewController: HomepageViewController, UINavigationContr
     @IBOutlet weak var maleButton: UIButton!
     @IBOutlet weak var femaleButton: UIButton!
     @IBOutlet weak var otherButton: UIButton!
+    let storageRef = Storage.storage().reference()
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     let imagePicker = UIImagePickerController()
     var imageUrl: URL?
     
@@ -59,6 +62,26 @@ class EditProfileClientViewController: HomepageViewController, UINavigationContr
     
     
     @IBAction func saveProfile(_ sender: Any) {
+        if let imageUrl = imageUrl, let userid = user?.id {
+            spinner?.isHidden = false
+            spinner?.startAnimating()
+            profilePicture.alpha = 0.5
+            let imgName = imageUrl.relativeString.split(separator: "/").last ?? "default.jpeg"
+            let userImageRef = storageRef.child("Profile").child("\(userid)")
+            userImageRef.putFile(from: imageUrl, metadata: nil) { metadata, error in
+              guard let metadata = metadata else {
+//                self.uploadNotification("Upload Failed", error?.localizedDescription ?? "Unknown error", "Dismiss", false)
+                print("image upload fail")
+                return
+              }
+                print("Metadata: \(metadata)")
+//                self.uploadNotification("Upload Successful", "Your image is posted successfully", "Ok", true)
+                print("Your image is posted successfully")
+                self.spinner?.stopAnimating()
+                self.spinner?.isHidden = true
+            }
+        }
+        
         user?.editUserProfile(age: Int(ageTextField.text ?? ""), gender: gender, bio: bioTextView.text ?? "", completion: { (err) in
             if let err = err {
                 print(err)
@@ -91,6 +114,12 @@ class EditProfileClientViewController: HomepageViewController, UINavigationContr
         if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerOriginalImage")] as? UIImage {
             profilePicture.image = image
         }
+    }
+    
+    func uploadNotification(_ title: String, _ message: String, _ actionTitle: String, _ isSuccess: Bool) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: actionTitle, style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
 
