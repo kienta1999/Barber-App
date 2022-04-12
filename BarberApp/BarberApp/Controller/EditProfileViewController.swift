@@ -81,7 +81,7 @@ class EditProfileViewController: HomepageViewController, UINavigationControllerD
                     if let err = err {
                         print(err)
                     } else{
-                        self.navigateBackToProfile()
+                        self.navigateBackToProfile(self.profilePic)
                     }
                 })
                 print("Metadata: \(metadata)")
@@ -95,17 +95,22 @@ class EditProfileViewController: HomepageViewController, UINavigationControllerD
                 if let err = err {
                     print(err)
                 } else{
-                    self.navigateBackToProfile()
+                    self.navigateBackToProfile(nil)
                 }
             })
         }
     }
     
-    func navigateBackToProfile(){
+    func navigateBackToProfile(_ image: UIImage?){
         self.navigationController?.popViewController(animated: true)
         let tabVC = self.navigationController?.topViewController  as! UITabBarController
         tabVC.viewControllers?.forEach({ (vc) in
             (vc as! HomepageViewController).user = self.user
+            if vc is ProfileViewController {
+                if let profilePic = profilePic {
+                    (vc as! ProfileViewController).profilePictureView.image = profilePic
+                }
+            }
         })
     }
     
