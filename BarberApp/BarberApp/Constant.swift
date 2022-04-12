@@ -35,6 +35,7 @@ struct Collection {
         static let genderField = "gender"
         static let bioField = "bio"
         static let ageField = "age"
+        static let profilePicPathField = "profilePicPath"
     }
     
     struct Post {

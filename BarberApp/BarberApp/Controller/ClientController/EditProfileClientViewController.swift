@@ -66,32 +66,42 @@ class EditProfileClientViewController: HomepageViewController, UINavigationContr
             spinner?.isHidden = false
             spinner?.startAnimating()
             profilePicture.alpha = 0.5
-            let imgName = imageUrl.relativeString.split(separator: "/").last ?? "default.jpeg"
             let userImageRef = storageRef.child("Profile").child("\(userid)")
             userImageRef.putFile(from: imageUrl, metadata: nil) { metadata, error in
               guard let metadata = metadata else {
-//                self.uploadNotification("Upload Failed", error?.localizedDescription ?? "Unknown error", "Dismiss", false)
                 print("image upload fail")
                 return
               }
+                let path = userImageRef.fullPath
+                self.user?.editUserProfile(age: Int(self.ageTextField.text ?? ""), gender: self.gender, bio: self.bioTextView.text ?? "", path: path, completion: { (err) in
+                    if let err = err {
+                        print(err)
+                    } else{
+                        self.navigateBackToProfile()
+                    }
+                })
                 print("Metadata: \(metadata)")
-//                self.uploadNotification("Upload Successful", "Your image is posted successfully", "Ok", true)
                 print("Your image is posted successfully")
                 self.spinner?.stopAnimating()
                 self.spinner?.isHidden = true
             }
         }
-        
-        user?.editUserProfile(age: Int(ageTextField.text ?? ""), gender: gender, bio: bioTextView.text ?? "", completion: { (err) in
-            if let err = err {
-                print(err)
-            } else{
-                self.navigationController?.popViewController(animated: true)
-                let tabVC = self.navigationController?.topViewController  as! UITabBarController
-                tabVC.viewControllers?.forEach({ (vc) in
-                    (vc as! HomepageViewController).user = self.user
-                })
-            }
+        else {
+            user?.editUserProfile(age: Int(ageTextField.text ?? ""), gender: gender, bio: bioTextView.text ?? "", path: nil, completion: { (err) in
+                if let err = err {
+                    print(err)
+                } else{
+                    self.navigateBackToProfile()
+                }
+            })
+        }
+    }
+    
+    func navigateBackToProfile(){
+        self.navigationController?.popViewController(animated: true)
+        let tabVC = self.navigationController?.topViewController  as! UITabBarController
+        tabVC.viewControllers?.forEach({ (vc) in
+            (vc as! HomepageViewController).user = self.user
         })
     }
     
@@ -115,12 +125,4 @@ class EditProfileClientViewController: HomepageViewController, UINavigationContr
             profilePicture.image = image
         }
     }
-    
-    func uploadNotification(_ title: String, _ message: String, _ actionTitle: String, _ isSuccess: Bool) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: actionTitle, style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-
 }

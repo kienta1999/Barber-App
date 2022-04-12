@@ -110,7 +110,9 @@ struct User {
                     User.userConstant.lastnameField: self.lastname!,
                     User.userConstant.emailField: self.email,
                     User.userConstant.passwordField: self.password,
-                    User.userConstant.roleField: self.role!
+                    User.userConstant.profilePicPathField: self.profilePicPath,
+                    User.userConstant.roleField: self.role!,
+                        
                 ]) { err in
                     if let err = err {
                         signupCompleted("Error adding document: \(err)", nil)
@@ -126,7 +128,7 @@ struct User {
         })
     }
     
-    mutating func editUserProfile(age: Int?, gender: String?, bio: String?, completion: @escaping (Error?) -> Void){
+    mutating func editUserProfile(age: Int?, gender: String?, bio: String?, path: String?, completion: @escaping (Error?) -> Void){
         self.age = age
         self.gender = gender
         self.bio = bio
@@ -137,12 +139,14 @@ struct User {
             userRef.updateData([
                 "age": age,
                 "gender": gender,
-                "bio": bio
+                "bio": bio,
+                "profilePicPath": path
             ]) { err in
                 completion(err)
             }
         }
     }
+
     
     static func getUser(_ id: String, completion: @escaping ([String : Any]?) -> Void){
         let userRef = db.collection(User.userConstant.collectionName).document(id)
