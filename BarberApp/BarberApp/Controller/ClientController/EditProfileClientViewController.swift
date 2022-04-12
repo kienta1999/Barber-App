@@ -70,6 +70,7 @@ class EditProfileClientViewController: HomepageViewController, UINavigationContr
             spinner?.isHidden = false
             spinner?.startAnimating()
             profilePicture.alpha = 0.5
+            view.alpha = 0.5
             let userImageRef = storageRef.child("Profile").child("\(userid)")
             userImageRef.putFile(from: imageUrl, metadata: nil) { metadata, error in
               guard let metadata = metadata else {
