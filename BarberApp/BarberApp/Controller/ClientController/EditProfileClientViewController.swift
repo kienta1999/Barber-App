@@ -21,6 +21,7 @@ class EditProfileClientViewController: HomepageViewController, UINavigationContr
     @IBOutlet weak var femaleButton: UIButton!
     @IBOutlet weak var otherButton: UIButton!
     let storageRef = Storage.storage().reference()
+    var profilePic: UIImage?
     
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     let imagePicker = UIImagePickerController()
@@ -48,6 +49,9 @@ class EditProfileClientViewController: HomepageViewController, UINavigationContr
         }
         if let bio = user?.bio {
             bioTextView.text = bio
+        }
+        if let profilePic = profilePic{
+            profilePicture.image = profilePic
         }
         
     }

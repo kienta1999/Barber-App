@@ -11,10 +11,10 @@ class HomepageViewController: UIViewController {
     var user: User?
     @IBOutlet weak var logoutBtn: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         logoutBtn?.backgroundColor = .lightGray
+        
     }
     
     

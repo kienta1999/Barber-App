@@ -8,7 +8,6 @@
 import UIKit
 
 class ProfileClientViewController: ProfileViewController{
-
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
@@ -25,6 +24,15 @@ class ProfileClientViewController: ProfileViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if let profilePicPath = user?.profilePicPath {
+            Post.getUrl(profilePicPath) { (url, err) in
+                if let url = url {
+                    if let data = try? Data(contentsOf: url) {
+                        self.profilePictureView.image = UIImage(data: data)
+                    }
+                }
+            }
+        }
         nameLabel.text = "\(String(describing: user!.firstname!)) \(user!.lastname!)"
         if let age = user?.age {
             ageLabel.text = "\(age)"
@@ -39,8 +47,9 @@ class ProfileClientViewController: ProfileViewController{
     
     
     @IBAction func editProfileClicked(_ sender: Any) {
-        let editProfileVC = self.storyboard?.instantiateViewController(identifier: StoryBoard.Client.editProfileClientVC) as! HomepageViewController
+        let editProfileVC = self.storyboard?.instantiateViewController(identifier: StoryBoard.Client.editProfileClientVC) as! EditProfileClientViewController
         editProfileVC.user = user
+        editProfileVC.profilePic = profilePictureView?.image
         navigationController?.pushViewController(editProfileVC, animated: true)
     }
     
