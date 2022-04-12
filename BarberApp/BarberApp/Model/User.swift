@@ -132,6 +132,7 @@ struct User {
         self.age = age
         self.gender = gender
         self.bio = bio
+        self.profilePicPath = path
         if let id = id {
             let userRef = Firestore.firestore().collection(User.userConstant.collectionName).document(id)
 

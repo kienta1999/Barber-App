@@ -81,6 +81,8 @@ class EditProfileViewController: HomepageViewController, UINavigationControllerD
                     if let err = err {
                         print(err)
                     } else{
+                        print("profilePic")
+                        print(self.profilePic)
                         self.navigateBackToProfile(self.profilePic)
                     }
                 })

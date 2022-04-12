@@ -23,7 +23,6 @@ class ProfileViewController: HomepageViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let profilePicPath = user?.profilePicPath {
-            print(profilePicPath)
             Post.getUrl(profilePicPath) { (url, err) in
                 if let url = url {
                     if let data = try? Data(contentsOf: url) {
