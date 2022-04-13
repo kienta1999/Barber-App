@@ -27,8 +27,9 @@ class UserAuthViewController: UIViewController {
             postVC.user = user
             tabViewControllers.append(postVC)
             
-            let profileVC = self.storyboard?.instantiateViewController(identifier: StoryBoard.Barber.profileVC) as! HomepageViewController
+            let profileVC = self.storyboard?.instantiateViewController(identifier: StoryBoard.Barber.profileVC) as! ProfileViewController
             profileVC.user = user
+            profileVC.profileUser = user
             tabViewControllers.append(profileVC)
 
             tabBarIdentifier = StoryBoard.Barber.tabVC
@@ -41,8 +42,9 @@ class UserAuthViewController: UIViewController {
             locationVC.user = user
             tabViewControllers.append(locationVC)
             
-            let profileVC = self.storyboard?.instantiateViewController(identifier: StoryBoard.Client.profileVC) as! HomepageViewController
+            let profileVC = self.storyboard?.instantiateViewController(identifier: StoryBoard.Client.profileVC) as! ProfileViewController
             profileVC.user = user
+            profileVC.profileUser = user
             tabViewControllers.append(profileVC)
             
             tabBarIdentifier = StoryBoard.Client.tabVC

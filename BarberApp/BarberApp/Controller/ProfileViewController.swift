@@ -16,13 +16,15 @@ class ProfileViewController: HomepageViewController {
     
     @IBOutlet weak var profilePictureView: UIImageView!
     
+    var profileUser: User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let profilePicPath = user?.profilePicPath {
+        if let profilePicPath = profileUser?.profilePicPath {
             Post.getUrl(profilePicPath) { (url, err) in
                 if let url = url {
                     if let data = try? Data(contentsOf: url) {
@@ -31,16 +33,16 @@ class ProfileViewController: HomepageViewController {
                 }
             }
         }
-        nameLabel.text = "\(String(describing: user!.firstname!)) \(user!.lastname!)"
-        if let age = user?.age {
+        nameLabel.text = "\(String(describing: profileUser!.firstname!)) \(profileUser!.lastname!)"
+        if let age = profileUser?.age {
             ageLabel.text = "\(age)"
         }
         else {
             ageLabel.text = "N/A"
         }
         
-        genderLabel.text = user?.gender ?? "N/A"
-        bioLabel.text = user?.bio ?? ""
+        genderLabel.text = profileUser?.gender ?? "N/A"
+        bioLabel.text = profileUser?.bio ?? ""
     }
     
     

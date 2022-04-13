@@ -110,6 +110,7 @@ class EditProfileViewController: HomepageViewController, UINavigationControllerD
             (vc as! HomepageViewController).user = self.user
             if vc is ProfileViewController {
                 if let profilePic = profilePic {
+                    (vc as! ProfileViewController).profileUser = user
                     (vc as! ProfileViewController).profilePictureView.image = profilePic
                 }
             }
