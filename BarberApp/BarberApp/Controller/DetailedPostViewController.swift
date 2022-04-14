@@ -117,8 +117,6 @@ class DetailedPostViewController: UIViewController {
     }
     
     @IBAction func onProfileSelect(_ sender: Any) {
-        print(postOwner["id"])
-        print(postOwner)
         let profileUser = User.init(
             id: postOwner["id"] as? String,
             firstname: postOwner["firstname"] as? String,
@@ -129,7 +127,8 @@ class DetailedPostViewController: UIViewController {
             age: postOwner["age"] as? Int,
             gender: postOwner["gender"] as? String,
             bio: postOwner["bio"] as? String,
-            profilePicPath: postOwner["profilePicPath"] as? String
+            profilePicPath: postOwner["profilePicPath"] as? String,
+            phoneNumber: postOwner["phoneNumber"] as? Int
         )
         if(profileUser.role == "Barber"){
             let profileVc = storyboard?.instantiateViewController(identifier: StoryBoard.Barber.profileVC) as! ProfileBarberViewController

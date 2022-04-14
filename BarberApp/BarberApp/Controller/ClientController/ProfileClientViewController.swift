@@ -18,7 +18,7 @@ class ProfileClientViewController: ProfileViewController{
     
     
     @IBAction func editProfileClicked(_ sender: Any) {
-        if(user!.id == profileUser!.id){
+        if(user?.id == profileUser?.id){
             let editProfileVC = self.storyboard?.instantiateViewController(identifier: StoryBoard.Client.editProfileClientVC) as! EditProfileClientViewController
             editProfileVC.user = profileUser
             editProfileVC.profilePic = profilePictureView?.image

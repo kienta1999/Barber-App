@@ -10,8 +10,11 @@ import FirebaseStorage
 
 class EditProfileBarberViewController: EditProfileViewController {
 
+    @IBOutlet weak var phoneTextField: UITextField!
     override func viewDidLoad(){
         super.viewDidLoad()
     }
+    
+    
 
 }

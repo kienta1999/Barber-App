@@ -20,6 +20,7 @@ struct User {
     var gender: String?
     var bio: String?
     var profilePicPath: String?
+    var phoneNumber: Int?
     
     static let db = Firestore.firestore()
     static let userConstant = Collection.Users.self
@@ -110,7 +111,6 @@ struct User {
                     User.userConstant.lastnameField: self.lastname!,
                     User.userConstant.emailField: self.email,
                     User.userConstant.passwordField: self.password,
-                    User.userConstant.profilePicPathField: self.profilePicPath,
                     User.userConstant.roleField: self.role!,
                         
                 ]) { err in
@@ -128,11 +128,12 @@ struct User {
         })
     }
     
-    mutating func editUserProfile(age: Int?, gender: String?, bio: String?, path: String?, completion: @escaping (Error?) -> Void){
+    mutating func editUserProfile(age: Int?, gender: String?, bio: String?, path: String?, phoneNumber: Int?, completion: @escaping (Error?) -> Void){
         self.age = age
         self.gender = gender
         self.bio = bio
         self.profilePicPath = path
+        self.phoneNumber = phoneNumber
         if let id = id {
             let userRef = Firestore.firestore().collection(User.userConstant.collectionName).document(id)
 
@@ -141,7 +142,8 @@ struct User {
                 "age": age,
                 "gender": gender,
                 "bio": bio,
-                "profilePicPath": path
+                "profilePicPath": path,
+                "phoneNumber": phoneNumber,
             ]) { err in
                 completion(err)
             }

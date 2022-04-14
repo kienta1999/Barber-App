@@ -65,6 +65,10 @@ class EditProfileViewController: HomepageViewController, UINavigationControllerD
     
     
     @IBAction func saveProfile(_ sender: Any) {
+        var phoneNumber: Int? = nil
+        if let phoneNumberText = (self as? EditProfileBarberViewController)?.phoneTextField?.text {
+            phoneNumber = Int(phoneNumberText)
+        }
         if let imageUrl = imageUrl, let userid = user?.id {
             spinner?.isHidden = false
             spinner?.startAnimating()
@@ -77,12 +81,10 @@ class EditProfileViewController: HomepageViewController, UINavigationControllerD
                 return
               }
                 let path = userImageRef.fullPath
-                self.user?.editUserProfile(age: Int(self.ageTextField.text ?? ""), gender: self.gender, bio: self.bioTextView.text ?? "", path: path, completion: { (err) in
+                self.user?.editUserProfile(age: Int(self.ageTextField.text ?? ""), gender: self.gender, bio: self.bioTextView.text ?? "", path: path, phoneNumber: phoneNumber, completion: { (err) in
                     if let err = err {
                         print(err)
                     } else{
-                        print("profilePic")
-                        print(self.profilePic)
                         self.navigateBackToProfile(self.profilePic)
                     }
                 })
@@ -93,7 +95,7 @@ class EditProfileViewController: HomepageViewController, UINavigationControllerD
             }
         }
         else {
-            user?.editUserProfile(age: Int(ageTextField.text ?? ""), gender: gender, bio: bioTextView.text ?? "", path: nil, completion: { (err) in
+            user?.editUserProfile(age: Int(ageTextField.text ?? ""), gender: gender, bio: bioTextView.text ?? "", path: nil, phoneNumber: phoneNumber, completion: { (err) in
                 if let err = err {
                     print(err)
                 } else{

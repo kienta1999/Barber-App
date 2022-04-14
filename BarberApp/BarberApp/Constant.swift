@@ -37,6 +37,7 @@ struct Collection {
         static let bioField = "bio"
         static let ageField = "age"
         static let profilePicPathField = "profilePicPath"
+        static let phoneNumberField = "phoneNumber"
     }
     
     struct Post {
