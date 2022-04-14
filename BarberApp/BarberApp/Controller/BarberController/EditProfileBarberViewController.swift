@@ -13,6 +13,9 @@ class EditProfileBarberViewController: EditProfileViewController {
     @IBOutlet weak var phoneTextField: UITextField!
     override func viewDidLoad(){
         super.viewDidLoad()
+        if let phone = user?.phoneNumber{
+            phoneTextField.text = String(phone)
+        }
     }
     
     

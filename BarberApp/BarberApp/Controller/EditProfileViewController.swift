@@ -19,6 +19,9 @@ class EditProfileViewController: HomepageViewController, UINavigationControllerD
     @IBOutlet weak var maleButton: UIButton!
     @IBOutlet weak var femaleButton: UIButton!
     @IBOutlet weak var otherButton: UIButton!
+    @IBOutlet weak var errorMessage: UILabel!
+    
+    
     let storageRef = Storage.storage().reference()
     var profilePic: UIImage?
     
@@ -30,6 +33,7 @@ class EditProfileViewController: HomepageViewController, UINavigationControllerD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        errorMessage.text = ""
         ageTextField.textColor = .white
         maleButton.isSelected = true
         if let currGender = user?.gender{
@@ -68,10 +72,34 @@ class EditProfileViewController: HomepageViewController, UINavigationControllerD
     
     
     @IBAction func saveProfile(_ sender: Any) {
+        // validation
         var phoneNumber: Int? = nil
         if let phoneNumberText = (self as? EditProfileBarberViewController)?.phoneTextField?.text {
             phoneNumber = Int(phoneNumberText)
+            if(phoneNumberText != "" && (phoneNumber == nil || phoneNumber! < 0)){
+                errorMessage.text = "Phone number should either be blank or is a positive number"
+                return
+            }
+            else if(phoneNumberText != "" && phoneNumberText.count != 10){
+                errorMessage.text = "Phone number should have 10 digits"
+                return
+            }
         }
+        
+        if ageTextField.text != "" {
+            if let age = Int(ageTextField.text!){
+                if age > 100 || age < 0 {
+                    errorMessage.text = "Age should be a number between 0 and 100"
+                    return
+                }
+            }
+            else {
+                errorMessage.text = "Age should be a number or blank"
+                return
+            }
+        }
+    
+        // save the data
         if let imageUrl = imageUrl, let userid = user?.id {
             spinner?.isHidden = false
             spinner?.startAnimating()
@@ -86,6 +114,7 @@ class EditProfileViewController: HomepageViewController, UINavigationControllerD
                 let path = userImageRef.fullPath
                 self.user?.editUserProfile(age: Int(self.ageTextField.text ?? ""), gender: self.gender, bio: self.bioTextView.text ?? "", path: path, phoneNumber: phoneNumber, completion: { (err) in
                     if let err = err {
+                        self.errorMessage.text = err.localizedDescription
                         print(err)
                     } else{
                         self.navigateBackToProfile(self.profilePic)
@@ -101,6 +130,7 @@ class EditProfileViewController: HomepageViewController, UINavigationControllerD
             user?.editUserProfile(age: Int(ageTextField.text ?? ""), gender: gender, bio: bioTextView.text ?? "", path: nil, phoneNumber: phoneNumber, completion: { (err) in
                 if let err = err {
                     print(err)
+                    self.errorMessage.text = err.localizedDescription
                 } else{
                     self.navigateBackToProfile(nil)
                 }

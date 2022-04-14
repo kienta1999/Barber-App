@@ -273,7 +273,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="314532xxxx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NL8-X7-xRZ">
-                                <rect key="frame" x="256" y="183" width="93" height="21"/>
+                                <rect key="frame" x="256" y="183" width="126" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="linkColor"/>
@@ -656,6 +656,13 @@
                                 <rect key="frame" x="153" y="152" width="108" height="94"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Error message here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7T-7d-D89">
+                                <rect key="frame" x="32" y="608" width="350" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hJc-L4-zDW"/>
                         <color key="backgroundColor" red="0.37629812959999998" green="0.3171503544" blue="0.30669295790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -663,6 +670,7 @@
                     <connections>
                         <outlet property="ageTextField" destination="ome-A9-DV2" id="OyL-Sz-cGR"/>
                         <outlet property="bioTextView" destination="Ewt-Pc-YqZ" id="VI4-UL-kDx"/>
+                        <outlet property="errorMessage" destination="d7T-7d-D89" id="VOY-vR-iA1"/>
                         <outlet property="femaleButton" destination="2g5-DT-YNT" id="G3Y-vP-3yZ"/>
                         <outlet property="maleButton" destination="agz-yK-Dm6" id="cg6-2x-cOM"/>
                         <outlet property="otherButton" destination="XxP-vc-hoz" id="Yji-ya-4rm"/>
@@ -692,12 +700,6 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter age here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xmJ-j8-1QT">
                                 <rect key="frame" x="141" y="365" width="113" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter phone here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WgM-oG-uTU">
-                                <rect key="frame" x="141" y="454" width="113" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -789,6 +791,19 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Error message here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSH-QB-CU4">
+                                <rect key="frame" x="37" y="660" width="350" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter phone here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WgM-oG-uTU">
+                                <rect key="frame" x="136" y="461" width="113" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9PB-sT-8pE"/>
                         <color key="backgroundColor" red="0.37629812959999998" green="0.3171503544" blue="0.30669295790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -796,6 +811,7 @@
                     <connections>
                         <outlet property="ageTextField" destination="xmJ-j8-1QT" id="RgT-in-MDI"/>
                         <outlet property="bioTextView" destination="Npc-39-QZ4" id="isv-nU-HuW"/>
+                        <outlet property="errorMessage" destination="BSH-QB-CU4" id="zKe-Tf-84l"/>
                         <outlet property="femaleButton" destination="dKu-Ky-u3X" id="3Nw-PK-S9b"/>
                         <outlet property="maleButton" destination="m6m-xs-03N" id="2Fd-s0-ubQ"/>
                         <outlet property="otherButton" destination="LjV-LA-Hqd" id="mW7-0N-6R6"/>
@@ -806,7 +822,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OgD-7X-5i0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2816" y="-1092"/>
+            <point key="canvasLocation" x="2815.9420289855075" y="-1092.1875"/>
         </scene>
         <!--Location-->
         <scene sceneID="ea5-LH-gY8">
