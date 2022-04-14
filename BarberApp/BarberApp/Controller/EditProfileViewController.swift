@@ -12,23 +12,18 @@ class EditProfileViewController: HomepageViewController, UINavigationControllerD
     
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var ageTextField: UITextField!
-    
-    
     @IBOutlet weak var bioTextView: UITextView!
-    
     @IBOutlet weak var maleButton: UIButton!
     @IBOutlet weak var femaleButton: UIButton!
     @IBOutlet weak var otherButton: UIButton!
     @IBOutlet weak var errorMessage: UILabel!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     
     let storageRef = Storage.storage().reference()
     var profilePic: UIImage?
-    
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
     let imagePicker = UIImagePickerController()
     var imageUrl: URL?
-    
     var gender: String =  "Male"
     
     override func viewDidLoad() {

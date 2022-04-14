@@ -13,14 +13,11 @@ class ProfileViewController: HomepageViewController {
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var genderLabel: UILabel!
     @IBOutlet weak var bioLabel: UILabel!
-    
     @IBOutlet weak var editProfileBtn: UIButton!
     @IBOutlet weak var messageBtn: UIButton!
-    
-    
     @IBOutlet weak var profilePictureView: UIImageView!
+
     var editAllow = true
-    
     var profileUser: User?
     
     override func viewDidLoad() {
