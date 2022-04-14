@@ -146,6 +146,11 @@ class EditProfileViewController: HomepageViewController, UINavigationControllerD
                     (vc as! ProfileViewController).profileUser = user
                     (vc as! ProfileViewController).profilePictureView.image = profilePic
                 }
+                if(vc is ProfileBarberViewController){
+                    if let address = (self as? EditProfileBarberViewController)?.address{
+                        (vc as! ProfileBarberViewController).barberAddressLabel.text = "\(address.title), \(address.subtitile ?? "")"
+                    }
+                }
             }
         })
     }
