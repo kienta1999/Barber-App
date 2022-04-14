@@ -730,17 +730,6 @@
                                 <rect key="frame" x="136" y="127" width="153" height="161"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVC-c1-kDP">
-                                <rect key="frame" x="184" y="610" width="53" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="saveProfile:" destination="eHp-ff-9fu" eventType="touchUpInside" id="1nH-7C-aYl"/>
-                                    <action selector="saveProfile:" destination="CGe-rG-Lgg" eventType="touchUpInside" id="cRp-s0-xr8"/>
-                                    <action selector="uploadImage:" destination="Xyg-Kq-PL0" eventType="touchUpInside" id="9li-04-tkl"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhf-WY-W20">
                                 <rect key="frame" x="90" y="308" width="244" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -804,11 +793,43 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5t-KE-Fm3">
+                                <rect key="frame" x="37" y="577" width="64" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07o-ez-YKd">
+                                <rect key="frame" x="168" y="752" width="85" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="See address"/>
+                                <connections>
+                                    <action selector="seeAddress:" destination="eHp-ff-9fu" eventType="touchUpInside" id="Sec-4Z-QIJ"/>
+                                </connections>
+                            </button>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X7F-wu-AOx">
+                                <rect key="frame" x="110" y="566" width="284" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVC-c1-kDP">
+                                <rect key="frame" x="181" y="629" width="53" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveProfile:" destination="eHp-ff-9fu" eventType="touchUpInside" id="1nH-7C-aYl"/>
+                                    <action selector="saveProfile:" destination="CGe-rG-Lgg" eventType="touchUpInside" id="cRp-s0-xr8"/>
+                                    <action selector="uploadImage:" destination="Xyg-Kq-PL0" eventType="touchUpInside" id="9li-04-tkl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9PB-sT-8pE"/>
                         <color key="backgroundColor" red="0.37629812959999998" green="0.3171503544" blue="0.30669295790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="addressSearchBar" destination="X7F-wu-AOx" id="qke-tk-aOM"/>
                         <outlet property="ageTextField" destination="xmJ-j8-1QT" id="RgT-in-MDI"/>
                         <outlet property="bioTextView" destination="Npc-39-QZ4" id="isv-nU-HuW"/>
                         <outlet property="errorMessage" destination="BSH-QB-CU4" id="zKe-Tf-84l"/>
