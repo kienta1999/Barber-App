@@ -148,6 +148,7 @@ class EditProfileViewController: HomepageViewController, UINavigationControllerD
                 }
                 if(vc is ProfileBarberViewController){
                     if let address = (self as? EditProfileBarberViewController)?.address{
+                        (vc as! ProfileBarberViewController).address = address
                         (vc as! ProfileBarberViewController).barberAddressLabel.text = "\(address.title), \(address.subtitile ?? "")"
                     }
                 }

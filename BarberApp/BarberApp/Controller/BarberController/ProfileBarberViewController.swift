@@ -26,15 +26,20 @@ class ProfileBarberViewController: ProfileViewController {
             phoneLabel.text = "N/A"
         }
         
-        address = Address.init(profileUser!.id!, "")
-        address?.getAddress(completion: { (found) in
-            if(found){
-                self.barberAddressLabel.text = "\(self.address!.title), \(self.address!.subtitile ?? "")"
-            }
-            else {
-                self.barberAddressLabel.text = "N/A"
-            }
-        })
+        if address == nil {
+            address = Address.init(profileUser!.id!, "")
+            address?.getAddress(completion: { (found) in
+                if(found){
+                    self.barberAddressLabel.text = "\(self.address!.title), \(self.address!.subtitile ?? "")"
+                }
+                else {
+                    self.barberAddressLabel.text = "N/A"
+                }
+            })
+        } else {
+            self.barberAddressLabel.text = "\(self.address!.title), \(self.address!.subtitile ?? "")"
+        }
+        
     }
     
     @IBAction func editProfileClicked(_ sender: Any) {
