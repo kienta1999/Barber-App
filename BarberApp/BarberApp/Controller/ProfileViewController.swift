@@ -15,6 +15,7 @@ class ProfileViewController: HomepageViewController {
     @IBOutlet weak var bioLabel: UILabel!
     
     @IBOutlet weak var editProfileBtn: UIButton!
+    @IBOutlet weak var messageBtn: UIButton!
     
     
     @IBOutlet weak var profilePictureView: UIImageView!
@@ -30,6 +31,10 @@ class ProfileViewController: HomepageViewController {
         super.viewWillAppear(animated)
         if(!editAllow){
             editProfileBtn.isHidden = true
+        }
+        if(user?.id == profileUser?.id){
+            // user cannot message themselves
+            messageBtn.isHidden = true
         }
         if let profilePicPath = profileUser?.profilePicPath {
             Post.getUrl(profilePicPath) { (url, err) in
@@ -51,6 +56,13 @@ class ProfileViewController: HomepageViewController {
         genderLabel.text = profileUser?.gender ?? "N/A"
         bioLabel.text = profileUser?.bio ?? ""
     }
+    
+    @IBAction func onMessageClicked(_ sender: Any) {
+        print("Messaging....")
+        print("user1: \(user?.id)")
+        print("user2: \(profileUser?.id)")
+    }
+    
     
     
 }

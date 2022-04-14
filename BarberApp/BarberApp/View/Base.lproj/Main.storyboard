@@ -299,6 +299,14 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Rl-Mc-3HQ">
+                                <rect key="frame" x="344" y="97" width="38" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="message.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="onMessageClicked:" destination="3sC-6V-I0n" eventType="touchUpInside" id="u1l-YS-XSz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kzF-Pa-Q5T"/>
                         <color key="backgroundColor" red="0.37629812959999998" green="0.3171503544" blue="0.30669295790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -315,6 +323,7 @@
                         <outlet property="editProfileBtn" destination="cjn-Hk-IDX" id="jei-b3-hCv"/>
                         <outlet property="genderLabel" destination="yHq-2H-cUk" id="Mhj-Rj-10f"/>
                         <outlet property="logoutBtn" destination="2MR-zI-cvg" id="K0M-Rp-71l"/>
+                        <outlet property="messageBtn" destination="9Rl-Mc-3HQ" id="SrD-l0-XMU"/>
                         <outlet property="nameLabel" destination="kh4-g8-sg0" id="8zx-0g-8Tl"/>
                         <outlet property="profilePictureView" destination="7RN-h2-xdu" id="Fdu-y6-h5p"/>
                     </connections>
@@ -874,6 +883,15 @@
                                     <action selector="editProfileClicked:" destination="r2D-hm-heb" eventType="touchUpInside" id="dKu-I3-Z4N"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MI2-X3-vUl">
+                                <rect key="frame" x="356" y="118" width="38" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="message.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="onMessageClicked:" destination="r2D-hm-heb" eventType="touchUpInside" id="9N9-ZI-r2s"/>
+                                    <action selector="onMessageClicked:" destination="3sC-6V-I0n" eventType="touchUpInside" id="d8H-Zn-lXD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ghj-gp-TO5"/>
                         <color key="backgroundColor" red="0.3333333432674408" green="0.2769846704286012" blue="0.27251579993555775" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -885,6 +903,7 @@
                         <outlet property="editProfileBtn" destination="Wvc-QX-e4B" id="djF-bC-316"/>
                         <outlet property="genderLabel" destination="f7z-VD-qsX" id="m91-Fa-6Ho"/>
                         <outlet property="logoutBtn" destination="oEj-KU-Q1W" id="tMV-lm-emV"/>
+                        <outlet property="messageBtn" destination="MI2-X3-vUl" id="CVf-CR-jkp"/>
                         <outlet property="nameLabel" destination="V4a-Wi-Rr5" id="v4N-fK-6cn"/>
                         <outlet property="profilePictureView" destination="ZZ2-EB-Ed8" id="A4U-AU-i2Y"/>
                     </connections>
@@ -1074,6 +1093,7 @@
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="logo text" width="476" height="230"/>
         <image name="mappin" catalog="system" width="105" height="128"/>
+        <image name="message.fill" catalog="system" width="128" height="113"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="plus.rectangle.fill.on.rectangle.fill" catalog="system" width="128" height="96"/>
         <systemColor name="labelColor">
