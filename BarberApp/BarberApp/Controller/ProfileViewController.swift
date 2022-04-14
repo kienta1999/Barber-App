@@ -18,6 +18,7 @@ class ProfileViewController: HomepageViewController {
     
     
     @IBOutlet weak var profilePictureView: UIImageView!
+    var editAllow = true
     
     var profileUser: User?
     
@@ -27,7 +28,7 @@ class ProfileViewController: HomepageViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if(user?.id != profileUser?.id){
+        if(!editAllow){
             editProfileBtn.isHidden = true
         }
         if let profilePicPath = profileUser?.profilePicPath {

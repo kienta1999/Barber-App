@@ -135,12 +135,14 @@ class DetailedPostViewController: UIViewController {
             let profileVc = storyboard?.instantiateViewController(identifier: StoryBoard.Barber.profileVC) as! ProfileBarberViewController
             profileVc.user = currentUser
             profileVc.profileUser = profileUser
+            profileVc.editAllow = false
             navigationController?.pushViewController(profileVc, animated: true)
         }
         else if (profileUser.role == "Client"){
             let profileVc = storyboard?.instantiateViewController(identifier: StoryBoard.Client.profileVC) as! ProfileClientViewController
             profileVc.user = currentUser
             profileVc.profileUser = profileUser
+            profileVc.editAllow = false
             navigationController?.pushViewController(profileVc, animated: true)
         }
     }
