@@ -21,15 +21,46 @@ class Address {
         self.title = title
     }
     
+    func deleteDuplicate(completion: @escaping (Error?) -> Void){
+        Firestore.firestore().collection("addresses")
+            .whereField(Collection.Address.userid, isEqualTo: userid)
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    completion(err)
+                    return
+                }
+                if querySnapshot!.documents.count >= 1 {
+                    querySnapshot!.documents[0].reference.delete { (err) in
+                        completion(err)
+                        return
+                    }
+                } else {
+                    completion(nil)
+                }
+        }
+        
+    }
+    
     func saveToDatabase(completion: @escaping (Error?) -> Void){
-        Firestore.firestore().collection("addresses").document().setData([
-            Collection.Address.userid: self.userid,
-            Collection.Address.lat: self.lat,
-            Collection.Address.lon: self.lon,
-            Collection.Address.title: self.title,
-            Collection.Address.subtitile: self.subtitile,
-        ]) { err in
-            completion(err)
+        self.deleteDuplicate { (err) in
+            if let err = err {
+                completion(err)
+                return
+            } else {
+                let newEntry  = Firestore.firestore().collection("addresses").document()
+                newEntry.setData([
+                    Collection.Address.userid: self.userid,
+                    Collection.Address.lat: self.lat,
+                    Collection.Address.lon: self.lon,
+                    Collection.Address.title: self.title,
+                    Collection.Address.subtitile: self.subtitile,
+                ]) { err in
+                    completion(err)
+                    if err != nil{
+                        self.id = newEntry.documentID
+                    }
+                }
+            }
         }
     }
     

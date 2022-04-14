@@ -68,7 +68,7 @@ class EditProfileBarberViewController: EditProfileViewController, MKLocalSearchC
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             tableView.deselectRow(at: indexPath, animated: true)
-
+            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
             let result = searchResults[indexPath.row]
             let searchRequest = MKLocalSearch.Request(completion: result)
 
@@ -107,11 +107,7 @@ class EditProfileBarberViewController: EditProfileViewController, MKLocalSearchC
     
     func saveAddress(){
         if let address = address {
-            print("------------------------------------")
-            print(address)
             address.saveToDatabase { (err) in
-                print("------------------------------------")
-                print(err?.localizedDescription)
                 self.errorMessage.text = err?.localizedDescription
             }
         }
