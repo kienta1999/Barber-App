@@ -57,4 +57,12 @@ struct Collection {
         static let userid = "userid"
         static let content = "content"
     }
+    
+    struct Address {
+        static let userid = "userid"
+        static let lat = "lat"
+        static let lon = "lon"
+        static let title = "title"
+        static let subtitile = "subtitile"
+    }
 }

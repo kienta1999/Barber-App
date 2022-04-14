@@ -17,6 +17,7 @@ class EditProfileBarberViewController: EditProfileViewController, MKLocalSearchC
     @IBOutlet weak var searchResultsTable: UITableView!
     var searchCompleter = MKLocalSearchCompleter()
     var searchResults = [MKLocalSearchCompletion]()
+    var address: Address?
     
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -33,8 +34,6 @@ class EditProfileBarberViewController: EditProfileViewController, MKLocalSearchC
     
     func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
         searchResults = completer.results
-        print(searchResults[0].title)
-        print(searchResults[0].subtitle)
     }
 
     private func completer(completer: MKLocalSearchCompleter, didFailWithError error: NSError) {
@@ -74,7 +73,17 @@ class EditProfileBarberViewController: EditProfileViewController, MKLocalSearchC
             let searchRequest = MKLocalSearch.Request(completion: result)
 
             let search = MKLocalSearch(request: searchRequest)
+        
+        self.saveProfileBtn.isHidden = true
+        self.errorMessage.text = "Searching for location...."
             search.start { (response, error) in
+                if let err = error {
+                    self.errorMessage.text = err.localizedDescription
+                    self.saveProfileBtn.isHidden = false
+                    self.addressSearchBar.text = ""
+                    return
+                    
+                }
                 guard let coordinate = response?.mapItems[0].placemark.coordinate else {
                     return
                 }
@@ -86,11 +95,26 @@ class EditProfileBarberViewController: EditProfileViewController, MKLocalSearchC
                 let lat = coordinate.latitude
                 let lon = coordinate.longitude
 
-                print(lat)
-                print(lon)
-                print(name)
-
+                self.errorMessage.text = ""
+                self.saveProfileBtn.isHidden = false
+                
+                self.address = Address.init(self.user!.id!, result.title)
+                self.address?.lat = lat
+                self.address?.lon = lon
+                self.address?.subtitile = result.subtitle
             }
         }
+    
+    func saveAddress(){
+        if let address = address {
+            print("------------------------------------")
+            print(address)
+            address.saveToDatabase { (err) in
+                print("------------------------------------")
+                print(err?.localizedDescription)
+                self.errorMessage.text = err?.localizedDescription
+            }
+        }
+    }
 
 }

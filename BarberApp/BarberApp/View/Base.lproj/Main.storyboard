@@ -675,6 +675,7 @@
                         <outlet property="maleButton" destination="agz-yK-Dm6" id="cg6-2x-cOM"/>
                         <outlet property="otherButton" destination="XxP-vc-hoz" id="Yji-ya-4rm"/>
                         <outlet property="profilePicture" destination="vFj-N0-Gmk" id="fgt-fW-tCC"/>
+                        <outlet property="saveProfileBtn" destination="9R1-n1-hzC" id="tzQ-XH-ieN"/>
                         <outlet property="spinner" destination="oYi-wK-8eo" id="Vlf-XK-w9d"/>
                     </connections>
                 </viewController>
@@ -835,6 +836,7 @@
                         <outlet property="otherButton" destination="LjV-LA-Hqd" id="mW7-0N-6R6"/>
                         <outlet property="phoneTextField" destination="WgM-oG-uTU" id="gRW-po-aWA"/>
                         <outlet property="profilePicture" destination="Rh2-YM-eTG" id="h6P-EW-MuZ"/>
+                        <outlet property="saveProfileBtn" destination="sVC-c1-kDP" id="fGF-i9-6FE"/>
                         <outlet property="searchResultsTable" destination="d3s-vG-hwM" id="cfo-6S-pxQ"/>
                         <outlet property="spinner" destination="2iA-M8-IYI" id="Hc4-NN-SUa"/>
                     </connections>

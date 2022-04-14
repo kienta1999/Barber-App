@@ -16,6 +16,7 @@ class EditProfileViewController: HomepageViewController, UINavigationControllerD
     @IBOutlet weak var maleButton: UIButton!
     @IBOutlet weak var femaleButton: UIButton!
     @IBOutlet weak var otherButton: UIButton!
+    @IBOutlet weak var saveProfileBtn: UIButton!
     @IBOutlet weak var errorMessage: UILabel!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
@@ -112,6 +113,7 @@ class EditProfileViewController: HomepageViewController, UINavigationControllerD
                         self.errorMessage.text = err.localizedDescription
                         print(err)
                     } else{
+                        (self as? EditProfileBarberViewController)?.saveAddress()
                         self.navigateBackToProfile(self.profilePic)
                     }
                 })
@@ -127,6 +129,7 @@ class EditProfileViewController: HomepageViewController, UINavigationControllerD
                     print(err)
                     self.errorMessage.text = err.localizedDescription
                 } else{
+                    (self as? EditProfileBarberViewController)?.saveAddress()
                     self.navigateBackToProfile(nil)
                 }
             })

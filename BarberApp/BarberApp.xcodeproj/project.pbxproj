@@ -36,6 +36,7 @@
 		7809B5AF27B6138A002C8484 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 7809B5AE27B6138A002C8484 /* FirebaseStorage */; };
 		7809B5B127B6138A002C8484 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 7809B5B027B6138A002C8484 /* FirebaseStorageCombine-Community */; };
 		7809B5B327B6138A002C8484 /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 7809B5B227B6138A002C8484 /* FirebaseStorageSwift-Beta */; };
+		84051A922807E9D70090229B /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84051A912807E9D70090229B /* Address.swift */; };
 		840909FD27B762F100364E09 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840909FC27B762F100364E09 /* User.swift */; };
 		84090A0C27B7641300364E09 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84090A0B27B7641300364E09 /* LoginViewController.swift */; };
 		84090A1127B7641F00364E09 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84090A1027B7641F00364E09 /* SignupViewController.swift */; };
@@ -88,6 +89,7 @@
 
 /* Begin PBXFileReference section */
 		7809B57927B60ECE002C8484 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84051A912807E9D70090229B /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		840909FC27B762F100364E09 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		84090A0B27B7641300364E09 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		84090A1027B7641F00364E09 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				84957A3927C84F96000BA467 /* Post.swift */,
 				84C4D6D827FC0F260039D50A /* Like.swift */,
 				842638AC280020D6003C3113 /* Comment.swift */,
+				84051A912807E9D70090229B /* Address.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 			files = (
 				847596EE27BF6E2A0041614F /* LocationViewController.swift in Sources */,
 				847596F627BF6EDD0041614F /* ProfileClientViewController.swift in Sources */,
+				84051A922807E9D70090229B /* Address.swift in Sources */,
 				84090A1127B7641F00364E09 /* SignupViewController.swift in Sources */,
 				840909FD27B762F100364E09 /* User.swift in Sources */,
 				84957A3A27C84F96000BA467 /* Post.swift in Sources */,
