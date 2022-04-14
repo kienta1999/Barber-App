@@ -132,7 +132,9 @@ struct User {
         self.age = age
         self.gender = gender
         self.bio = bio
-        self.profilePicPath = path
+        if let path =  path {
+            self.profilePicPath = path
+        }
         self.phoneNumber = phoneNumber
         if let id = id {
             let userRef = Firestore.firestore().collection(User.userConstant.collectionName).document(id)
@@ -142,7 +144,7 @@ struct User {
                 "age": age,
                 "gender": gender,
                 "bio": bio,
-                "profilePicPath": path,
+                "profilePicPath": self.profilePicPath,
                 "phoneNumber": phoneNumber,
             ]) { err in
                 completion(err)
