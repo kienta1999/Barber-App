@@ -21,6 +21,29 @@ class Address {
         self.title = title
     }
     
+    func getAddress(completion: @escaping (Bool) -> Void){
+        Firestore.firestore().collection("addresses")
+            .whereField(Collection.Address.userid, isEqualTo: userid)
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    completion(false)
+                    return
+                }
+                if querySnapshot!.documents.count >= 1 {
+                    let ref = querySnapshot!.documents[0].reference
+                    let data = querySnapshot!.documents[0].data()
+                    self.id = ref.documentID
+                    self.lat = data["lat"] as? Double
+                    self.lon = data["lon"] as? Double
+                    self.title = data["title"] as! String
+                    self.subtitile = data["subtitile"] as? String
+                    completion(true)
+                } else {
+                    completion(false)
+                }
+        }
+    }
+    
     func deleteDuplicate(completion: @escaping (Error?) -> Void){
         Firestore.firestore().collection("addresses")
             .whereField(Collection.Address.userid, isEqualTo: userid)

@@ -10,6 +10,8 @@ import UIKit
 class ProfileBarberViewController: ProfileViewController {
     
     @IBOutlet weak var phoneLabel: UILabel!
+    var address: Address?
+    @IBOutlet weak var barberAddressLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,16 @@ class ProfileBarberViewController: ProfileViewController {
         else {
             phoneLabel.text = "N/A"
         }
+        
+        address = Address.init(profileUser!.id!, "")
+        address?.getAddress(completion: { (found) in
+            if(found){
+                self.barberAddressLabel.text = "\(self.address!.title), \(self.address!.subtitile ?? "")"
+            }
+            else {
+                self.barberAddressLabel.text = "N/A"
+            }
+        })
     }
     
     @IBAction func editProfileClicked(_ sender: Any) {
