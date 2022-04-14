@@ -87,5 +87,20 @@ class Address {
         }
     }
     
+    static func getAllAddress(getAddressesComplete: @escaping ([[String : Any]]?, Error?) -> Void){
+        Firestore.firestore().collection("addresses").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                getAddressesComplete(nil, err)
+            } else {
+                let allAddress = querySnapshot!.documents.map(){ (document) -> [String : Any] in
+                    var address = document.data()
+                    address["id"] = document.documentID
+                    return address
+                }
+                getAddressesComplete(allAddress, nil)
+            }
+        }
+    }
+    
     
 }

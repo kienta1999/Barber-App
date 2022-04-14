@@ -18,6 +18,11 @@ class LocationViewController: HomepageViewController, CLLocationManagerDelegate 
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        Address.getAllAddress { (data, error) in
+            if let data = data {
+                print(data)
+            }
+        }
         
     }
     override func viewDidAppear(_ animated: Bool) {
