@@ -52,6 +52,9 @@ class EditProfileViewController: HomepageViewController, UINavigationControllerD
         if let profilePic = profilePic{
             profilePicture.image = profilePic
         }
+        bioTextView?.layer.borderWidth = 1
+        bioTextView?.layer.borderColor = UIColor.black.cgColor
+        bioTextView?.layer.cornerRadius = bioTextView.frame.height / 10
         
     }
     

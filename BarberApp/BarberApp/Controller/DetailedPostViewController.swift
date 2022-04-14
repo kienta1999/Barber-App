@@ -41,6 +41,9 @@ class DetailedPostViewController: UIViewController {
         imageView?.image = image
         captionTextView?.text = post!["caption"] as? String
         captionTextView?.isEditable = false
+        commentTextView?.layer.borderWidth = 1
+        commentTextView?.layer.borderColor = UIColor.black.cgColor
+        commentTextView?.layer.cornerRadius = captionTextView.frame.height / 10
         
         if let firstname = postOwner["firstname"], let lastname =  postOwner["lastname"]{
             nameBtn?.setTitle("\(firstname as! String) \(lastname as! String)", for: .normal)
