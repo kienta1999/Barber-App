@@ -18,9 +18,11 @@ class ProfileBarberViewController: ProfileViewController {
     }
     
     @IBAction func editProfileClicked(_ sender: Any) {
-        let editProfileVC = self.storyboard?.instantiateViewController(identifier: StoryBoard.Barber.editProfileBarberVC) as! EditProfileBarberViewController
-        editProfileVC.user = profileUser
-        editProfileVC.profilePic = profilePictureView?.image
-        navigationController?.pushViewController(editProfileVC, animated: true)
+        if(user!.id == profileUser!.id){
+            let editProfileVC = self.storyboard?.instantiateViewController(identifier: StoryBoard.Barber.editProfileBarberVC) as! EditProfileBarberViewController
+            editProfileVC.user = profileUser
+            editProfileVC.profilePic = profilePictureView?.image
+            navigationController?.pushViewController(editProfileVC, animated: true)
+        }
     }
 }

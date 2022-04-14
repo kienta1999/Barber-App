@@ -17,14 +17,14 @@ class DetailedPostViewController: UIViewController {
     // post owner information drawn from database
     var postOwner: [String: Any] = [:] {
         didSet{
-            nameLabel?.text = "\(postOwner["firstname"] as! String) \(postOwner["lastname"] as! String)"
+            nameBtn.setTitle("\(postOwner["firstname"] as! String) \(postOwner["lastname"] as! String)", for: .normal)
         }
     }
     var like: Like?
     var likeCount = 0
     @IBOutlet weak var commentMsgLabel: UILabel!
     
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var nameBtn: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var captionTextView: UITextView!
@@ -43,7 +43,7 @@ class DetailedPostViewController: UIViewController {
         captionTextView?.isEditable = false
         
         if let firstname = postOwner["firstname"], let lastname =  postOwner["lastname"]{
-            nameLabel?.text = "\(firstname as! String) \(lastname as! String)"
+            nameBtn?.setTitle("\(firstname as! String) \(lastname as! String)", for: .normal)
         }
         like = Like.init(currentUser!.id!, post!["id"] as! String)
         like?.checkPost(complete: { (exists) in
@@ -115,4 +115,34 @@ class DetailedPostViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func onProfileSelect(_ sender: Any) {
+        print(postOwner["id"])
+        print(postOwner)
+        let profileUser = User.init(
+            id: postOwner["id"] as? String,
+            firstname: postOwner["firstname"] as? String,
+            lastname: postOwner["lastname"] as? String,
+            email: postOwner["email"] as! String,
+            password: postOwner["password"] as! String,
+            role: postOwner["role"] as? String,
+            age: postOwner["age"] as? Int,
+            gender: postOwner["gender"] as? String,
+            bio: postOwner["bio"] as? String,
+            profilePicPath: postOwner["profilePicPath"] as? String
+        )
+        if(profileUser.role == "Barber"){
+            let profileVc = storyboard?.instantiateViewController(identifier: StoryBoard.Barber.profileVC) as! ProfileBarberViewController
+            profileVc.user = currentUser
+            profileVc.profileUser = profileUser
+            navigationController?.pushViewController(profileVc, animated: true)
+        }
+        else if (profileUser.role == "Client"){
+            let profileVc = storyboard?.instantiateViewController(identifier: StoryBoard.Client.profileVC) as! ProfileClientViewController
+            profileVc.user = currentUser
+            profileVc.profileUser = profileUser
+            navigationController?.pushViewController(profileVc, animated: true)
+        }
+    }
+    
 }

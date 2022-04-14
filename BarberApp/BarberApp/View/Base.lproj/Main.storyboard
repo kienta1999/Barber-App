@@ -454,13 +454,6 @@
                                     <action selector="likeBtnClicked:" destination="5IE-36-H5r" eventType="touchUpInside" id="ZS4-wG-4XH"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kien Ta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHb-Ci-BBE">
-                                <rect key="frame" x="20" y="94" width="108" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10 likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kaO-Xa-dDa">
                                 <rect key="frame" x="72" y="391" width="56" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -515,6 +508,14 @@
                                     <action selector="viewCommentBtnClicked:" destination="5IE-36-H5r" eventType="touchUpInside" id="RqR-mp-Tcb"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CfV-LG-jDO">
+                                <rect key="frame" x="10" y="84" width="118" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Kien Ta"/>
+                                <connections>
+                                    <action selector="onProfileSelect:" destination="5IE-36-H5r" eventType="touchUpInside" id="4oB-07-RdK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9wP-Gj-jb7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -526,12 +527,12 @@
                         <outlet property="imageView" destination="qqr-2M-UUW" id="bbv-f9-OAM"/>
                         <outlet property="likeBtn" destination="vHO-ae-5QM" id="n7a-9H-v7D"/>
                         <outlet property="likeLabel" destination="kaO-Xa-dDa" id="NY6-SN-K6j"/>
-                        <outlet property="nameLabel" destination="rHb-Ci-BBE" id="6PE-hi-0qW"/>
+                        <outlet property="nameBtn" destination="CfV-LG-jDO" id="AsF-uy-WJX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Mv-hr-F0X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5190" y="376"/>
+            <point key="canvasLocation" x="5189.8550724637689" y="375.66964285714283"/>
         </scene>
         <!--Edit Profile Client View Controller-->
         <scene sceneID="Xxt-il-w0D">
