@@ -14,6 +14,9 @@ class ProfileViewController: HomepageViewController {
     @IBOutlet weak var genderLabel: UILabel!
     @IBOutlet weak var bioLabel: UILabel!
     
+    @IBOutlet weak var editProfileBtn: UIButton!
+    
+    
     @IBOutlet weak var profilePictureView: UIImageView!
     
     var profileUser: User?
@@ -24,6 +27,9 @@ class ProfileViewController: HomepageViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if(user?.id != profileUser?.id){
+            editProfileBtn.isHidden = true
+        }
         if let profilePicPath = profileUser?.profilePicPath {
             Post.getUrl(profilePicPath) { (url, err) in
                 if let url = url {

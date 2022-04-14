@@ -312,6 +312,7 @@
                     <connections>
                         <outlet property="ageLabel" destination="FDb-cl-zaN" id="jya-A8-E3n"/>
                         <outlet property="bioLabel" destination="bdU-eb-2Ry" id="bca-ia-4Jm"/>
+                        <outlet property="editProfileBtn" destination="cjn-Hk-IDX" id="jei-b3-hCv"/>
                         <outlet property="genderLabel" destination="yHq-2H-cUk" id="Mhj-Rj-10f"/>
                         <outlet property="logoutBtn" destination="2MR-zI-cvg" id="K0M-Rp-71l"/>
                         <outlet property="nameLabel" destination="kh4-g8-sg0" id="8zx-0g-8Tl"/>
@@ -881,6 +882,7 @@
                     <connections>
                         <outlet property="ageLabel" destination="qxe-fi-n36" id="q6F-Qs-BMV"/>
                         <outlet property="bioLabel" destination="0b3-B9-cLp" id="d3D-xy-AU9"/>
+                        <outlet property="editProfileBtn" destination="Wvc-QX-e4B" id="djF-bC-316"/>
                         <outlet property="genderLabel" destination="f7z-VD-qsX" id="m91-Fa-6Ho"/>
                         <outlet property="logoutBtn" destination="oEj-KU-Q1W" id="tMV-lm-emV"/>
                         <outlet property="nameLabel" destination="V4a-Wi-Rr5" id="v4N-fK-6cn"/>
