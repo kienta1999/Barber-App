@@ -18,13 +18,29 @@ class LocationViewController: HomepageViewController, CLLocationManagerDelegate 
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        Address.getAllAddress { (data, error) in
-            if let data = data {
-                print(data)
-            }
-        }
-        
+
+//        Address.getAllAddress { (data, error) in
+//            if let data = data {
+//                print(data)
+//            }
+//            for address in data!{
+//                let addressTitle = String(describing: address["title"])
+//                var addressLat = address["lat"] as! Double
+//                var addressLon = address["lon"] as! Double
+//                var addressSubtitle = String(describing: address["subtitle"])
+//
+//                var addressPin = MKPointAnnotation()
+//                addressPin.coordinate = CLLocationCoordinate2D(latitude: addressLat, longitude: addressLon)
+//                addressPin.title = addressTitle
+//                addressPin.subtitle = addressSubtitle
+//                self.mapView.addAnnotation(addressPin)
+//            }
+//
+//    }
+   
     }
+      
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         manager.desiredAccuracy = kCLLocationAccuracyBest
@@ -39,6 +55,24 @@ class LocationViewController: HomepageViewController, CLLocationManagerDelegate 
             
             render(location)
         }
+        Address.getAllAddress { (data, error) in
+            if let data = data {
+                print(data)
+            }
+            for address in data!{
+                let addressTitle = String(describing: address["title"])
+                let addressLat = address["lat"] as! Double
+                let addressLon = address["lon"] as! Double
+                let addressSubtitle = String(describing: address["subtitle"])
+
+                let addressPin = MKPointAnnotation()
+                addressPin.coordinate = CLLocationCoordinate2D(latitude: addressLat, longitude: addressLon)
+                addressPin.title = addressTitle
+                addressPin.subtitle = addressSubtitle
+                self.mapView.addAnnotation(addressPin)
+            }
+        
+    }
     }
     func render(_ location: CLLocation){
         let coordinate = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
@@ -53,15 +87,15 @@ class LocationViewController: HomepageViewController, CLLocationManagerDelegate 
         currentLocation.coordinate = coordinate
         
         
-        
-        let barber2 = MKPointAnnotation()
-        barber2.coordinate = CLLocationCoordinate2D(latitude: 38.625141, longitude: -90.188766)
         mapView.addAnnotation(currentLocation)
-        
-        mapView.addAnnotation(barber2)
-        addCustomPin()
+
         
         mapView.register(CustomAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
+        
+       
+        }
+        
+        
         func mapViewTransition(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
             performSegue(withIdentifier: "AnnotationToBarber", sender: view)
         }
@@ -88,12 +122,5 @@ class LocationViewController: HomepageViewController, CLLocationManagerDelegate 
 //            destination.annotation = annotationView.annotation as? MKPointAnnotation
 //        }
 //    }
-    private func addCustomPin() {
-        let barber1 = MKPointAnnotation()
-        barber1.coordinate = CLLocationCoordinate2D(latitude: 38.625610, longitude: -90.187347)
-        barber1.title = "Kevin's Barbershop"
-        barber1.subtitle = "Rating: 4.5/5 Price:$ Distance: 6.1 miles"
-        mapView.addAnnotation(barber1)
-        
-    }
-}
+
+
