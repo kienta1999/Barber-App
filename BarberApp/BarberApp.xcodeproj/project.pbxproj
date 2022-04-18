@@ -51,6 +51,7 @@
 		847596E927BF68BC0041614F /* ProfileBarberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847596E827BF68BB0041614F /* ProfileBarberViewController.swift */; };
 		847596EE27BF6E2A0041614F /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847596ED27BF6E2A0041614F /* LocationViewController.swift */; };
 		847596F627BF6EDD0041614F /* ProfileClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847596F527BF6EDD0041614F /* ProfileClientViewController.swift */; };
+		847D4798280E2C4100F8730A /* PostFromBarberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847D4797280E2C4100F8730A /* PostFromBarberViewController.swift */; };
 		848CA5D127B87C70001EFD41 /* ViewAllPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CA5D027B87C70001EFD41 /* ViewAllPostViewController.swift */; };
 		848CA5D627B87CCA001EFD41 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CA5D527B87CCA001EFD41 /* Constant.swift */; };
 		848CA5DB27B87E7B001EFD41 /* HomepageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CA5DA27B87E7B001EFD41 /* HomepageViewController.swift */; };
@@ -106,6 +107,7 @@
 		847596E827BF68BB0041614F /* ProfileBarberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBarberViewController.swift; sourceTree = "<group>"; };
 		847596ED27BF6E2A0041614F /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		847596F527BF6EDD0041614F /* ProfileClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileClientViewController.swift; sourceTree = "<group>"; };
+		847D4797280E2C4100F8730A /* PostFromBarberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostFromBarberViewController.swift; sourceTree = "<group>"; };
 		848CA5D027B87C70001EFD41 /* ViewAllPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAllPostViewController.swift; sourceTree = "<group>"; };
 		848CA5D527B87CCA001EFD41 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		848CA5DA27B87E7B001EFD41 /* HomepageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				847596E327BF67F30041614F /* PostViewController.swift */,
 				847596E827BF68BB0041614F /* ProfileBarberViewController.swift */,
 				84FC1703280503CE00D92693 /* EditProfileBarberViewController.swift */,
+				847D4797280E2C4100F8730A /* PostFromBarberViewController.swift */,
 			);
 			path = BarberController;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				847596F627BF6EDD0041614F /* ProfileClientViewController.swift in Sources */,
 				84051A922807E9D70090229B /* Address.swift in Sources */,
 				84090A1127B7641F00364E09 /* SignupViewController.swift in Sources */,
+				847D4798280E2C4100F8730A /* PostFromBarberViewController.swift in Sources */,
 				840909FD27B762F100364E09 /* User.swift in Sources */,
 				84957A3A27C84F96000BA467 /* Post.swift in Sources */,
 				848CA5DB27B87E7B001EFD41 /* HomepageViewController.swift in Sources */,

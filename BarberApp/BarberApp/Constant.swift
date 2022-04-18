@@ -14,6 +14,7 @@ struct StoryBoard {
         static let postVC = "PostBarberVC"
         static let profileVC = "ProfileBarberVC"
         static let editProfileBarberVC = "editProfileBarberVC"
+        static let postFromBarberVC = "PostFromBarberVC"
     }
     struct Client {
         static let homeVC = "HomepageClientVC"

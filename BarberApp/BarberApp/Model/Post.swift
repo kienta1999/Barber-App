@@ -50,6 +50,21 @@ class Post {
         }
     }
     
+    static func getAllPostFrom(_ userid: String, getPostsComplete: @escaping ([[String : Any]]?, Error?) -> Void){
+        Firestore.firestore().collection("posts").whereField(Collection.Post.userid, isEqualTo: userid).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                getPostsComplete(nil, err)
+            } else {
+                let allPosts = querySnapshot!.documents.map(){ (document) -> [String : Any] in
+                    var post = document.data()
+                    post["id"] = document.documentID
+                    return post
+                }
+                getPostsComplete(allPosts, nil)
+            }
+        }
+    }
+    
     static func getUrl(_ imagePath: String, getUrlComplete: @escaping (URL?, Error?) -> Void){
         let storage = Storage.storage()
         let imagePathReference = storage.reference(withPath: imagePath)

@@ -50,4 +50,11 @@ class ProfileBarberViewController: ProfileViewController {
             navigationController?.pushViewController(editProfileVC, animated: true)
         }
     }
+    @IBAction func onViewPostClicked(_ sender: Any) {
+        let barberPostVC = storyboard?.instantiateViewController(identifier: StoryBoard.Barber.postFromBarberVC) as! PostFromBarberViewController
+        barberPostVC.user = profileUser
+        navigationController?.pushViewController(barberPostVC, animated: true)
+    }
+    
+    
 }

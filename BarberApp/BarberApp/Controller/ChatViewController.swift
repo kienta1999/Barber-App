@@ -11,22 +11,22 @@ import InputBarAccessoryView
 import FirebaseFirestore
 import FirebaseAuth
 
-class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate, MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayDelegate {
-    func currentSender() -> SenderType {
-        <#code#>
-    }
-    
-    func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
-        <#code#>
-    }
-    
-    func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
-        <#code#>
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view
-    }
-}
+//class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate, MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayDelegate {
+//    func currentSender() -> SenderType {
+//        <#code#>
+//    }
+//    
+//    func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
+//        <#code#>
+//    }
+//    
+//    func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
+//        <#code#>
+//    }
+//    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        
+//        // Do any additional setup after loading the view
+//    }
+//}
