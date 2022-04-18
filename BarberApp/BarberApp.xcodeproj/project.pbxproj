@@ -68,6 +68,8 @@
 		84FC16FF2804E0BF00D92693 /* EditProfileClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FC16FE2804E0BF00D92693 /* EditProfileClientViewController.swift */; };
 		84FC1704280503CE00D92693 /* EditProfileBarberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FC1703280503CE00D92693 /* EditProfileBarberViewController.swift */; };
 		84FC17092805090A00D92693 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FC17082805090A00D92693 /* EditProfileViewController.swift */; };
+		A663ED73280D52A800DF13F4 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = A663ED72280D52A800DF13F4 /* MessageKit */; };
+		A663ED75280DB35000DF13F4 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A663ED74280DB35000DF13F4 /* ChatViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +129,7 @@
 		84FC16FE2804E0BF00D92693 /* EditProfileClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileClientViewController.swift; sourceTree = "<group>"; };
 		84FC1703280503CE00D92693 /* EditProfileBarberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileBarberViewController.swift; sourceTree = "<group>"; };
 		84FC17082805090A00D92693 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		A663ED74280DB35000DF13F4 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +154,7 @@
 				7809B59F27B6138A002C8484 /* FirebaseInAppMessaging-Beta in Frameworks */,
 				7809B58B27B6138A002C8484 /* FirebaseCrashlytics in Frameworks */,
 				7809B58D27B6138A002C8484 /* FirebaseDatabase in Frameworks */,
+				A663ED73280D52A800DF13F4 /* MessageKit in Frameworks */,
 				7809B5B127B6138A002C8484 /* FirebaseStorageCombine-Community in Frameworks */,
 				7809B5AB27B6138A002C8484 /* FirebaseRemoteConfig in Frameworks */,
 				7809B59D27B6138A002C8484 /* FirebaseFunctionsSwift-Beta in Frameworks */,
@@ -203,6 +207,7 @@
 				848CA5D027B87C70001EFD41 /* ViewAllPostViewController.swift */,
 				84C4D6D027FC00360039D50A /* DetailedPostViewController.swift */,
 				845E70CE28022B9B0021AD03 /* CommentViewController.swift */,
+				A663ED74280DB35000DF13F4 /* ChatViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -352,6 +357,7 @@
 				7809B5AE27B6138A002C8484 /* FirebaseStorage */,
 				7809B5B027B6138A002C8484 /* FirebaseStorageCombine-Community */,
 				7809B5B227B6138A002C8484 /* FirebaseStorageSwift-Beta */,
+				A663ED72280D52A800DF13F4 /* MessageKit */,
 			);
 			productName = BarberApp;
 			productReference = 84E483F327B1F85000F22445 /* BarberApp.app */;
@@ -426,6 +432,7 @@
 			mainGroup = 84E483EA27B1F85000F22445;
 			packageReferences = (
 				7809B57B27B6138A002C8484 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				A663ED71280D52A700DF13F4 /* XCRemoteSwiftPackageReference "MessageKit" */,
 			);
 			productRefGroup = 84E483F427B1F85000F22445 /* Products */;
 			projectDirPath = "";
@@ -497,6 +504,7 @@
 				84090A0C27B7641300364E09 /* LoginViewController.swift in Sources */,
 				84561F3127E96E2F008CEAD9 /* PostView.swift in Sources */,
 				84FC17092805090A00D92693 /* EditProfileViewController.swift in Sources */,
+				A663ED75280DB35000DF13F4 /* ChatViewController.swift in Sources */,
 				84E483F927B1F85000F22445 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -834,6 +842,14 @@
 				minimumVersion = 8.0.0;
 			};
 		};
+		A663ED71280D52A700DF13F4 /* XCRemoteSwiftPackageReference "MessageKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MessageKit/MessageKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -976,6 +992,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7809B57B27B6138A002C8484 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageSwift-Beta";
+		};
+		A663ED72280D52A800DF13F4 /* MessageKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A663ED71280D52A700DF13F4 /* XCRemoteSwiftPackageReference "MessageKit" */;
+			productName = MessageKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
