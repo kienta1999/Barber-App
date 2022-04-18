@@ -60,10 +60,10 @@ class LocationViewController: HomepageViewController, CLLocationManagerDelegate 
                 print(data)
             }
             for address in data!{
-                let addressTitle = String(describing: address["title"])
+                let addressTitle = String(describing: address["title"]!)
                 let addressLat = address["lat"] as! Double
                 let addressLon = address["lon"] as! Double
-                let addressSubtitle = String(describing: address["subtitle"])
+                let addressSubtitle = String(describing: address["subtitile"]!)
 
                 let addressPin = MKPointAnnotation()
                 addressPin.coordinate = CLLocationCoordinate2D(latitude: addressLat, longitude: addressLon)
@@ -85,6 +85,7 @@ class LocationViewController: HomepageViewController, CLLocationManagerDelegate 
         let currentLocation = MKPointAnnotation()
 
         currentLocation.coordinate = coordinate
+        currentLocation.title = "My Location"
         
         
         mapView.addAnnotation(currentLocation)
