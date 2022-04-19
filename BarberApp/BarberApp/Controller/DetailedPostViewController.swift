@@ -12,12 +12,23 @@ class DetailedPostViewController: UIViewController {
     // post information drawn from database
     var post: [String: Any]?
     var image: UIImage?
+    @IBOutlet weak var profileImage: UIImageView!
     // The user currently log in
     var currentUser: User?
     // post owner information drawn from database
     var postOwner: [String: Any] = [:] {
         didSet{
             nameBtn.setTitle("\(postOwner["firstname"] as! String) \(postOwner["lastname"] as! String)", for: .normal)
+            if let profilePicPath = postOwner["profilePicPath"] as? String {
+                Post.getUrl(profilePicPath) { (url, err) in
+                    if let url = url {
+                        if let data = try? Data(contentsOf: url) {
+                            self.profileImage?.image = UIImage(data: data)
+                        }
+                    }
+                }
+            }
+            
         }
     }
     var like: Like?
