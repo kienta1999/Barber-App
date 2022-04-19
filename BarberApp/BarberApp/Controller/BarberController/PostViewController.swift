@@ -83,10 +83,33 @@ class PostViewController: HomepageViewController, UINavigationControllerDelegate
               }
                 print("Metadata: \(metadata)")
                 let newPost = Post.init(userid, userImageRef.fullPath, self.captionTextView.text)
-                newPost.saveToDatabase()
-                self.uploadNotification("Upload Successful", "Your image is posted successfully", "Ok", true)
-                self.spinner.stopAnimating()
-                self.spinner.isHidden = true
+                newPost.saveToDatabase() { id in
+                    if let id = id {
+                        let newPostDict: [String: Any] = [
+                            Collection.Post.userid: userid,
+                            Collection.Post.caption: self.captionTextView.text,
+                            Collection.Post.path: userImageRef.fullPath,
+                            "id": id
+                        ]
+                        let tabVC = self.navigationController?.topViewController as! UITabBarController
+                        tabVC.viewControllers?.forEach({ (vc) in
+                            if vc is ViewAllPostViewController {
+                                let viewAllVc = (vc as! ViewAllPostViewController)
+                                viewAllVc.allPost.append(newPostDict)
+                                let imageView = self.imageView.image;
+                                let size = CGSize.init(width: 200.0, height: (imageView?.size.height)! / (imageView?.size.width)! * 200.0)
+                                viewAllVc.cachedImages.append(HomepageViewController.resizeImage(imageView!, size))
+                                viewAllVc.postTableView.reloadData()
+                                self.uploadNotification("Upload Successful", "Your image is posted successfully", "Ok", true)
+                                self.spinner.stopAnimating()
+                                self.spinner.isHidden = true
+                            }
+                        })
+                        
+                    }
+                }
+                
+                
             }
         } else {
             uploadNotification("Upload Failed", "Please select an image", "Dismiss", false)

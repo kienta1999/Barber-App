@@ -21,15 +21,18 @@ class Post {
         self.caption = caption
     }
     
-    func saveToDatabase(){
-        db.collection("posts").document().setData([
+    func saveToDatabase(savePostsComplete: @escaping (String?) -> Void){
+        let postRef = db.collection("posts").document()
+        postRef.setData([
             Post.postConstant.userid: self.userid,
             Post.postConstant.path: self.path,
             Post.postConstant.caption: self.caption as Any
         ]) { err in
             if let err = err {
                 print("Error writing document: \(err)")
+                savePostsComplete(nil)
             } else {
+                savePostsComplete(postRef.documentID)
                 print("Document successfully written!")
             }
         }
