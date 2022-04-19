@@ -11,6 +11,10 @@ import InputBarAccessoryView
 import FirebaseFirestore
 import FirebaseAuth
 
+class ChatViewController: MessagesViewController {
+    
+}
+
 //class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate, MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayDelegate {
 //    func currentSender() -> SenderType {
 //        <#code#>

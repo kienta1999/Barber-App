@@ -29,10 +29,10 @@ class ProfileViewController: HomepageViewController {
         if(!editAllow){
             editProfileBtn.isHidden = true
         }
-        if(user?.id == profileUser?.id){
-            // user cannot message themselves
-            messageBtn.isHidden = true
-        }
+//        if(user?.id == profileUser?.id){
+//            // user cannot message themselves (edited: for viewing their own profile, the message button will redirect to chatoverviewpage)
+//            messageBtn.isHidden = true
+//        }
         if let profilePicPath = profileUser?.profilePicPath {
             Post.getUrl(profilePicPath) { (url, err) in
                 if let url = url {
@@ -58,6 +58,9 @@ class ProfileViewController: HomepageViewController {
         print("Messaging....")
         print("user1: \(user?.id)")
         print("user2: \(profileUser?.id)")
+        print(StoryBoard.chatOverviewVC)
+        let chatVC = storyboard?.instantiateViewController(identifier: StoryBoard.chatOverviewVC) as! ChatViewController
+        navigationController?.pushViewController(chatVC, animated: true)
     }
     
     
