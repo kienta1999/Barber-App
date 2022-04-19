@@ -59,8 +59,13 @@ class ProfileViewController: HomepageViewController {
         print("user1: \(user?.id)")
         print("user2: \(profileUser?.id)")
         print(StoryBoard.chatOverviewVC)
-        let chatVC = storyboard?.instantiateViewController(identifier: StoryBoard.chatOverviewVC) as! ChatViewController
-        navigationController?.pushViewController(chatVC, animated: true)
+        if (user?.id == profileUser?.id){
+            print("will be further implemented later")
+        }
+        else {
+            let chatVC = storyboard?.instantiateViewController(identifier: StoryBoard.chatOverviewVC) as! ChatViewController
+            navigationController?.pushViewController(chatVC, animated: true)
+        }
     }
     
     
