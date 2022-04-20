@@ -69,6 +69,9 @@
 		84FC16FF2804E0BF00D92693 /* EditProfileClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FC16FE2804E0BF00D92693 /* EditProfileClientViewController.swift */; };
 		84FC1704280503CE00D92693 /* EditProfileBarberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FC1703280503CE00D92693 /* EditProfileBarberViewController.swift */; };
 		84FC17092805090A00D92693 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FC17082805090A00D92693 /* EditProfileViewController.swift */; };
+		A60025EC280F89120061EAC9 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60025EB280F89120061EAC9 /* Message.swift */; };
+		A60025EE280F894B0061EAC9 /* ImageMediaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60025ED280F894B0061EAC9 /* ImageMediaItem.swift */; };
+		A60025F0280F899B0061EAC9 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60025EF280F899B0061EAC9 /* Room.swift */; };
 		A663ED73280D52A800DF13F4 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = A663ED72280D52A800DF13F4 /* MessageKit */; };
 		A663ED75280DB35000DF13F4 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A663ED74280DB35000DF13F4 /* ChatViewController.swift */; };
 /* End PBXBuildFile section */
@@ -131,6 +134,9 @@
 		84FC16FE2804E0BF00D92693 /* EditProfileClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileClientViewController.swift; sourceTree = "<group>"; };
 		84FC1703280503CE00D92693 /* EditProfileBarberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileBarberViewController.swift; sourceTree = "<group>"; };
 		84FC17082805090A00D92693 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		A60025EB280F89120061EAC9 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		A60025ED280F894B0061EAC9 /* ImageMediaItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMediaItem.swift; sourceTree = "<group>"; };
+		A60025EF280F899B0061EAC9 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		A663ED74280DB35000DF13F4 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -223,6 +229,9 @@
 				84C4D6D827FC0F260039D50A /* Like.swift */,
 				842638AC280020D6003C3113 /* Comment.swift */,
 				84051A912807E9D70090229B /* Address.swift */,
+				A60025EB280F89120061EAC9 /* Message.swift */,
+				A60025ED280F894B0061EAC9 /* ImageMediaItem.swift */,
+				A60025EF280F899B0061EAC9 /* Room.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -486,9 +495,11 @@
 				847596F627BF6EDD0041614F /* ProfileClientViewController.swift in Sources */,
 				84051A922807E9D70090229B /* Address.swift in Sources */,
 				84090A1127B7641F00364E09 /* SignupViewController.swift in Sources */,
+				A60025EC280F89120061EAC9 /* Message.swift in Sources */,
 				847D4798280E2C4100F8730A /* PostFromBarberViewController.swift in Sources */,
 				840909FD27B762F100364E09 /* User.swift in Sources */,
 				84957A3A27C84F96000BA467 /* Post.swift in Sources */,
+				A60025F0280F899B0061EAC9 /* Room.swift in Sources */,
 				848CA5DB27B87E7B001EFD41 /* HomepageViewController.swift in Sources */,
 				84FC16FA2804D97C00D92693 /* ProfileViewController.swift in Sources */,
 				847596E427BF67F30041614F /* PostViewController.swift in Sources */,
@@ -506,6 +517,7 @@
 				848CA5D627B87CCA001EFD41 /* Constant.swift in Sources */,
 				84FC1704280503CE00D92693 /* EditProfileBarberViewController.swift in Sources */,
 				84090A0C27B7641300364E09 /* LoginViewController.swift in Sources */,
+				A60025EE280F894B0061EAC9 /* ImageMediaItem.swift in Sources */,
 				84561F3127E96E2F008CEAD9 /* PostView.swift in Sources */,
 				84FC17092805090A00D92693 /* EditProfileViewController.swift in Sources */,
 				A663ED75280DB35000DF13F4 /* ChatViewController.swift in Sources */,
