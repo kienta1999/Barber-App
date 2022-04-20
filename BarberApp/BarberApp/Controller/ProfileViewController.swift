@@ -63,7 +63,7 @@ class ProfileViewController: HomepageViewController {
             print("will be further implemented later")
         }
         else {
-            let chatVC = storyboard?.instantiateViewController(identifier: StoryBoard.chatOverviewVC) as! ChatViewController
+            let chatVC = ChatViewController(user: user!, room: Room(id:profileUser?.id, name:"Test"))
             navigationController?.pushViewController(chatVC, animated: true)
         }
     }
