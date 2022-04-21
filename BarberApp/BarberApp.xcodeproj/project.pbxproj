@@ -75,6 +75,7 @@
 		A663ED73280D52A800DF13F4 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = A663ED72280D52A800DF13F4 /* MessageKit */; };
 		A663ED75280DB35000DF13F4 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A663ED74280DB35000DF13F4 /* ChatViewController.swift */; };
 		A6B32CED2810DF910022E975 /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B32CEC2810DF910022E975 /* Sender.swift */; };
+		A6B32CEF2810F1500022E975 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B32CEE2810F1500022E975 /* RoomViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,7 @@
 		A60025EF280F899B0061EAC9 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		A663ED74280DB35000DF13F4 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		A6B32CEC2810DF910022E975 /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
+		A6B32CEE2810F1500022E975 /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +220,7 @@
 				84C4D6D027FC00360039D50A /* DetailedPostViewController.swift */,
 				845E70CE28022B9B0021AD03 /* CommentViewController.swift */,
 				A663ED74280DB35000DF13F4 /* ChatViewController.swift */,
+				A6B32CEE2810F1500022E975 /* RoomViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				84090A1127B7641F00364E09 /* SignupViewController.swift in Sources */,
 				A60025EC280F89120061EAC9 /* Message.swift in Sources */,
 				847D4798280E2C4100F8730A /* PostFromBarberViewController.swift in Sources */,
+				A6B32CEF2810F1500022E975 /* RoomViewController.swift in Sources */,
 				840909FD27B762F100364E09 /* User.swift in Sources */,
 				84957A3A27C84F96000BA467 /* Post.swift in Sources */,
 				A6B32CED2810DF910022E975 /* Sender.swift in Sources */,

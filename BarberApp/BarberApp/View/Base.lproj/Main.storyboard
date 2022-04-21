@@ -256,6 +256,9 @@
                             <constraint firstItem="zgt-2d-xVS" firstAttribute="trailing" secondItem="oNe-kP-pzK" secondAttribute="trailing" constant="20" id="y08-Gq-y2Q"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="roomTable" destination="oNe-kP-pzK" id="Lao-OQ-DCX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L4Z-Ay-sAl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
