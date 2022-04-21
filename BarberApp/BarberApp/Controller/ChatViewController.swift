@@ -15,9 +15,12 @@ import FirebaseAuth
 class ChatViewController: MessagesViewController, MessagesDataSource {
     
     private let user: User
+    let chatFirestoreHelper = ChatFirestoreHelper()
     let room: Room
     var sender = Sender(senderId: "any_unique_id", displayName: "jake")
     var messages = [Message]()
+    private let database = Firestore.firestore()
+    private var reference: CollectionReference?
     
     init(user: User, room: Room) {
             self.user = user
@@ -31,6 +34,10 @@ class ChatViewController: MessagesViewController, MessagesDataSource {
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        chatFirestoreHelper.removeListener()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         messagesCollectionView.messagesDataSource = self
@@ -38,13 +45,62 @@ class ChatViewController: MessagesViewController, MessagesDataSource {
         messagesCollectionView.messagesDisplayDelegate = self
         
         messageInputBar.delegate = self
+        
+        removeMessageAvatars()
+        listenToMessages()
+    }
+    
+    private func listenToMessages() {
+      guard let id = room.id else {
+        //navigationController?.popViewController(animated: true)
+        return
+      }
+
+      //reference = database.collection("rooms/\(id)/thread")
+        
+        chatFirestoreHelper.subscribe(id: id) { [weak self] result in
+            switch result {
+            case .success(let messages):
+                self?.loadImageAndUpdateCells(messages)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    private func loadImageAndUpdateCells(_ messages: [Message]) {
+        messages.forEach { message in
+            let message = message
+//            if let url = message.downloadURL {
+//                FirebaseStorageManager.downloadImage(url: url) { [weak self] image in
+//                    guard let image = image else { return }
+//                    message.image = image
+//                    self?.insertNewMessage(message)
+//                }
+//            } else {
+//                insertNewMessage(message)
+//            }
+            insertNewMessage(message)
+        }
     }
     
     private func insertNewMessage(_ message: Message) {
+        if messages.contains(message) {
+            return
+          }
         messages.append(message)
         messages.sort()
         
-        messagesCollectionView.reloadData()
+//        let isLatestMessage = messages.firstIndex(of: message) == (messages.count - 1)
+//          let shouldScrollToBottom =
+//            messagesCollectionView.isAtBottom && isLatestMessage
+
+          messagesCollectionView.reloadData()
+
+//          if shouldScrollToBottom {
+//            messagesCollectionView.scrollToLastItem(animated: true)
+//          }
+        
     }
     
     func currentSender() -> SenderType {
@@ -59,6 +115,26 @@ class ChatViewController: MessagesViewController, MessagesDataSource {
         return messages.count
     }
     
+    private func removeMessageAvatars() {
+      guard
+        let layout = messagesCollectionView.collectionViewLayout
+          as? MessagesCollectionViewFlowLayout
+      else {
+        return
+      }
+      layout.textMessageSizeCalculator.outgoingAvatarSize = .zero
+      layout.textMessageSizeCalculator.incomingAvatarSize = .zero
+      layout.setMessageIncomingAvatarSize(.zero)
+      layout.setMessageOutgoingAvatarSize(.zero)
+      let incomingLabelAlignment = LabelAlignment(
+        textAlignment: .left,
+        textInsets: UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0))
+      layout.setMessageIncomingMessageTopLabelAlignment(incomingLabelAlignment)
+      let outgoingLabelAlignment = LabelAlignment(
+        textAlignment: .right,
+        textInsets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 15))
+      layout.setMessageOutgoingMessageTopLabelAlignment(outgoingLabelAlignment)
+    }
 }
 
 extension ChatViewController: MessagesLayoutDelegate {
@@ -88,9 +164,15 @@ extension ChatViewController: MessagesDisplayDelegate {
 
 extension ChatViewController: InputBarAccessoryViewDelegate {
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
-        let message = Message(content: text)
+        let message = Message(user: user, content: text)
         
-        insertNewMessage(message)
+        chatFirestoreHelper.save(message) { [weak self] error in
+            if let error = error {
+                print(error)
+                return
+            }
+            self?.messagesCollectionView.scrollToLastItem()
+        }
         inputBar.inputTextView.text.removeAll()
     }
 }

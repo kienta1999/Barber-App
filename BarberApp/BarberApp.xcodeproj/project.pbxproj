@@ -76,6 +76,10 @@
 		A663ED75280DB35000DF13F4 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A663ED74280DB35000DF13F4 /* ChatViewController.swift */; };
 		A6B32CED2810DF910022E975 /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B32CEC2810DF910022E975 /* Sender.swift */; };
 		A6B32CEF2810F1500022E975 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B32CEE2810F1500022E975 /* RoomViewController.swift */; };
+		A6B32CF1281149C90022E975 /* DatabaseRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B32CF0281149C90022E975 /* DatabaseRepresentation.swift */; };
+		A6B32CF32811BC080022E975 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B32CF22811BC080022E975 /* UserDefaultManager.swift */; };
+		A6B32CF52811DD9A0022E975 /* ChatFireStoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B32CF42811DD990022E975 /* ChatFireStoreHelper.swift */; };
+		A6B32CF72811DEB20022E975 /* StreamError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B32CF62811DEB20022E975 /* StreamError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +146,10 @@
 		A663ED74280DB35000DF13F4 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		A6B32CEC2810DF910022E975 /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
 		A6B32CEE2810F1500022E975 /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
+		A6B32CF0281149C90022E975 /* DatabaseRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRepresentation.swift; sourceTree = "<group>"; };
+		A6B32CF22811BC080022E975 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
+		A6B32CF42811DD990022E975 /* ChatFireStoreHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatFireStoreHelper.swift; sourceTree = "<group>"; };
+		A6B32CF62811DEB20022E975 /* StreamError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +246,9 @@
 				A60025ED280F894B0061EAC9 /* ImageMediaItem.swift */,
 				A60025EF280F899B0061EAC9 /* Room.swift */,
 				A6B32CEC2810DF910022E975 /* Sender.swift */,
+				A6B32CF0281149C90022E975 /* DatabaseRepresentation.swift */,
+				A6B32CF42811DD990022E975 /* ChatFireStoreHelper.swift */,
+				A6B32CF62811DEB20022E975 /* StreamError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -308,6 +319,7 @@
 				84E4840127B1F85100F22445 /* LaunchScreen.storyboard */,
 				84E4840427B1F85100F22445 /* Info.plist */,
 				7809B57927B60ECE002C8484 /* GoogleService-Info.plist */,
+				A6B32CF22811BC080022E975 /* UserDefaultManager.swift */,
 			);
 			path = BarberApp;
 			sourceTree = "<group>";
@@ -500,12 +512,15 @@
 				847596EE27BF6E2A0041614F /* LocationViewController.swift in Sources */,
 				847596F627BF6EDD0041614F /* ProfileClientViewController.swift in Sources */,
 				84051A922807E9D70090229B /* Address.swift in Sources */,
+				A6B32CF52811DD9A0022E975 /* ChatFireStoreHelper.swift in Sources */,
 				84090A1127B7641F00364E09 /* SignupViewController.swift in Sources */,
+				A6B32CF72811DEB20022E975 /* StreamError.swift in Sources */,
 				A60025EC280F89120061EAC9 /* Message.swift in Sources */,
 				847D4798280E2C4100F8730A /* PostFromBarberViewController.swift in Sources */,
 				A6B32CEF2810F1500022E975 /* RoomViewController.swift in Sources */,
 				840909FD27B762F100364E09 /* User.swift in Sources */,
 				84957A3A27C84F96000BA467 /* Post.swift in Sources */,
+				A6B32CF1281149C90022E975 /* DatabaseRepresentation.swift in Sources */,
 				A6B32CED2810DF910022E975 /* Sender.swift in Sources */,
 				A60025F0280F899B0061EAC9 /* Room.swift in Sources */,
 				848CA5DB27B87E7B001EFD41 /* HomepageViewController.swift in Sources */,
@@ -530,6 +545,7 @@
 				84FC17092805090A00D92693 /* EditProfileViewController.swift in Sources */,
 				A663ED75280DB35000DF13F4 /* ChatViewController.swift in Sources */,
 				84E483F927B1F85000F22445 /* SceneDelegate.swift in Sources */,
+				A6B32CF32811BC080022E975 /* UserDefaultManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
