@@ -224,29 +224,35 @@
             </objects>
             <point key="canvasLocation" x="4497.1014492753629" y="-405.13392857142856"/>
         </scene>
+        <!--Room View Controller-->
+        <scene sceneID="NXv-iw-yvH">
+            <objects>
+                <viewController storyboardIdentifier="RoomOverviewVC" id="T7l-9q-Lxe" customClass="RoomViewController" customModule="BarberApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7MB-BJ-wWy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="zgt-2d-xVS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L4Z-Ay-sAl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5448" y="-405"/>
+        </scene>
         <!--Chat View Controller-->
         <scene sceneID="dtG-Pg-ma7">
             <objects>
-                <viewController storyboardIdentifier="ChatOverviewVC" id="Dd7-p7-jWh" customClass="ChatViewController" customModule="BarberApp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChatOverviewVC" id="Dd7-p7-jWh" customClass="ChatViewController" customModule="BarberApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="23I-Um-rht">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTk-MF-y4f">
-                                <rect key="frame" x="128" y="438" width="33" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ODM-g8-xo0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MCR-ZE-cO6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5331.884057971015" y="-405.13392857142856"/>
+            <point key="canvasLocation" x="6361" y="-405"/>
         </scene>
         <!--Post From Barber View Controller-->
         <scene sceneID="EA2-rq-gbN">

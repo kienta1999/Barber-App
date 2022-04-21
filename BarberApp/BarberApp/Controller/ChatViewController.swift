@@ -31,7 +31,8 @@ class ChatViewController: MessagesViewController, MessagesDataSource {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func confirmDelegates() {
+    override func viewDidLoad() {
+        super.viewDidLoad()
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self

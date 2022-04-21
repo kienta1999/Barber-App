@@ -74,6 +74,7 @@
 		A60025F0280F899B0061EAC9 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60025EF280F899B0061EAC9 /* Room.swift */; };
 		A663ED73280D52A800DF13F4 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = A663ED72280D52A800DF13F4 /* MessageKit */; };
 		A663ED75280DB35000DF13F4 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A663ED74280DB35000DF13F4 /* ChatViewController.swift */; };
+		A6B32CED2810DF910022E975 /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B32CEC2810DF910022E975 /* Sender.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +139,7 @@
 		A60025ED280F894B0061EAC9 /* ImageMediaItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMediaItem.swift; sourceTree = "<group>"; };
 		A60025EF280F899B0061EAC9 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		A663ED74280DB35000DF13F4 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		A6B32CEC2810DF910022E975 /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +234,7 @@
 				A60025EB280F89120061EAC9 /* Message.swift */,
 				A60025ED280F894B0061EAC9 /* ImageMediaItem.swift */,
 				A60025EF280F899B0061EAC9 /* Room.swift */,
+				A6B32CEC2810DF910022E975 /* Sender.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				847D4798280E2C4100F8730A /* PostFromBarberViewController.swift in Sources */,
 				840909FD27B762F100364E09 /* User.swift in Sources */,
 				84957A3A27C84F96000BA467 /* Post.swift in Sources */,
+				A6B32CED2810DF910022E975 /* Sender.swift in Sources */,
 				A60025F0280F899B0061EAC9 /* Room.swift in Sources */,
 				848CA5DB27B87E7B001EFD41 /* HomepageViewController.swift in Sources */,
 				84FC16FA2804D97C00D92693 /* ProfileViewController.swift in Sources */,
