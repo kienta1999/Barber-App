@@ -231,8 +231,30 @@
                     <view key="view" contentMode="scaleToFill" id="7MB-BJ-wWy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oNe-kP-pzK">
+                                <rect key="frame" x="20" y="132" width="374" height="710"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rooms" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXT-Um-lie">
+                                <rect key="frame" x="20" y="88" width="90" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="zgt-2d-xVS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CXT-Um-lie" firstAttribute="leading" secondItem="zgt-2d-xVS" secondAttribute="leading" constant="20" id="683-Lq-6OG"/>
+                            <constraint firstItem="oNe-kP-pzK" firstAttribute="leading" secondItem="zgt-2d-xVS" secondAttribute="leading" constant="20" id="Bm9-jG-WcQ"/>
+                            <constraint firstItem="oNe-kP-pzK" firstAttribute="leading" secondItem="zgt-2d-xVS" secondAttribute="leading" constant="20" id="aFP-5F-UaY"/>
+                            <constraint firstItem="oNe-kP-pzK" firstAttribute="top" secondItem="CXT-Um-lie" secondAttribute="bottom" constant="8" symbolic="YES" id="cQx-WX-coo"/>
+                            <constraint firstItem="zgt-2d-xVS" firstAttribute="trailing" secondItem="oNe-kP-pzK" secondAttribute="trailing" constant="20" id="kVD-LW-EdT"/>
+                            <constraint firstItem="zgt-2d-xVS" firstAttribute="bottom" secondItem="oNe-kP-pzK" secondAttribute="bottom" constant="20" id="loT-qf-v6M"/>
+                            <constraint firstItem="CXT-Um-lie" firstAttribute="top" secondItem="zgt-2d-xVS" secondAttribute="top" constant="44" id="nue-Tf-dcM"/>
+                            <constraint firstItem="zgt-2d-xVS" firstAttribute="trailing" secondItem="oNe-kP-pzK" secondAttribute="trailing" constant="20" id="y08-Gq-y2Q"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L4Z-Ay-sAl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
