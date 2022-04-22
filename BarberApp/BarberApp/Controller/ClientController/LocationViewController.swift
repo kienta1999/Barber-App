@@ -9,6 +9,8 @@ import MapKit
 import Firebase
 import UIKit
 
+var instant:  LocationViewController?
+
 class LocationViewController: HomepageViewController, CLLocationManagerDelegate {
 
     @IBOutlet var mapView: MKMapView!
@@ -17,6 +19,7 @@ class LocationViewController: HomepageViewController, CLLocationManagerDelegate 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         mapView.register(CustomAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
 
    
@@ -25,6 +28,7 @@ class LocationViewController: HomepageViewController, CLLocationManagerDelegate 
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        instant = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.delegate = self
         manager.requestWhenInUseAuthorization()
@@ -116,34 +120,39 @@ class LocationViewController: HomepageViewController, CLLocationManagerDelegate 
                     }
                     if querySnapshot!.documents.count >= 1 {
                         var barberProfileId = querySnapshot!.documents[0].data()["userid"]
+                        User.getUser(barberProfileId as! String) { (barberProfile) in
+                            if let barberProfile = barberProfile{
+                                let profileUser = User.init(
+                                            id: barberProfile["id"] as? String,
+                                            firstname: barberProfile["firstname"] as? String,
+                                            lastname: barberProfile["lastname"] as? String,
+                                            email: barberProfile["email"] as! String,
+                                            password: barberProfile["password"] as! String,
+                                            role: barberProfile["role"] as? String,
+                                            age: barberProfile["age"] as? Int,
+                                            gender: barberProfile["gender"] as? String,
+                                            bio: barberProfile["bio"] as? String,
+                                            profilePicPath: barberProfile["profilePicPath"] as? String,
+                                            phoneNumber: barberProfile["phoneNumber"] as? Int
+                                        )
+                                        if(profileUser.role == "Barber"){
+                                            let profileVc = instant?.storyboard?.instantiateViewController(identifier: StoryBoard.Barber.profileVC) as! ProfileBarberViewController
+                                            profileVc.user = instant?.user
+                                            profileVc.profileUser = profileUser
+                                            profileVc.editAllow = false
+                                            instant?.navigationController?.pushViewController(profileVc, animated: true)
+                                        }
+                                        else if (profileUser.role == "Client"){
+                                            let profileVc = instant?.storyboard?.instantiateViewController(identifier: StoryBoard.Client.profileVC) as! ProfileClientViewController
+                                            profileVc.user = instant?.user
+                                            profileVc.profileUser = profileUser
+                                            profileVc.editAllow = false
+                                            instant?.navigationController?.pushViewController(profileVc, animated: true)
+                                        }
+                            }
+                        }
                   
-//                        let profileUser = User.init(
-//                                    id: barberProfile["id"] as? String,
-//                                    firstname: barberProfile["firstname"] as? String,
-//                                    lastname: barberProfile["lastname"] as? String,
-//                                    email: barberProfile["email"] as! String,
-//                                    password: barberProfile["password"] as! String,
-//                                    role: barberProfile["role"] as? String,
-//                                    age: barberProfile["age"] as? Int,
-//                                    gender: barberProfile["gender"] as? String,
-//                                    bio: barberProfile["bio"] as? String,
-//                                    profilePicPath: barberProfile["profilePicPath"] as? String,
-//                                    phoneNumber: barberProfile["phoneNumber"] as? Int
-//                                )
-//                                if(profileUser.role == "Barber"){
-//                                    let profileVc = storyboard?.instantiateViewController(identifier: StoryBoard.Barber.profileVC) as! ProfileBarberViewController
-//                                    profileVc.user = currentUser
-//                                    profileVc.profileUser = profileUser
-//                                    profileVc.editAllow = false
-//                                    navigationController?.pushViewController(profileVc, animated: true)
-//                                }
-//                                else if (profileUser.role == "Client"){
-//                                    let profileVc = storyboard?.instantiateViewController(identifier: StoryBoard.Client.profileVC) as! ProfileClientViewController
-//                                    profileVc.user = currentUser
-//                                    profileVc.profileUser = profileUser
-//                                    profileVc.editAllow = false
-//                                    navigationController?.pushViewController(profileVc, animated: true)
-//                                }
+
                         print(querySnapshot!.documents[0].data()["userid"])
                         //print(barberProfile)
                         
