@@ -9,13 +9,14 @@ import UIKit
 
 class PostFromBarberViewController: ViewAllPostViewController {
 
+    var profileUser: User?
     override func viewDidLoad() {
         postTableView.delegate = self
         postTableView.dataSource = self
         postTableView.register(UITableViewCell.self, forCellReuseIdentifier: "postCell")
         // Do any additional setup after loading the view.
         
-        Post.getAllPostFrom(user!.id!) { (posts, err) in
+        Post.getAllPostFrom(profileUser!.id!) { (posts, err) in
             if let posts = posts {
                 self.allPost = posts
                 let group = DispatchGroup()
