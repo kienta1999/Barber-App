@@ -42,6 +42,7 @@ class LoginViewController: UserAuthViewController {
                     self.user?.age = data?[User.userConstant.ageField]  as? Int
                     self.user?.profilePicPath = data?[User.userConstant.profilePicPathField]  as? String
                     self.user?.phoneNumber = data?[User.userConstant.phoneNumberField] as? Int
+                    UserDefaultManager.displayName = self.user?.firstname ?? ""
                     self.transitionToHome()
                 }
             }

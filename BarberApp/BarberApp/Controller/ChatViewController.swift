@@ -17,10 +17,9 @@ class ChatViewController: MessagesViewController, MessagesDataSource {
     private let user: User
     let chatFirestoreHelper = ChatFirestoreHelper()
     let room: Room
-    var sender = Sender(senderId: "any_unique_id", displayName: "jake")
     var messages = [Message]()
-    private let database = Firestore.firestore()
-    private var reference: CollectionReference?
+    //private let database = Firestore.firestore()
+    //private var reference: CollectionReference?
     
     init(user: User, room: Room) {
             self.user = user
@@ -43,7 +42,7 @@ class ChatViewController: MessagesViewController, MessagesDataSource {
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
-        
+        title = room.name
         messageInputBar.delegate = self
         
         removeMessageAvatars()
@@ -104,7 +103,7 @@ class ChatViewController: MessagesViewController, MessagesDataSource {
     }
     
     func currentSender() -> SenderType {
-        return sender
+        return Sender(senderId: user.id!, displayName: UserDefaultManager.displayName)
     }
     
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {

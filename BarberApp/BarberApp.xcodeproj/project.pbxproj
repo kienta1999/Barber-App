@@ -80,6 +80,7 @@
 		A6B32CF32811BC080022E975 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B32CF22811BC080022E975 /* UserDefaultManager.swift */; };
 		A6B32CF52811DD9A0022E975 /* ChatFireStoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B32CF42811DD990022E975 /* ChatFireStoreHelper.swift */; };
 		A6B32CF72811DEB20022E975 /* StreamError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B32CF62811DEB20022E975 /* StreamError.swift */; };
+		A6B32CF92812EA3B0022E975 /* RoomFirestoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B32CF82812EA3B0022E975 /* RoomFirestoreHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +151,7 @@
 		A6B32CF22811BC080022E975 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		A6B32CF42811DD990022E975 /* ChatFireStoreHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatFireStoreHelper.swift; sourceTree = "<group>"; };
 		A6B32CF62811DEB20022E975 /* StreamError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamError.swift; sourceTree = "<group>"; };
+		A6B32CF82812EA3B0022E975 /* RoomFirestoreHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomFirestoreHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +251,7 @@
 				A6B32CF0281149C90022E975 /* DatabaseRepresentation.swift */,
 				A6B32CF42811DD990022E975 /* ChatFireStoreHelper.swift */,
 				A6B32CF62811DEB20022E975 /* StreamError.swift */,
+				A6B32CF82812EA3B0022E975 /* RoomFirestoreHelper.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 				847596F627BF6EDD0041614F /* ProfileClientViewController.swift in Sources */,
 				84051A922807E9D70090229B /* Address.swift in Sources */,
 				A6B32CF52811DD9A0022E975 /* ChatFireStoreHelper.swift in Sources */,
+				A6B32CF92812EA3B0022E975 /* RoomFirestoreHelper.swift in Sources */,
 				84090A1127B7641F00364E09 /* SignupViewController.swift in Sources */,
 				A6B32CF72811DEB20022E975 /* StreamError.swift in Sources */,
 				A60025EC280F89120061EAC9 /* Message.swift in Sources */,
