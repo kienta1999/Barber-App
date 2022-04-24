@@ -60,11 +60,12 @@ class ProfileViewController: HomepageViewController {
         print("user2: \(profileUser?.id)")
         print(StoryBoard.chatOverviewVC)
         if (user?.id == profileUser?.id){
-            let roomVC = RoomViewController(currentUser: user!)
-            navigationController?.pushViewController(roomVC, animated: true)
+            print("will be further implemented")
+            //let roomVC = RoomViewController(currentUser: user!)
+            //navigationController?.pushViewController(roomVC, animated: true)
         }
         else {
-            let chatVC = ChatViewController(user: user!, room: Room(id:profileUser?.id, name:UserDefaultManager.displayName))
+            let chatVC = ChatViewController(user: user!, user2: profileUser!)
             navigationController?.pushViewController(chatVC, animated: true)
         }
     }

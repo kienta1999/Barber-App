@@ -7,7 +7,7 @@
 
 import MessageKit
 
-struct Sender: SenderType {
+struct Sender: SenderType, Equatable {
     var senderId: String
     var displayName: String
 }

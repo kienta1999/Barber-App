@@ -26,6 +26,7 @@ struct StoryBoard {
     static let detailedPostVC = "DetailedPostVC"
     static let commentVC = "CommentVC"
     static let chatOverviewVC = "ChatOverviewVC"
+    static let roomOverviewVC = "RoomOverviewVC"
 }
 struct Collection {
     struct Users {
