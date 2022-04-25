@@ -165,4 +165,24 @@ struct User {
             }
         }
     }
+    
+    static func getAllRoom(_ userId: String, complete: @escaping ([[String:Any]]?) -> Void){
+        let db = Firestore.firestore().collection("rooms")
+            .whereField("users", arrayContains: userId )
+        
+        db.getDocuments { (chatQuerySnap, error) in
+            
+            if let error = error {
+                //print("Error: \(error)")
+                complete(nil)
+            } else {
+                let allRooms = chatQuerySnap!.documents.map(){ (document) -> [String : Any] in
+                    var room = document.data()
+                    room["id"] = document.documentID
+                    return room
+                }
+                complete(allRooms)
+            }
+        }
+    }
 }

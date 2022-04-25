@@ -27,7 +27,7 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     
     init(user: User, user2: User) {
         self.currentUser = user
-        self.user2Name = user2.firstname
+        self.user2Name = "\(user2.firstname!) \(user2.lastname!)"
         self.user2UID = user2.id
         super.init(nibName: nil, bundle: nil)
     }
@@ -61,8 +61,10 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     
     func createNewChat() {
         let users = [self.currentUser.id, self.user2UID]
+        let userNames = ["\(self.currentUser.firstname!) \(self.currentUser.lastname!)",self.user2Name]
          let data: [String: Any] = [
-             "users":users
+             "users":users,
+             "names":userNames
          ]
          
          let db = Firestore.firestore().collection("rooms")

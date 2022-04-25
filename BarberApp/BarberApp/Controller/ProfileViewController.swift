@@ -55,14 +55,21 @@ class ProfileViewController: HomepageViewController {
     }
     
     @IBAction func onMessageClicked(_ sender: Any) {
-        print("Messaging....")
-        print("user1: \(user?.id)")
-        print("user2: \(profileUser?.id)")
-        print(StoryBoard.chatOverviewVC)
+//        print("Messaging....")
+//        print("user1: \(user?.id)")
+//        print("user2: \(profileUser?.id)")
+//        print(StoryBoard.chatOverviewVC)
         if (user?.id == profileUser?.id){
-            print("will be further implemented")
-            //let roomVC = RoomViewController(currentUser: user!)
-            //navigationController?.pushViewController(roomVC, animated: true)
+            User.getAllRoom((user?.id)!) { (roomsData) in
+                if let roomsData = roomsData {
+                    let roomVC = self.storyboard?.instantiateViewController(withIdentifier: StoryBoard.roomOverviewVC) as! RoomViewController
+                    roomVC.configurate(userId: self.user?.id, roomsData: roomsData)
+                    self.navigationController?.pushViewController(roomVC, animated: true)
+                }
+                else {
+                    print("Some error occur - cannot view the rooms")
+                }
+            }
         }
         else {
             let chatVC = ChatViewController(user: user!, user2: profileUser!)
