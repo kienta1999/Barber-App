@@ -378,7 +378,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjn-Hk-IDX">
-                                <rect key="frame" x="158" y="439" width="98" height="38"/>
+                                <rect key="frame" x="158" y="619" width="98" height="38"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Edit Profile"/>
                                 <connections>
@@ -412,7 +412,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1q-kf-dQ9">
-                                <rect key="frame" x="74" y="517" width="266" height="38"/>
+                                <rect key="frame" x="74" y="697" width="266" height="38"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="View all post from this barber"/>
                                 <connections>
@@ -453,7 +453,7 @@
                             <constraint firstItem="kh4-g8-sg0" firstAttribute="top" secondItem="kzF-Pa-Q5T" secondAttribute="top" constant="50" id="avw-XS-iYI"/>
                             <constraint firstItem="bdU-eb-2Ry" firstAttribute="top" secondItem="gEa-ga-dgI" secondAttribute="bottom" constant="20" id="bn8-y4-9kX"/>
                             <constraint firstItem="V1q-kf-dQ9" firstAttribute="top" secondItem="cjn-Hk-IDX" secondAttribute="bottom" constant="40" id="br4-Fy-bnp"/>
-                            <constraint firstItem="2MR-zI-cvg" firstAttribute="top" secondItem="V1q-kf-dQ9" secondAttribute="bottom" constant="200" id="c8c-Sb-Wmc"/>
+                            <constraint firstItem="2MR-zI-cvg" firstAttribute="top" secondItem="V1q-kf-dQ9" secondAttribute="bottom" constant="20" id="c8c-Sb-Wmc"/>
                             <constraint firstItem="2MR-zI-cvg" firstAttribute="bottom" secondItem="kzF-Pa-Q5T" secondAttribute="bottom" constant="-20" id="cwa-HT-HEq"/>
                             <constraint firstItem="kzF-Pa-Q5T" firstAttribute="trailing" secondItem="gEa-ga-dgI" secondAttribute="trailing" constant="45" id="dLA-Uf-sgC"/>
                             <constraint firstItem="fdY-eL-4p5" firstAttribute="trailing" secondItem="zvY-OR-ZZi" secondAttribute="trailing" id="efY-eM-ypX"/>
@@ -795,7 +795,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9R1-n1-hzC">
-                                <rect key="frame" x="180.5" y="664" width="53" height="42"/>
+                                <rect key="frame" x="180.5" y="729" width="53" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
@@ -839,7 +839,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error message here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7T-7d-D89">
-                                <rect key="frame" x="132.5" y="741" width="149" height="21"/>
+                                <rect key="frame" x="132.5" y="801" width="149" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
@@ -855,9 +855,9 @@
                             <constraint firstItem="vFj-N0-Gmk" firstAttribute="centerX" secondItem="48I-hr-HqE" secondAttribute="centerX" id="41Y-AH-KQD"/>
                             <constraint firstItem="X9c-ts-8ct" firstAttribute="top" secondItem="vFj-N0-Gmk" secondAttribute="bottom" constant="20" id="6K6-Bo-mGH"/>
                             <constraint firstItem="agz-yK-Dm6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zJr-8a-tgP" secondAttribute="trailing" constant="10" id="9KQ-wS-u8A"/>
-                            <constraint firstItem="hJc-L4-zDW" firstAttribute="bottom" secondItem="d7T-7d-D89" secondAttribute="bottom" constant="100" id="AgY-f0-OvY"/>
+                            <constraint firstItem="hJc-L4-zDW" firstAttribute="bottom" secondItem="d7T-7d-D89" secondAttribute="bottom" constant="40" id="AgY-f0-OvY"/>
                             <constraint firstItem="agz-yK-Dm6" firstAttribute="top" secondItem="ome-A9-DV2" secondAttribute="bottom" constant="17" id="CTl-Y4-y04"/>
-                            <constraint firstItem="d7T-7d-D89" firstAttribute="top" secondItem="9R1-n1-hzC" secondAttribute="bottom" constant="35" id="EYc-tL-qJE"/>
+                            <constraint firstItem="d7T-7d-D89" firstAttribute="top" secondItem="9R1-n1-hzC" secondAttribute="bottom" constant="30" id="EYc-tL-qJE"/>
                             <constraint firstItem="vFj-N0-Gmk" firstAttribute="top" secondItem="hJc-L4-zDW" secondAttribute="top" constant="75" id="KjD-l7-gQF"/>
                             <constraint firstItem="d7T-7d-D89" firstAttribute="centerX" secondItem="48I-hr-HqE" secondAttribute="centerX" id="OA5-NF-KLR"/>
                             <constraint firstItem="Ewt-Pc-YqZ" firstAttribute="top" secondItem="agz-yK-Dm6" secondAttribute="bottom" constant="15" id="OKI-qr-uM2"/>
@@ -1194,7 +1194,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wvc-QX-e4B">
-                                <rect key="frame" x="169.5" y="525" width="75" height="30"/>
+                                <rect key="frame" x="169.5" y="705" width="75" height="30"/>
                                 <state key="normal" title="Edit Profile"/>
                                 <connections>
                                     <action selector="editProfileClicked:" destination="r2D-hm-heb" eventType="touchUpInside" id="dKu-I3-Z4N"/>
@@ -1226,7 +1226,7 @@
                             <constraint firstItem="ghj-gp-TO5" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="f7z-VD-qsX" secondAttribute="trailing" constant="30" id="Rb1-rG-asY"/>
                             <constraint firstItem="ghj-gp-TO5" firstAttribute="trailing" secondItem="MI2-X3-vUl" secondAttribute="trailing" constant="45" id="UwI-CO-qYq"/>
                             <constraint firstItem="f7z-VD-qsX" firstAttribute="centerY" secondItem="TSl-B9-BFp" secondAttribute="centerY" id="WbR-eQ-JQc"/>
-                            <constraint firstItem="oEj-KU-Q1W" firstAttribute="top" secondItem="Wvc-QX-e4B" secondAttribute="bottom" constant="200" id="Wfu-31-rr8"/>
+                            <constraint firstItem="oEj-KU-Q1W" firstAttribute="top" secondItem="Wvc-QX-e4B" secondAttribute="bottom" constant="20" id="Wfu-31-rr8"/>
                             <constraint firstItem="0b3-B9-cLp" firstAttribute="top" secondItem="ZZ2-EB-Ed8" secondAttribute="bottom" constant="20" id="bP5-PS-P48"/>
                             <constraint firstItem="ghj-gp-TO5" firstAttribute="bottom" secondItem="oEj-KU-Q1W" secondAttribute="bottom" constant="20" id="beM-O0-Qc4"/>
                             <constraint firstItem="TSl-B9-BFp" firstAttribute="trailing" secondItem="QD4-x5-ZGz" secondAttribute="trailing" id="dnS-0n-fSz"/>
