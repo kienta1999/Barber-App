@@ -55,10 +55,6 @@ class ProfileViewController: HomepageViewController {
     }
     
     @IBAction func onMessageClicked(_ sender: Any) {
-//        print("Messaging....")
-//        print("user1: \(user?.id)")
-//        print("user2: \(profileUser?.id)")
-//        print(StoryBoard.chatOverviewVC)
         if (user?.id == profileUser?.id){
             User.getAllRoom((user?.id)!) { (roomsData) in
                 if let roomsData = roomsData {
@@ -67,7 +63,7 @@ class ProfileViewController: HomepageViewController {
                     self.navigationController?.pushViewController(roomVC, animated: true)
                 }
                 else {
-                    print("Some error occur - cannot view the rooms")
+                    print("Error: Cannot view the rooms")
                 }
             }
         }

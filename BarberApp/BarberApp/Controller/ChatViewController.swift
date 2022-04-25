@@ -53,6 +53,7 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
         
+        removeMessageAvatars()
         loadChat()
         
     }
@@ -177,22 +178,21 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     
             func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
 
-                let message = Message(id: UUID().uuidString, content: text, created: Timestamp(), senderID: currentUser.id!, senderName: currentUser.firstname!)
+                let message = Message(id: UUID().uuidString, content: text, created: Timestamp(), senderID: currentUser.id!, senderName: "\(currentUser.firstname!) \(currentUser.lastname!)")
                 
-                  //messages.append(message)
                   insertNewMessage(message)
                   save(message)
     
                   inputBar.inputTextView.text = ""
                   messagesCollectionView.reloadData()
-                  messagesCollectionView.scrollToBottom(animated: true)
+                messagesCollectionView.scrollToLastItem(animated: true)
             }
     
     
     // MARK: - MessagesDataSource
     func currentSender() -> SenderType {
         
-        return Sender(senderId: self.currentUser.id!, displayName: self.currentUser.firstname ?? "Name not found")
+        return Sender(senderId: self.currentUser.id!, displayName: "\(self.currentUser.firstname!) \(self.currentUser.lastname!)" )
         
     }
     
@@ -221,7 +221,11 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     
     // MARK: - MessagesDisplayDelegate
     func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
-        return isFromCurrentSender(message: message) ? .blue: .lightGray
+        return isFromCurrentSender(message: message) ? UIColor.init(red: 96/255, green: 82/255, blue: 82/255, alpha: 1) : UIColor.init(red: 181/255, green: 116/255, blue: 56/255, alpha: 1)
+    }
+    
+    func textColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
+        return .white
     }
     
         private func removeMessageAvatars() {
@@ -245,19 +249,6 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
           layout.setMessageOutgoingMessageTopLabelAlignment(outgoingLabelAlignment)
         }
 
-//    func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
-//
-//        if message.sender.senderId == currentUser.id! {
-//            SDWebImageManager.shared.loadImage(with: currentUser.photoURL, options: .highPriority, progress: nil) { (image, data, error, cacheType, isFinished, imageUrl) in
-//                avatarView.image = image
-//            }
-//        } else {
-//            SDWebImageManager.shared.loadImage(with: URL(string: user2ImgUrl!), options: .highPriority, progress: nil) { (image, data, error, cacheType, isFinished, imageUrl) in
-//                avatarView.image = image
-//            }
-//        }
-//    }
-
     func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
 
         let corner: MessageStyle.TailCorner = isFromCurrentSender(message: message) ? .bottomRight: .bottomLeft
@@ -267,174 +258,9 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     
 }
 
-//import UIKit
-//import MessageKit
-//import InputBarAccessoryView
-//import Photos
-//import FirebaseFirestore
-//import FirebaseAuth
-//
-//class ChatViewController: MessagesViewController, MessagesDataSource {
-//
-//    private let user: User
-//    let chatFirestoreHelper = ChatFirestoreHelper()
-//    let room: Room
-//    var messages = [Message]()
-//    //private let database = Firestore.firestore()
-//    //private var reference: CollectionReference?
-//
-//    init(user: User, room: Room) {
-//            self.user = user
-//            self.room = room
-//            super.init(nibName: nil, bundle: nil)
-//
-//            title = room.name
-//        }
-//
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//
-//    deinit {
-//        chatFirestoreHelper.removeListener()
-//    }
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        messagesCollectionView.messagesDataSource = self
-//        messagesCollectionView.messagesLayoutDelegate = self
-//        messagesCollectionView.messagesDisplayDelegate = self
-//        title = room.name
-//        messageInputBar.delegate = self
-//
-//        removeMessageAvatars()
-//        listenToMessages()
-//    }
-//
-//    private func listenToMessages() {
-//      guard let id = room.id else {
-//        //navigationController?.popViewController(animated: true)
-//        return
-//      }
-//
-//      //reference = database.collection("rooms/\(id)/thread")
-//
-//        chatFirestoreHelper.subscribe(id: id) { [weak self] result in
-//            switch result {
-//            case .success(let messages):
-//                self?.loadImageAndUpdateCells(messages)
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-//    }
-//
-//    private func loadImageAndUpdateCells(_ messages: [Message]) {
-//        messages.forEach { message in
-//            let message = message
-////            if let url = message.downloadURL {
-////                FirebaseStorageManager.downloadImage(url: url) { [weak self] image in
-////                    guard let image = image else { return }
-////                    message.image = image
-////                    self?.insertNewMessage(message)
-////                }
-////            } else {
-////                insertNewMessage(message)
-////            }
-//            insertNewMessage(message)
-//        }
-//    }
-//
-//    private func insertNewMessage(_ message: Message) {
-//        if messages.contains(message) {
-//            return
-//          }
-//        messages.append(message)
-//        messages.sort()
-//
-////        let isLatestMessage = messages.firstIndex(of: message) == (messages.count - 1)
-////          let shouldScrollToBottom =
-////            messagesCollectionView.isAtBottom && isLatestMessage
-//
-//          messagesCollectionView.reloadData()
-//
-////          if shouldScrollToBottom {
-////            messagesCollectionView.scrollToLastItem(animated: true)
-////          }
-//
-//    }
-//
-//    func currentSender() -> SenderType {
-//        return Sender(senderId: user.id!, displayName: user.firstname!)
-//    }
-//
-//    func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
-//        return messages[indexPath.section]
-//    }
-//
-//    func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
-//        return messages.count
-//    }
-//
-//    private func removeMessageAvatars() {
-//      guard
-//        let layout = messagesCollectionView.collectionViewLayout
-//          as? MessagesCollectionViewFlowLayout
-//      else {
-//        return
-//      }
-//      layout.textMessageSizeCalculator.outgoingAvatarSize = .zero
-//      layout.textMessageSizeCalculator.incomingAvatarSize = .zero
-//      layout.setMessageIncomingAvatarSize(.zero)
-//      layout.setMessageOutgoingAvatarSize(.zero)
-//      let incomingLabelAlignment = LabelAlignment(
-//        textAlignment: .left,
-//        textInsets: UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0))
-//      layout.setMessageIncomingMessageTopLabelAlignment(incomingLabelAlignment)
-//      let outgoingLabelAlignment = LabelAlignment(
-//        textAlignment: .right,
-//        textInsets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 15))
-//      layout.setMessageOutgoingMessageTopLabelAlignment(outgoingLabelAlignment)
-//    }
-//}
-//
-//extension ChatViewController: MessagesLayoutDelegate {
-//    func footerViewSize(for section: Int, in messagesCollectionView: MessagesCollectionView) -> CGSize {
-//        return CGSize(width: 0, height: 8)
-//    }
-//
-//    func messageTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
-//        return 20
-//    }
-//}
-//
 //extension ChatViewController: MessagesDisplayDelegate {
 //    func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
 //        return isFromCurrentSender(message: message) ? .yellow : .gray
 //    }
 //
-//    func textColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
-//        return isFromCurrentSender(message: message) ? .black : .white
-//    }
-//
-//    func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
-//        let cornerDirection: MessageStyle.TailCorner = isFromCurrentSender(message: message) ? .bottomRight : .bottomLeft
-//        return .bubbleTail(cornerDirection, .curved)
-//    }
-//}
-//
-//extension ChatViewController: InputBarAccessoryViewDelegate {
-//    func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
-//        let message = Message(user: user, content: text)
-//
-//        chatFirestoreHelper.save(message) { [weak self] error in
-//            if let error = error {
-//                print(error)
-//                return
-//            }
-//            self?.messagesCollectionView.scrollToLastItem()
-//        }
-//        inputBar.inputTextView.text.removeAll()
-//    }
-//}
-//
+
