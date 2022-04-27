@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gpQ-1l-uB8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gpQ-1l-uB8">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -240,11 +241,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oNe-kP-pzK">
-                                <rect key="frame" x="20" y="132" width="374" height="710"/>
+                                <rect key="frame" x="20" y="108" width="374" height="734"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rooms" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXT-Um-lie">
-                                <rect key="frame" x="20" y="88" width="374" height="36"/>
+                                <rect key="frame" x="20" y="64" width="374" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -260,7 +261,7 @@
                             <constraint firstItem="zgt-2d-xVS" firstAttribute="trailing" secondItem="oNe-kP-pzK" secondAttribute="trailing" constant="20" id="kVD-LW-EdT"/>
                             <constraint firstItem="zgt-2d-xVS" firstAttribute="trailing" secondItem="CXT-Um-lie" secondAttribute="trailing" constant="20" id="lK9-gl-XmN"/>
                             <constraint firstItem="zgt-2d-xVS" firstAttribute="bottom" secondItem="oNe-kP-pzK" secondAttribute="bottom" constant="20" id="loT-qf-v6M"/>
-                            <constraint firstItem="CXT-Um-lie" firstAttribute="top" secondItem="zgt-2d-xVS" secondAttribute="top" constant="44" id="nue-Tf-dcM"/>
+                            <constraint firstItem="CXT-Um-lie" firstAttribute="top" secondItem="zgt-2d-xVS" secondAttribute="top" constant="20" id="nue-Tf-dcM"/>
                             <constraint firstItem="zgt-2d-xVS" firstAttribute="trailing" secondItem="oNe-kP-pzK" secondAttribute="trailing" constant="20" id="y08-Gq-y2Q"/>
                         </constraints>
                     </view>
@@ -1275,13 +1276,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5d-Fb-RaM">
-                                <rect key="frame" x="20" y="104" width="374" height="36"/>
+                                <rect key="frame" x="20" y="64" width="374" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wPm-jl-QCZ">
-                                <rect key="frame" x="20" y="148" width="374" height="694"/>
+                                <rect key="frame" x="20" y="108" width="374" height="734"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -1293,7 +1294,7 @@
                             <constraint firstItem="deT-5E-eot" firstAttribute="bottom" secondItem="wPm-jl-QCZ" secondAttribute="bottom" constant="20" id="EFQ-Vr-83S"/>
                             <constraint firstItem="wPm-jl-QCZ" firstAttribute="top" secondItem="O5d-Fb-RaM" secondAttribute="bottom" constant="8" symbolic="YES" id="Gv7-5m-mLe"/>
                             <constraint firstItem="deT-5E-eot" firstAttribute="trailing" secondItem="O5d-Fb-RaM" secondAttribute="trailing" constant="20" id="NB2-yc-tYl"/>
-                            <constraint firstItem="O5d-Fb-RaM" firstAttribute="top" secondItem="deT-5E-eot" secondAttribute="top" constant="60" id="abE-vL-yz3"/>
+                            <constraint firstItem="O5d-Fb-RaM" firstAttribute="top" secondItem="deT-5E-eot" secondAttribute="top" constant="20" id="abE-vL-yz3"/>
                             <constraint firstItem="O5d-Fb-RaM" firstAttribute="leading" secondItem="deT-5E-eot" secondAttribute="leading" constant="20" id="qd4-X7-BNI"/>
                         </constraints>
                     </view>
@@ -1456,7 +1457,7 @@
         <image name="mappin" catalog="system" width="105" height="128"/>
         <image name="message.fill" catalog="system" width="128" height="113"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
-        <image name="plus.rectangle.fill.on.rectangle.fill" catalog="system" width="128" height="96"/>
+        <image name="plus.rectangle.fill.on.rectangle.fill" catalog="system" width="128" height="97"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
