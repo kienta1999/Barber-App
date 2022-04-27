@@ -14,6 +14,9 @@
 - Barber: a@gmail.com   123456
 - Client: kien@gmail.com     123456
 
+### Map Feature:
+- Prior to Build, please enable your location to San Francisco, CA (Debug > Simulate Location > San Francisco, CA, USA) to view all previously created pins in nearby locations.
+
 # Top categories
 - Novelty/Creativity of App Concept: social network for hairstyle enthusiast.
 - Technical Difficulty: log in as different kinds of user (barber/client) shows different kinds of UI. Normally we should have multiple apps for multiple kinds of users.
