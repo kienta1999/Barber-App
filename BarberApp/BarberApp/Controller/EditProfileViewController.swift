@@ -30,7 +30,7 @@ class EditProfileViewController: HomepageViewController, UINavigationControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
         errorMessage.text = ""
-        ageTextField.textColor = .white
+        ageTextField.textColor = .black
         maleButton.isSelected = true
         if let currGender = user?.gender{
             gender = currGender

@@ -29,10 +29,6 @@ class ProfileViewController: HomepageViewController {
         if(!editAllow){
             editProfileBtn.isHidden = true
         }
-//        if(user?.id == profileUser?.id){
-//            // user cannot message themselves (edited: for viewing their own profile, the message button will redirect to chatoverviewpage)
-//            messageBtn.isHidden = true
-//        }
         if let profilePicPath = profileUser?.profilePicPath {
             Post.getUrl(profilePicPath) { (url, err) in
                 if let url = url {
