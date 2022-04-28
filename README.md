@@ -26,5 +26,5 @@
 - User Experience: very intuitive, self-explained design.
 - Optimization: image size is handled properly to work in harmony with each others.
 - Accessibility: the application is not limited to specific kind of audience.
-- Framework Usage: Firebase, Mapkit
+- Framework Usage: Firebase, Mapkit, MessageKit
 
