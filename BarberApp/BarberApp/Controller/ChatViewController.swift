@@ -10,8 +10,10 @@ import InputBarAccessoryView
 import Firebase
 import MessageKit
 import FirebaseFirestore
-//import SDWebImage
 
+
+// https://ibjects.medium.com/simple-text-chat-app-using-firebase-in-swift-5-b9fa91730b6c
+// Reference to the website I got help from when developing the messaging feature
 class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate, MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayDelegate {
 
 
@@ -257,10 +259,4 @@ class ChatViewController: MessagesViewController, InputBarAccessoryViewDelegate,
     }
     
 }
-
-//extension ChatViewController: MessagesDisplayDelegate {
-//    func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
-//        return isFromCurrentSender(message: message) ? .yellow : .gray
-//    }
-//
 

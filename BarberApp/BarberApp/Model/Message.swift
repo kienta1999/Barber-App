@@ -10,6 +10,8 @@ import MessageKit
 import UIKit
 import Firebase
 
+// https://ibjects.medium.com/simple-text-chat-app-using-firebase-in-swift-5-b9fa91730b6c
+// Reference to the website I got help from when developing the messaging feature
 struct Message {
     var id: String
     var content: String
